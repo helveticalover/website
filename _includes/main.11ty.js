@@ -110,7 +110,7 @@ exports.render = function(data) {
   <div class="header">
     <div class="center title">
       <a href="#">
-        <img src="/static/cgpicon.png">
+        <img src="{{ '/static/cgpicon.png' | url }}">
       </a>
     </div>
     <nav class="center">
