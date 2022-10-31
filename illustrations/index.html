@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tiffany Li</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  <style>
+    body, html {
+      min-width: 100%;
+      min-height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+      font-size: 16px;
+    }
+    .content {
+      width: 100%;
+      padding: 10px 1.5em;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      margin: 50 auto;
+    }
+    .header {
+      margin: 0;
+      padding: 25.5px;
+    }
+    .center {
+      margin-left: 0;
+      margin-right: 0;
+      text-align: center;
+      width: 100%;
+    }
+    .title {
+      height: 120px;
+    }
+    .title img {
+      height: 100%;
+      box-sizing: inherit;
+      vertical-align: top;
+      display: inline;
+    }
+    nav {
+      margin: 20px 0px;
+    }
+    nav ul {
+      padding: 0;
+    }
+    nav li {
+      display: inline;
+    }
+    nav a {
+      display: inline-block;
+      padding: 10px;
+    }
+    .mobile-expand {
+      display: none;
+    }
+    .mobile-expand-lbl {
+      display: none;
+      cursor: pointer;
+      transition: all 0.25s ease-out;
+    }
+    .mobile-expand-lbl:hover {
+      color: #7C5A0B;
+    }
+    .mobile-expand-content {
+      max-height: auto;
+      overflow: hidden;
+      transition: max-height .25s ease-in-out;
+    }
+    .mobile-expand:checked + .mobile-expand-lbl + .mobile-expand-content {
+      max-height: 100vh;
+    }
+    @media only screen and (max-width: 768px) {
+      .content {
+        width: 100%;
+      }
+      .nav li {
+        display: inline-block;
+        width: 100%;
+      }
+      .mobile-expand-lbl {
+        display: inline-block;
+      }
+      .mobile-expand-content {
+        max-height: 0px;
+      }
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .gallery picture {
+      margin: 0;
+    }
+    .gallery img {
+      object-fit: cover;
+      padding: 0;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="center title">
+      <a href="#">
+        <img src="{{ '/static/cgpicon.png' | url }}">
+      </a>
+    </div>
+    <nav class="center">
+      <div class="wrap-mobile-collapsible">
+        <input id="id_nav-collapsible" class="mobile-expand" type="checkbox">
+        <label for="id_nav-collapsible" class="mobile-expand-lbl center" data-target="id_nav"><i class="material-icons">menu</i></label>
+        <div class="mobile-expand-content">
+          <ul class="nav" id="id_nav">
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Illustrations</a></li>
+            <li><a href="#">Video</a></li>
+            <li><a href="#">About Me</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="content">
+    
+    <div class="gallery" id="id_gallery">
+        <picture>
+			<source type="image/webp" data-srcset=" /static/images/9iuj5rCVh9-100.webp 100w , /static/images/9iuj5rCVh9-640.webp 640w , /static/images/9iuj5rCVh9-1024.webp 1024w , /static/images/9iuj5rCVh9-2048.webp 2048w ," >
+			<img
+			class="lazy"
+			alt="Character designs based on playing cards."
+			src="/static/images/9iuj5rCVh9-100.jpeg"
+			data-src="/static/images/9iuj5rCVh9-100.jpeg"
+			data-srcset=" /static/images/9iuj5rCVh9-100.jpeg 100w , /static/images/9iuj5rCVh9-640.jpeg 640w , /static/images/9iuj5rCVh9-1024.jpeg 1024w , /static/images/9iuj5rCVh9-2048.jpeg 2048w ,"
+			width="100"
+			height="42"
+			data-width="100"
+			data-height="42">
+		</picture>
+		<picture>
+			<source type="image/webp" data-srcset=" /static/images/gRRSRc_2nE-100.webp 100w , /static/images/gRRSRc_2nE-640.webp 640w , /static/images/gRRSRc_2nE-1024.webp 1024w , /static/images/gRRSRc_2nE-2048.webp 2048w ," >
+			<img
+			class="lazy"
+			alt="Illustration based on playing cards."
+			src="/static/images/gRRSRc_2nE-100.jpeg"
+			data-src="/static/images/gRRSRc_2nE-100.jpeg"
+			data-srcset=" /static/images/gRRSRc_2nE-100.jpeg 100w , /static/images/gRRSRc_2nE-640.jpeg 640w , /static/images/gRRSRc_2nE-1024.jpeg 1024w , /static/images/gRRSRc_2nE-2048.jpeg 2048w ,"
+			width="100"
+			height="133"
+			data-width="100"
+			data-height="133">
+		</picture>
+		<picture>
+			<source type="image/webp" data-srcset=" /static/images/m94tDTtydv-100.webp 100w , /static/images/m94tDTtydv-640.webp 640w , /static/images/m94tDTtydv-1024.webp 1024w , /static/images/m94tDTtydv-2048.webp 2048w ," >
+			<img
+			class="lazy"
+			alt="Illustration based on playing cards."
+			src="/static/images/m94tDTtydv-100.jpeg"
+			data-src="/static/images/m94tDTtydv-100.jpeg"
+			data-srcset=" /static/images/m94tDTtydv-100.jpeg 100w , /static/images/m94tDTtydv-640.jpeg 640w , /static/images/m94tDTtydv-1024.jpeg 1024w , /static/images/m94tDTtydv-2048.jpeg 2048w ,"
+			width="100"
+			height="133"
+			data-width="100"
+			data-height="133">
+		</picture>
+		<picture>
+			<source type="image/webp" data-srcset=" /static/images/i-V1gSr3Iw-100.webp 100w , /static/images/i-V1gSr3Iw-640.webp 640w , /static/images/i-V1gSr3Iw-1024.webp 1024w , /static/images/i-V1gSr3Iw-2048.webp 2048w ," >
+			<img
+			class="lazy"
+			alt="Illustrations based on playing cards."
+			src="/static/images/i-V1gSr3Iw-100.jpeg"
+			data-src="/static/images/i-V1gSr3Iw-100.jpeg"
+			data-srcset=" /static/images/i-V1gSr3Iw-100.jpeg 100w , /static/images/i-V1gSr3Iw-640.jpeg 640w , /static/images/i-V1gSr3Iw-1024.jpeg 1024w , /static/images/i-V1gSr3Iw-2048.jpeg 2048w ,"
+			width="100"
+			height="76"
+			data-width="100"
+			data-height="76">
+		</picture>
+		<picture>
+			<source type="image/webp" data-srcset=" /static/images/D4yJ7UYZd3-100.webp 100w , /static/images/D4yJ7UYZd3-640.webp 640w , /static/images/D4yJ7UYZd3-1024.webp 1024w , /static/images/D4yJ7UYZd3-2048.webp 2048w ," >
+			<img
+			class="lazy"
+			alt="Illustrations based on playing cards."
+			src="/static/images/D4yJ7UYZd3-100.jpeg"
+			data-src="/static/images/D4yJ7UYZd3-100.jpeg"
+			data-srcset=" /static/images/D4yJ7UYZd3-100.jpeg 100w , /static/images/D4yJ7UYZd3-640.jpeg 640w , /static/images/D4yJ7UYZd3-1024.jpeg 1024w , /static/images/D4yJ7UYZd3-2048.jpeg 2048w ,"
+			width="100"
+			height="76"
+			data-width="100"
+			data-height="76">
+		</picture>
+		<picture>
+			<source type="image/webp" data-srcset=" /static/images/ldzCxOJiSQ-100.webp 100w , /static/images/ldzCxOJiSQ-640.webp 640w , /static/images/ldzCxOJiSQ-1024.webp 1024w , /static/images/ldzCxOJiSQ-2048.webp 2048w ," >
+			<img
+			class="lazy"
+			alt="A good cat"
+			src="/static/images/ldzCxOJiSQ-100.jpeg"
+			data-src="/static/images/ldzCxOJiSQ-100.jpeg"
+			data-srcset=" /static/images/ldzCxOJiSQ-100.jpeg 100w , /static/images/ldzCxOJiSQ-640.jpeg 640w , /static/images/ldzCxOJiSQ-1024.jpeg 1024w , /static/images/ldzCxOJiSQ-2048.jpeg 2048w ,"
+			width="100"
+			height="154"
+			data-width="100"
+			data-height="154">
+		</picture>
+    </div>
+    <script language="javascript" src="{{ '/static/gallery.js' | url }}"></script>
+    <script type="module" async>
+        import Lazyload from "https://cdn.skypack.dev/vanilla-lazyload";
+        const lazyload = new Lazyload();
+    </script>
+    
+  </div>
+</body>
+</html>
