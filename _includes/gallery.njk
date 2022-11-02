@@ -1,0 +1,12 @@
+---
+layout: main.njk
+---
+
+<div class="gallery" id="id_gallery">
+    {{ content | safe }}
+</div>
+<script language="javascript" src="{{ '/static/gallery.js' | url }}"></script>
+<script type="module" async>
+    import Lazyload from "https://cdn.skypack.dev/vanilla-lazyload";
+    const lazyload = new Lazyload();
+</script>
