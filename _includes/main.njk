@@ -1,5 +1,3 @@
-exports.render = function(data) {
-    return `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -129,10 +127,7 @@ exports.render = function(data) {
     </nav>
   </div>
   <div class="content">
-    ${data.content}
+    {{ content | safe }}
   </div>
 </body>
-</html>`;
-}
-
-module.exports = exports;
+</html>
