@@ -2,6 +2,9 @@
 layout: main.njk
 ---
 
+<div class="debug">
+    <input name="resize" onclick="sizeGalleries()" />
+</div>
 <div class="gallery" id="id_gallery">
     {{ content | safe }}
 </div>
@@ -9,4 +12,6 @@ layout: main.njk
 <script type="module" async>
     import Lazyload from "https://cdn.skypack.dev/vanilla-lazyload";
     const lazyload = new Lazyload();
+    sizeGalleries();
+    sizeGalleries();
 </script>
