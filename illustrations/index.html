@@ -101,7 +101,18 @@
       object-fit: cover;
       padding: 0;
     }
-    
+
+    .gallery img.lazy {
+      opacity: 0;
+    }
+    .gallery img:not(.initial) {
+      transition: opacity 1s;
+    }
+    .gallery img.initial,
+    .gallery img.loaded,
+    .gallery img.error {
+      opacity: 1;
+    }
   </style>
 </head>
 <body>
@@ -128,6 +139,9 @@
   </div>
   <div class="content">
     
+<div class="debug">
+    <input name="resize" onclick="sizeGalleries()" />
+</div>
 <div class="gallery" id="id_gallery">
     <picture>
 			<source type="image/webp" data-srcset=" /static/images/9iuj5rCVh9-100.webp 100w , /static/images/9iuj5rCVh9-640.webp 640w , /static/images/9iuj5rCVh9-1024.webp 1024w , /static/images/9iuj5rCVh9-2048.webp 2048w ," >
@@ -212,8 +226,9 @@
 <script type="module" async>
     import Lazyload from "https://cdn.skypack.dev/vanilla-lazyload";
     const lazyload = new Lazyload();
+    sizeGalleries();
+    sizeGalleries();
 </script>
-
   </div>
 </body>
 </html>
