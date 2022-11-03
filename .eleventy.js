@@ -1,4 +1,5 @@
 // https://mahmoudashraf.dev/blog/how-to-optimize-and-lazyloading-images-on-eleventy/
+// https://github.com/verlok/vanilla-lazyload/
 
 const Image = require("@11ty/eleventy-img");
 const Sharp = require("sharp");
