@@ -2,7 +2,6 @@
 // https://github.com/verlok/vanilla-lazyload/
 
 const Image = require("@11ty/eleventy-img");
-const Sharp = require("sharp");
 
 module.exports = function(config) {
 
@@ -22,12 +21,6 @@ module.exports = function(config) {
 		});
 
 		let selectedSrc = stats["jpeg"][0];
-
-		// const placeholder = await Sharp(selectedSrc.outputPath)
-		// 	.resize({ fit: Sharp.fit.inside })
-		// 	.blur()
-		// 	.toBuffer();
-		// const base64Placeholder = `data:image/png;base64,${placeholder.toString("base64")}`;
 
 		const srcset = Object.keys(stats).reduce(
 			(acc, format) => ({
