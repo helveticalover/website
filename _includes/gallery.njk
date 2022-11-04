@@ -1,5 +1,7 @@
 ---
 layout: main.njk
+targetHeight: 500
+padding: 10
 ---
 
 <div class="debug">
@@ -12,6 +14,5 @@ layout: main.njk
 <script type="module" async>
     import Lazyload from "https://cdn.skypack.dev/vanilla-lazyload";
     const lazyload = new Lazyload();
-    sizeGalleries();
-    sizeGalleries();
+    const gallery = new Gallery({{ targetHeight }}, {{ padding }});
 </script>
