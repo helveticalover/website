@@ -113,6 +113,84 @@
     .gallery img.error {
       opacity: 1;
     }
+
+    .modal {
+      z-index: 1;
+      position: fixed;
+      left: 0;
+      top: 0;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      transition: opacity 0.2s;
+    }
+
+    .modal .background {
+      position: relative;
+      background-color: rgb(0,0,0);
+      background-color: rgba(0,0,0,0.9);
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+    }
+
+    .modal .content {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .modal-content {
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    .modal.hidden {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    .modal.displayed {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    
+    #caption {
+      position: block;
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+      text-align: center;
+      color: #ccc;
+      padding: 10px 0;
+      height: 150px;
+    }
+
+    .close {
+      position: fixed;
+      float: right;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -129,7 +207,7 @@
         <div class="mobile-expand-content">
           <ul class="nav" id="id_nav">
             <li><a href="#">Projects</a></li>
-            <li><a href="#">Illustrations</a></li>
+            <li><a href="/website/illustrations">Illustrations</a></li>
             <li><a href="#">Video</a></li>
             <li><a href="#">About Me</a></li>
           </ul>
@@ -138,9 +216,14 @@
     </nav>
   </div>
   <div class="content">
-    
-<div class="debug">
-    <input name="resize" onclick="sizeGalleries()" />
+    <div id="myModal" class="modal hidden">
+  <span class="close">&times;</span>
+  <div class="background">
+    <div class="content">
+        <img id="img01" class="modal-content" src="/website/static/images/9iuj5rCVh9-2048.webp">
+        <div id="caption">test caption</div>
+    </div>
+  </div>
 </div>
 <div class="gallery" id="id_gallery">
     <picture>
@@ -154,7 +237,8 @@
 			width="100"
 			height="42"
 			data-width="100"
-			data-height="42">
+			data-height="42"
+			onclick="showInModal('/static/images/9iuj5rCVh9-2048.jpeg', 'Character designs based on playing cards.')">
 		</picture>
 		<picture>
 			<source type="image/webp" data-srcset=" /static/images/gRRSRc_2nE-100.webp 100w , /static/images/gRRSRc_2nE-640.webp 640w , /static/images/gRRSRc_2nE-1024.webp 1024w , /static/images/gRRSRc_2nE-2048.webp 2048w ," >
@@ -167,7 +251,8 @@
 			width="100"
 			height="133"
 			data-width="100"
-			data-height="133">
+			data-height="133"
+			onclick="showInModal('/static/images/gRRSRc_2nE-2048.jpeg', 'Illustration based on playing cards.')">
 		</picture>
 		<picture>
 			<source type="image/webp" data-srcset=" /static/images/m94tDTtydv-100.webp 100w , /static/images/m94tDTtydv-640.webp 640w , /static/images/m94tDTtydv-1024.webp 1024w , /static/images/m94tDTtydv-2048.webp 2048w ," >
@@ -180,7 +265,8 @@
 			width="100"
 			height="133"
 			data-width="100"
-			data-height="133">
+			data-height="133"
+			onclick="showInModal('/static/images/m94tDTtydv-2048.jpeg', 'Illustration based on playing cards.')">
 		</picture>
 		<picture>
 			<source type="image/webp" data-srcset=" /static/images/i-V1gSr3Iw-100.webp 100w , /static/images/i-V1gSr3Iw-640.webp 640w , /static/images/i-V1gSr3Iw-1024.webp 1024w , /static/images/i-V1gSr3Iw-2048.webp 2048w ," >
@@ -193,7 +279,8 @@
 			width="100"
 			height="76"
 			data-width="100"
-			data-height="76">
+			data-height="76"
+			onclick="showInModal('/static/images/i-V1gSr3Iw-2048.jpeg', 'Illustrations based on playing cards.')">
 		</picture>
 		<picture>
 			<source type="image/webp" data-srcset=" /static/images/D4yJ7UYZd3-100.webp 100w , /static/images/D4yJ7UYZd3-640.webp 640w , /static/images/D4yJ7UYZd3-1024.webp 1024w , /static/images/D4yJ7UYZd3-2048.webp 2048w ," >
@@ -206,7 +293,8 @@
 			width="100"
 			height="76"
 			data-width="100"
-			data-height="76">
+			data-height="76"
+			onclick="showInModal('/static/images/D4yJ7UYZd3-2048.jpeg', 'Illustrations based on playing cards.')">
 		</picture>
 		<picture>
 			<source type="image/webp" data-srcset=" /static/images/ldzCxOJiSQ-100.webp 100w , /static/images/ldzCxOJiSQ-640.webp 640w , /static/images/ldzCxOJiSQ-1024.webp 1024w , /static/images/ldzCxOJiSQ-2048.webp 2048w ," >
@@ -219,15 +307,16 @@
 			width="100"
 			height="154"
 			data-width="100"
-			data-height="154">
+			data-height="154"
+			onclick="showInModal('/static/images/ldzCxOJiSQ-2048.jpeg', 'A good cat')">
 		</picture>
 </div>
+<script language="javascript" src="/website/static/modal.js"></script>
 <script language="javascript" src="/website/static/gallery.js"></script>
 <script type="module" async>
     import Lazyload from "https://cdn.skypack.dev/vanilla-lazyload";
     const lazyload = new Lazyload();
-    sizeGalleries();
-    sizeGalleries();
+    const gallery = new Gallery(500, 10);
 </script>
   </div>
 </body>
