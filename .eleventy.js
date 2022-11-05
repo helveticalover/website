@@ -33,6 +33,8 @@ module.exports = function(config) {
 			{}
 		);
 
+		const fullSize = stats["jpeg"][stats["jpeg"].length - 1].url;
+
 		const source = `<source type="image/webp" data-srcset="${srcset["webp"]}" >`;
 
 		const img = `<img
@@ -44,7 +46,8 @@ module.exports = function(config) {
 			width="${selectedSrc.width}"
 			height="${selectedSrc.height}"
 			data-width="${selectedSrc.width}"
-			data-height="${selectedSrc.height}">`;
+			data-height="${selectedSrc.height}"
+			onclick="showInModal('${fullSize}', '${alt}')">`;
 	
 		return `<picture>
 			${source}
