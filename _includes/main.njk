@@ -113,6 +113,84 @@
     .gallery img.error {
       opacity: 1;
     }
+
+    .modal {
+      z-index: 1;
+      position: fixed;
+      left: 0;
+      top: 0;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      transition: opacity 0.2s;
+    }
+
+    .modal .background {
+      position: relative;
+      background-color: rgb(0,0,0);
+      background-color: rgba(0,0,0,0.9);
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+    }
+
+    .modal .content {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .modal-content {
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    .modal.hidden {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    .modal.displayed {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    {# TODO #}
+    #caption {
+      position: block;
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+      text-align: center;
+      color: #ccc;
+      padding: 10px 0;
+      height: 150px;
+    }
+
+    .close {
+      position: fixed;
+      float: right;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -129,7 +207,7 @@
         <div class="mobile-expand-content">
           <ul class="nav" id="id_nav">
             <li><a href="#">Projects</a></li>
-            <li><a href="#">Illustrations</a></li>
+            <li><a href="{{ '/illustrations' | url }}">Illustrations</a></li>
             <li><a href="#">Video</a></li>
             <li><a href="#">About Me</a></li>
           </ul>
