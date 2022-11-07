@@ -26,22 +26,24 @@ module.exports = function(config) {
 			(acc, format) => ({
 				...acc,
 				[format]: stats[format].reduce(
-					(_acc, curr) => `${_acc} ${curr.srcset} ,`,
-					""
-				),
+					function(_acc, curr) {
+						let url = `${config.getFilter("url")(curr.srcset)}`;
+						return `${_acc} ${url} ,`;
+					},
+				""),
 			}),
 			{}
 		);
 
-		const fullSize = stats["jpeg"][stats["jpeg"].length - 1].url;
-
+		const fullSize = `${config.getFilter("url")(stats["jpeg"][stats["jpeg"].length - 1].url)}`;
+		const srcUrl = `${config.getFilter("url")(selectedSrc.url)}`;
 		const source = `<source type="image/webp" data-srcset="${srcset["webp"]}" >`;
 
 		const img = `<img
 			class="lazy"
 			alt="${alt}"
-			src="${selectedSrc.url}"
-			data-src="${selectedSrc.url}"
+			src="${srcUrl}"
+			data-src="${srcUrl}"
 			data-srcset="${srcset["jpeg"]}"
 			width="${selectedSrc.width}"
 			height="${selectedSrc.height}"
@@ -54,4 +56,8 @@ module.exports = function(config) {
 			${img}
 		</picture>`;
 	});
+
+	return {
+		pathPrefix: "/website/",
+	};
 }

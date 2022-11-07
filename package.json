@@ -5,7 +5,7 @@
   "main": ".eleventy.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "env NODE_ENV=production npx @11ty/eleventy --pathprefix 'website'",
+    "build": "env NODE_ENV=production npx @11ty/eleventy",
     "serve": "npx @11ty/eleventy --serve"
   },
   "repository": {
