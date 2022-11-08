@@ -5,7 +5,8 @@ const Image = require("@11ty/eleventy-img");
 
 module.exports = function(config) {
 
-	config.addPassthroughCopy("static/*.js");
+	config.addPassthroughCopy("static/**/*.js");
+	config.addPassthroughCopy("static/**/*.css");
 	config.addPassthroughCopy("static/cgpicon.png");
 
 	// Resize images and send to static directory
