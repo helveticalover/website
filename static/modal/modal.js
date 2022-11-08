@@ -22,8 +22,4 @@ for (let modal of modals)
     }
     
     background.onclick = span.onclick;
-    
-    modalImg.onclick = function(e) {
-        e.stopPropagation();
-    }
 }
