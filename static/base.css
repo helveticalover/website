@@ -1,6 +1,6 @@
 :root {
     --body-font: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
-    --body-font-size: 16px;
+    --body-font-size: 1em;
 }
 
 body, html {
@@ -12,78 +12,78 @@ body, html {
     font-size: var(--body-font-size);
 }
 .content {
-width: 100%;
-padding: 10px 1.5em;
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
-box-sizing: border-box;
-margin: 50 auto;
+    width: 100%;
+    padding: 10px 1.5em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 50 auto;
 }
 .header {
-margin: 0;
-padding: 25.5px;
+    margin: 0;
+    padding: 25.5px;
 }
 .center {
-margin-left: 0;
-margin-right: 0;
-text-align: center;
-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+    width: 100%;
 }
 .title {
-height: 120px;
+    height: 120px;
 }
 .title img {
-height: 100%;
-box-sizing: inherit;
-vertical-align: top;
-display: inline;
+    height: 100%;
+    box-sizing: inherit;
+    vertical-align: top;
+    display: inline;
 }
 
 /* navigation */
 nav {
-margin: 20px 0px;
+    margin: 20px 0px;
 }
 nav ul {
-padding: 0;
+    padding: 0;
 }
 nav li {
-display: inline;
+    display: inline;
 }
 nav a {
-display: inline-block;
-padding: 10px;
+    display: inline-block;
+    padding: 10px;
 }
 .mobile-expand {
-display: none;
+    display: none;
 }
 .mobile-expand-lbl {
-display: none;
-cursor: pointer;
-transition: all 0.25s ease-out;
+    display: none;
+    cursor: pointer;
+    transition: all 0.25s ease-out;
 }
 .mobile-expand-lbl:hover {
-color: #7C5A0B;
+    color: #7C5A0B;
 }
 .mobile-expand-content {
-max-height: auto;
-overflow: hidden;
-transition: max-height .25s ease-in-out;
+    max-height: auto;
+    overflow: hidden;
+    transition: max-height .25s ease-in-out;
 }
 .mobile-expand:checked + .mobile-expand-lbl + .mobile-expand-content {
-max-height: 100vh;
+    max-height: 100vh;
 }
 @media only screen and (max-width: 768px) {
-.content {
-    width: 100%;
-}
-.nav li {
-    display: inline-block;
-    width: 100%;
-}
-.mobile-expand-lbl {
-    display: inline-block;
-}
-.mobile-expand-content {
-    max-height: 0px;
-}
+    .content {
+        width: 100%;
+    }
+    .nav li {
+        display: inline-block;
+        width: 100%;
+    }
+    .mobile-expand-lbl {
+        display: inline-block;
+    }
+    .mobile-expand-content {
+        max-height: 0px;
+    }
 }
