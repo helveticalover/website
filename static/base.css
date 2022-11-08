@@ -1,6 +1,10 @@
 :root {
     --body-font: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
     --body-font-size: 1em;
+    --body-padding: 10px 1.5em;
+    --mobile-body-padding: 0px;
+    --modal-padding: 50px;
+    --mobile-modal-padding: 0px;
 }
 
 body, html {
@@ -13,7 +17,7 @@ body, html {
 }
 .content {
     width: 100%;
-    padding: 10px 1.5em;
+    padding: var(--body-padding);
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -75,6 +79,7 @@ nav a {
 @media only screen and (max-width: 768px) {
     .content {
         width: 100%;
+        padding: var(--mobile-body-padding);
     }
     .nav li {
         display: inline-block;
