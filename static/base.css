@@ -5,6 +5,12 @@
     --mobile-body-padding: 0px;
     --modal-padding: 50px;
     --mobile-modal-padding: 0px;
+    --desktop-gallery-padding-left: 10px;
+    --desktop-gallery-padding-top: 10px;
+    --mobile-gallery-padding-left: 5px;
+    --mobile-gallery-padding-top: 2px;
+    --gallery-padding-left: var(--desktop-gallery-padding-left);
+    --gallery-padding-top: var(--desktop-gallery-padding-top);
 }
 
 body, html {
@@ -77,6 +83,10 @@ nav a {
     max-height: 100vh;
 }
 @media only screen and (max-width: 768px) {
+    :root {
+        --gallery-padding-left: var(--mobile-gallery-padding-left);
+        --gallery-padding-top: var(--mobile-gallery-padding-top);
+    }
     .content {
         width: 100%;
         padding: var(--mobile-body-padding);

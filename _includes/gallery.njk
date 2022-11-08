@@ -1,7 +1,6 @@
 ---
 layout: main.njk
 targetHeight: 500
-padding: 10
 ---
 <div class="modal hidden">
   <span class="modal-close">&times;</span>
@@ -22,5 +21,5 @@ padding: 10
 <script type="module" async>
     import Lazyload from "https://cdn.skypack.dev/vanilla-lazyload";
     const lazyload = new Lazyload();
-    const gallery = new Gallery({{ targetHeight }}, {{ padding }});
+    const gallery = new Gallery({{ targetHeight }});
 </script>
