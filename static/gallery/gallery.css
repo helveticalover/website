@@ -6,18 +6,3 @@
   margin: 0;
   padding: 0;
 }
-
-.gallery img {
-  object-fit: cover;
-  opacity: 0;
-  visibility: hidden;
-}
-.gallery img:not(.initial) {
-  transition: opacity 1s;
-}
-.gallery img.initial,
-.gallery img.loaded,
-.gallery img.error {
-  opacity: 1;
-  visibility: visible;
-}

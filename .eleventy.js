@@ -10,7 +10,7 @@ module.exports = function(config) {
 	config.addPassthroughCopy("static/cgpicon.png");
 
 	// Resize images and send to static directory
-	config.addShortcode("image", async function (src, alt){
+	config.addAsyncShortcode("image", async function (src, alt){
 		if (!alt) {
 			throw new Error(`Missing \`alt\` on image from: ${src}`);
 		}
