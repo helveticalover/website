@@ -3,20 +3,22 @@ layout: main.njk
 targetHeight: 500
 padding: 10
 ---
-<div id="myModal" class="modal hidden">
+<div class="modal hidden">
   <span class="close">&times;</span>
   <div class="background">
     <div class="content">
-        <img id="img01" class="modal-content" src="{{ '/static/images/9iuj5rCVh9-2048.webp' | url }}">
-        <div id="caption">test caption</div>
+        <img class="modal-content">
+        <div class="modal-caption">test caption</div>
     </div>
   </div>
 </div>
 <div class="gallery" id="id_gallery">
     {{ content | safe }}
 </div>
-<script language="javascript" src="{{ '/static/modal.js' | url }}"></script>
-<script language="javascript" src="{{ '/static/gallery.js' | url }}"></script>
+<link href="{{ '/static/modal/modal.css' | url }}" type="text/css" rel="stylesheet">
+<script language="javascript" src="{{ '/static/modal/modal.js' | url }}"></script>
+<link href="{{ '/static/gallery/gallery.css' | url }}" type="text/css" rel="stylesheet">
+<script language="javascript" src="{{ '/static/gallery/gallery.js' | url }}"></script>
 <script type="module" async>
     import Lazyload from "https://cdn.skypack.dev/vanilla-lazyload";
     const lazyload = new Lazyload();
