@@ -8,10 +8,8 @@
   .gallery img {
     object-fit: cover;
     padding: 0;
-  }
-
-  .gallery img.lazy {
     opacity: 0;
+    visibility: hidden;
   }
   .gallery img:not(.initial) {
     transition: opacity 1s;
@@ -20,4 +18,5 @@
   .gallery img.loaded,
   .gallery img.error {
     opacity: 1;
+    visibility: visible;
   }

@@ -49,12 +49,11 @@ module.exports = function(config) {
 			width="${selectedSrc.width}"
 			height="${selectedSrc.height}"
 			data-width="${selectedSrc.width}"
-			data-height="${selectedSrc.height}"
-			onclick="showInModal('${fullSize}', '${alt}')">`;
+			data-height="${selectedSrc.height}">`;
 	
 		return `<picture>
 			${source}
-			${img}
+			<a href="javascript:showInModal('${fullSize}', '${alt}')">${img}</a>
 		</picture>`;
 	});
 
