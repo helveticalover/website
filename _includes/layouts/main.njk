@@ -7,11 +7,17 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
   <link href="{{ '/static/base.css' | url }}" type="text/css" rel="stylesheet">
+  <script type="module" async>
+    import Lazyload from "https://cdn.skypack.dev/vanilla-lazyload";
+    const lazyload = new Lazyload();
+</script>
 </head>
 <body>
-  {% include "header.njk" %}
-  <div class="content">
-    {{ content | safe }}
+  <div class="body-wrapper">
+    {% include "header.njk" %}
+    <div class="content">
+      {{ content | safe }}
+    </div>
   </div>
 </body>
 </html>

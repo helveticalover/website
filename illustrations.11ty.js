@@ -1,5 +1,5 @@
 exports.data = {
-    layout: "gallery.njk",
+    layout: "layouts/gallery.njk",
 }
 
 exports.render = async function(data) {

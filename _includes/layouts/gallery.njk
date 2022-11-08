@@ -1,0 +1,12 @@
+---
+layout: layouts/main.njk
+targetHeight: 500
+---
+{% include "modal.njk" %}
+
+<div class="gallery" id="id_gallery">
+    {{ content | safe }}
+</div>
+<link href="{{ '/static/gallery/gallery.css' | url }}" type="text/css" rel="stylesheet">
+<script language="javascript" src="{{ '/static/gallery/gallery.js' | url }}"></script>
+<script>const gallery = new Gallery({{ targetHeight }});</script>
