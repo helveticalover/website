@@ -1,0 +1,23 @@
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .gallery picture {
+    margin: 0;
+  }
+  .gallery img {
+    object-fit: cover;
+    padding: 0;
+  }
+
+  .gallery img.lazy {
+    opacity: 0;
+  }
+  .gallery img:not(.initial) {
+    transition: opacity 1s;
+  }
+  .gallery img.initial,
+  .gallery img.loaded,
+  .gallery img.error {
+    opacity: 1;
+  }
