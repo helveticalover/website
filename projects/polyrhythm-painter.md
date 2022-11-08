@@ -4,6 +4,7 @@ date: 2020-05-17
 title: PolyRhythm Painter
 blurb: An online drawing game with rhythm game mechanics.
 tools: ['Unity', 'C#', 'HLSL']
+thumbnail: PRP.png
 ---
 The goal of PolyRhythm Painter is to recreate drawings as accurately as possible by following instructions scrolling across the screen. The more accurate you are, the more faithful your drawing is to the original. You can also use the game’s built-in level editor to create your own drawings to share with other players.
 
