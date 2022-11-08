@@ -2,8 +2,8 @@ var modals = document.getElementsByClassName("modal");
 
 for (let modal of modals)
 {
-    var background = modal.querySelector(".background");
-    var modalImg = modal.querySelector(".modal-content");
+    var background = modal.querySelector(".modal-background");
+    var modalImg = modal.querySelector(".modal-img");
     var captionText = modal.querySelector(".modal-caption");
     
     function showInModal(src, alt) {
@@ -15,7 +15,7 @@ for (let modal of modals)
         }
     }
     
-    var span = modal.querySelector(".close");
+    var span = modal.querySelector(".modal-close");
     span.onclick = function() {
         modal.classList.remove("displayed");
         modal.classList.add("hidden");
