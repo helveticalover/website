@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tiffany Li</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  <link href="/website/static/base.css" type="text/css" rel="stylesheet">
+  <script type="module" async>
+    import Lazyload from "https://cdn.skypack.dev/vanilla-lazyload";
+    const lazyload = new Lazyload();
+</script>
+</head>
+<body>
+  <div class="body-wrapper">
+    <div class="header">
+    <div class="center title">
+      <a href="#">
+        <img src="/website/static/cgpicon.png">
+      </a>
+    </div>
+    <nav class="center">
+      <div class="wrap-mobile-collapsible">
+        <input id="id_nav-collapsible" class="mobile-expand" type="checkbox">
+        <label for="id_nav-collapsible" class="mobile-expand-lbl center" data-target="id_nav"><i class="material-icons">menu</i></label>
+        <div class="mobile-expand-content">
+          <ul class="nav" id="id_nav">
+            <li><a href="/website/projects">Projects</a></li>
+            <li><a href="/website/illustrations">Illustrations</a></li>
+            <li><a href="#">Video</a></li>
+            <li><a href="/website/about-me">About Me</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+</div>
+    <div class="content">
+      
+<div class="modal hidden">
+  <span class="modal-close">&times;</span>
+  <div class="modal-background">
+    <div class="modal-content">
+        <img class="modal-img">
+        <div class="modal-caption">test caption</div>
+    </div>
+  </div>
+</div>
+<link href="/website/static/modal/modal.css" type="text/css" rel="stylesheet">
+<script language="javascript" src="/website/static/modal/modal.js"></script>
+
+<div id="about-me-wrapper">
+    <div id="about-me">
+        <div id="self-intro">
+            <h2>About Me</h2>
+            <p>I am a Carnegie Mellon University alumna with a 
+                Bachelor's of Computer Science and Arts, and a minor in Game Design. I 
+                specialize in game and game-adjacent software that incorporates a breadth 
+                of disciplines such as engineering, visual arts, and design. You can view 
+                my resume <a 
+                href="https://drive.google.com/file/d/12e5VbWHhBMGvr4APF8LkPyNU58MJO50I/view">
+                here</a>.
+            </p>
+        </div>
+        <div id="portrait">
+            <picture>
+			<source type="image/webp" data-srcset=" /website/static/images/vOF_4Nyxc8-100.webp 100w , /website/static/images/vOF_4Nyxc8-640.webp 640w ," >
+			<a href="javascript:showInModal('/website/static/images/vOF_4Nyxc8-640.jpeg', 'Self portrait.')"><img
+			class="lazy"
+			alt="Self portrait."
+			src="/website/static/images/vOF_4Nyxc8-100.jpeg"
+			data-src="/website/static/images/vOF_4Nyxc8-100.jpeg"
+			data-srcset=" /website/static/images/vOF_4Nyxc8-100.jpeg 100w , /website/static/images/vOF_4Nyxc8-640.jpeg 640w ,"
+			width="100"
+			height="161"
+			data-width="100"
+			data-height="161"></a>
+		</picture>
+        </div>
+    </div>
+</div>
+<script type="module" async>
+    import Lazyload from "https://cdn.skypack.dev/vanilla-lazyload";
+    const lazyload = new Lazyload();
+</script>
+    </div>
+  </div>
+</body>
+</html>

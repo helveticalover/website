@@ -1,8 +1,6 @@
 class Gallery {
-    #padding = 10;
     #targetHeight = 400;
-    constructor(targetHeight, padding) {
-        this.#padding = padding;
+    constructor(targetHeight) {
         this.#targetHeight = targetHeight;
         window.addEventListener('resize', (e) => this.sizeGalleries());
         this.sizeGalleries();
@@ -80,7 +78,8 @@ class Gallery {
     {
         for (let dat of rows)
         { 
-            let R_1 = R - 2 * dat.images.length * this.#padding;
+            let padding = this.#parseSize(this.#getPadding().left);
+            let R_1 = R - 2 * dat.images.length * padding;
 
             for (let img of dat.images)
             {
@@ -104,9 +103,30 @@ class Gallery {
             {
                 img.width = dat.scaledHeight * img.dataset.width / img.dataset.height;
                 img.height = dat.scaledHeight;
-                img.style.padding = this.#padding + "px";
+
+                let padding = this.#getPadding();
+                img.style.paddingLeft = padding.left;
+                img.style.paddingRight = padding.left;
+                img.style.paddingTop = padding.top;
+                img.style.paddingBottom = padding.top;
             }
         }
+    }
+
+    #getPadding()
+    {
+        let paddingLeft = getComputedStyle(document.documentElement).getPropertyValue('--gallery-padding-left');
+        let paddingTop = getComputedStyle(document.documentElement).getPropertyValue('--gallery-padding-top');
+        return {
+            top: paddingTop ? paddingTop : "0px",
+            left: paddingLeft ? paddingLeft : "0px",
+        };
+    }
+
+    #parseSize(str)
+    {
+        str = str.replace(/\s/g, "");
+        return parseInt(str.substring(0, str.length - 2));
     }
 
     #getMean(samples)

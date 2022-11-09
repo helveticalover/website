@@ -7,9 +7,14 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
   <link href="/website/static/base.css" type="text/css" rel="stylesheet">
+  <script type="module" async>
+    import Lazyload from "https://cdn.skypack.dev/vanilla-lazyload";
+    const lazyload = new Lazyload();
+</script>
 </head>
 <body>
-  <div class="header">
+  <div class="body-wrapper">
+    <div class="header">
     <div class="center title">
       <a href="#">
         <img src="/website/static/cgpicon.png">
@@ -24,14 +29,14 @@
             <li><a href="/website/projects">Projects</a></li>
             <li><a href="/website/illustrations">Illustrations</a></li>
             <li><a href="#">Video</a></li>
-            <li><a href="#">About Me</a></li>
+            <li><a href="/website/about-me">About Me</a></li>
           </ul>
         </div>
       </div>
     </nav>
 </div>
-  <div class="content">
-    <div class="modal hidden">
+    <div class="content">
+      <div class="modal hidden">
   <span class="modal-close">&times;</span>
   <div class="modal-background">
     <div class="modal-content">
@@ -40,38 +45,15 @@
     </div>
   </div>
 </div>
+<link href="/website/static/modal/modal.css" type="text/css" rel="stylesheet">
+<script language="javascript" src="/website/static/modal/modal.js"></script>
+
 <div class="gallery" id="id_gallery">
     <picture>
 			<source type="image/webp" data-srcset=" /website/static/images/UXhcIQdMNy-100.webp 100w , /website/static/images/UXhcIQdMNy-640.webp 640w , /website/static/images/UXhcIQdMNy-1024.webp 1024w ," >
-			<a href="javascript:showInModal('/website/static/images/UXhcIQdMNy-1024.jpeg', 'An animation short about a squirrel who lives in a turtle.')"><img
+			<a href="javascript:showInModal('/website/static/images/UXhcIQdMNy-1024.jpeg', 'A web framework for creating online C++ lessons for Carnegie Mellon's Computer Game Programming course.')"><img
 			class="lazy"
-			alt="An animation short about a squirrel who lives in a turtle."
-			src="/website/static/images/UXhcIQdMNy-100.jpeg"
-			data-src="/website/static/images/UXhcIQdMNy-100.jpeg"
-			data-srcset=" /website/static/images/UXhcIQdMNy-100.jpeg 100w , /website/static/images/UXhcIQdMNy-640.jpeg 640w , /website/static/images/UXhcIQdMNy-1024.jpeg 1024w ,"
-			width="100"
-			height="62"
-			data-width="100"
-			data-height="62"></a>
-		</picture>
-<picture>
-			<source type="image/webp" data-srcset=" /website/static/images/UXhcIQdMNy-100.webp 100w , /website/static/images/UXhcIQdMNy-640.webp 640w , /website/static/images/UXhcIQdMNy-1024.webp 1024w ," >
-			<a href="javascript:showInModal('/website/static/images/UXhcIQdMNy-1024.jpeg', 'A grid-based puzzle-stealth game developed without a pre-existing engine.')"><img
-			class="lazy"
-			alt="A grid-based puzzle-stealth game developed without a pre-existing engine."
-			src="/website/static/images/UXhcIQdMNy-100.jpeg"
-			data-src="/website/static/images/UXhcIQdMNy-100.jpeg"
-			data-srcset=" /website/static/images/UXhcIQdMNy-100.jpeg 100w , /website/static/images/UXhcIQdMNy-640.jpeg 640w , /website/static/images/UXhcIQdMNy-1024.jpeg 1024w ,"
-			width="100"
-			height="62"
-			data-width="100"
-			data-height="62"></a>
-		</picture>
-<picture>
-			<source type="image/webp" data-srcset=" /website/static/images/UXhcIQdMNy-100.webp 100w , /website/static/images/UXhcIQdMNy-640.webp 640w , /website/static/images/UXhcIQdMNy-1024.webp 1024w ," >
-			<a href="javascript:showInModal('/website/static/images/UXhcIQdMNy-1024.jpeg', 'A four-act campaign written for the Firefly Role-Playing Game Core Rulebook.')"><img
-			class="lazy"
-			alt="A four-act campaign written for the Firefly Role-Playing Game Core Rulebook."
+			alt="A web framework for creating online C++ lessons for Carnegie Mellon's Computer Game Programming course."
 			src="/website/static/images/UXhcIQdMNy-100.jpeg"
 			data-src="/website/static/images/UXhcIQdMNy-100.jpeg"
 			data-srcset=" /website/static/images/UXhcIQdMNy-100.jpeg 100w , /website/static/images/UXhcIQdMNy-640.jpeg 640w , /website/static/images/UXhcIQdMNy-1024.jpeg 1024w ,"
@@ -95,9 +77,35 @@
 		</picture>
 <picture>
 			<source type="image/webp" data-srcset=" /website/static/images/UXhcIQdMNy-100.webp 100w , /website/static/images/UXhcIQdMNy-640.webp 640w , /website/static/images/UXhcIQdMNy-1024.webp 1024w ," >
-			<a href="javascript:showInModal('/website/static/images/UXhcIQdMNy-1024.jpeg', 'A web framework for creating online C++ lessons for Carnegie Mellon's Computer Game Programming course.')"><img
+			<a href="javascript:showInModal('/website/static/images/UXhcIQdMNy-1024.jpeg', 'A four-act campaign written for the Firefly Role-Playing Game Core Rulebook.')"><img
 			class="lazy"
-			alt="A web framework for creating online C++ lessons for Carnegie Mellon's Computer Game Programming course."
+			alt="A four-act campaign written for the Firefly Role-Playing Game Core Rulebook."
+			src="/website/static/images/UXhcIQdMNy-100.jpeg"
+			data-src="/website/static/images/UXhcIQdMNy-100.jpeg"
+			data-srcset=" /website/static/images/UXhcIQdMNy-100.jpeg 100w , /website/static/images/UXhcIQdMNy-640.jpeg 640w , /website/static/images/UXhcIQdMNy-1024.jpeg 1024w ,"
+			width="100"
+			height="62"
+			data-width="100"
+			data-height="62"></a>
+		</picture>
+<picture>
+			<source type="image/webp" data-srcset=" /website/static/images/UXhcIQdMNy-100.webp 100w , /website/static/images/UXhcIQdMNy-640.webp 640w , /website/static/images/UXhcIQdMNy-1024.webp 1024w ," >
+			<a href="javascript:showInModal('/website/static/images/UXhcIQdMNy-1024.jpeg', 'A grid-based puzzle-stealth game developed without a pre-existing engine.')"><img
+			class="lazy"
+			alt="A grid-based puzzle-stealth game developed without a pre-existing engine."
+			src="/website/static/images/UXhcIQdMNy-100.jpeg"
+			data-src="/website/static/images/UXhcIQdMNy-100.jpeg"
+			data-srcset=" /website/static/images/UXhcIQdMNy-100.jpeg 100w , /website/static/images/UXhcIQdMNy-640.jpeg 640w , /website/static/images/UXhcIQdMNy-1024.jpeg 1024w ,"
+			width="100"
+			height="62"
+			data-width="100"
+			data-height="62"></a>
+		</picture>
+<picture>
+			<source type="image/webp" data-srcset=" /website/static/images/UXhcIQdMNy-100.webp 100w , /website/static/images/UXhcIQdMNy-640.webp 640w , /website/static/images/UXhcIQdMNy-1024.webp 1024w ," >
+			<a href="javascript:showInModal('/website/static/images/UXhcIQdMNy-1024.jpeg', 'An animation short about a squirrel who lives in a turtle.')"><img
+			class="lazy"
+			alt="An animation short about a squirrel who lives in a turtle."
 			src="/website/static/images/UXhcIQdMNy-100.jpeg"
 			data-src="/website/static/images/UXhcIQdMNy-100.jpeg"
 			data-srcset=" /website/static/images/UXhcIQdMNy-100.jpeg 100w , /website/static/images/UXhcIQdMNy-640.jpeg 640w , /website/static/images/UXhcIQdMNy-1024.jpeg 1024w ,"
@@ -107,15 +115,10 @@
 			data-height="62"></a>
 		</picture>
 </div>
-<link href="/website/static/modal/modal.css" type="text/css" rel="stylesheet">
-<script language="javascript" src="/website/static/modal/modal.js"></script>
 <link href="/website/static/gallery/gallery.css" type="text/css" rel="stylesheet">
 <script language="javascript" src="/website/static/gallery/gallery.js"></script>
-<script type="module" async>
-    import Lazyload from "https://cdn.skypack.dev/vanilla-lazyload";
-    const lazyload = new Lazyload();
-    const gallery = new Gallery(500, 10);
-</script>
+<script>const gallery = new Gallery(500);</script>
+    </div>
   </div>
 </body>
 </html>
