@@ -8,7 +8,7 @@ title: Tiffany Li
 <div id="about-me">
     <div>
         <div id="portrait">
-            {% image "static/images/selfportrait.jpg", "Self portrait." %}
+            {% modalImage "static/images/selfportrait.jpg", "A self portrait. <i>Ink.</i>" %}
         </div>
         <div id="self-intro">
             <h1>{{ title }}</h1>
@@ -17,10 +17,12 @@ title: Tiffany Li
                 specialize in game and game-adjacent software that incorporate a breadth 
                 of disciplines such as engineering, visual arts, and design.
             </p>
-            <ul class="flex-nav" style="max-width:300px;">
-                <li><a class="social-icon" href="#resume"><div class="button">Resume</div></a></li>
-                <li><a class="social-icon" href="https://www.linkedin.com/in/tiffany-li-a86656135/"><img src="{{ '/static/In-Blue-128.png' | url }}"></a></li>
-                <li><a class="social-icon" href="https://github.com/helveticalover"><img src="{{ '/static/GitHub-Mark-64px.png' | url }}"></a></li>
+            <ul class="flex-nav" style="max-width:400px;">
+                <li style="margin-bottom: 30px"><a class="social-icon" href="#resume"><div class="button">Resume</div></a></li>
+                <li><ul class="flex-nav">
+                    <li><a class="social-icon" href="https://www.linkedin.com/in/tiffany-li-a86656135/"><img src="{{ '/static/In-Blue-128.png' | url }}"></a></li>
+                    <li><a class="social-icon" href="https://github.com/helveticalover"><img src="{{ '/static/GitHub-Mark-64px.png' | url }}"></a></li>
+                </ul></li>
             </ul>
         </div>
     </div>

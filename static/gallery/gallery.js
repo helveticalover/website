@@ -78,8 +78,8 @@ class Gallery {
     {
         for (let dat of rows)
         { 
-            let padding = this.#parseSize(this.#getPadding().left);
-            let R_1 = R - 2 * dat.images.length * padding;
+            let margin = this.#parseSize(this.#getPadding().left);
+            let R_1 = R - 2 * dat.images.length * margin;
 
             for (let img of dat.images)
             {
@@ -101,25 +101,24 @@ class Gallery {
         { 
             for (let img of dat.images)
             {
-                img.width = dat.scaledHeight * img.dataset.width / img.dataset.height;
                 img.height = dat.scaledHeight;
 
-                let padding = this.#getPadding();
-                img.style.paddingLeft = padding.left;
-                img.style.paddingRight = padding.left;
-                img.style.paddingTop = padding.top;
-                img.style.paddingBottom = padding.top;
+                let margin = this.#getPadding();
+                img.style.marginLeft = margin.left;
+                img.style.marginRight = margin.left;
+                img.style.marginTop = margin.top;
+                img.style.marginBottom = margin.top;
             }
         }
     }
 
     #getPadding()
     {
-        let paddingLeft = getComputedStyle(document.documentElement).getPropertyValue('--gallery-padding-left');
-        let paddingTop = getComputedStyle(document.documentElement).getPropertyValue('--gallery-padding-top');
+        let marginLeft = getComputedStyle(document.documentElement).getPropertyValue('--gallery-margin-left');
+        let marginTop = getComputedStyle(document.documentElement).getPropertyValue('--gallery-margin-top');
         return {
-            top: paddingTop ? paddingTop : "0px",
-            left: paddingLeft ? paddingLeft : "0px",
+            top: marginTop ? marginTop : "0px",
+            left: marginLeft ? marginLeft : "0px",
         };
     }
 

@@ -1,8 +1,13 @@
 .gallery {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .gallery * {
   margin: 0;
   padding: 0;
+}
+.gallery img {
+  max-height: 90vh;
+  width: auto;
 }

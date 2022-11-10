@@ -12,8 +12,7 @@ module.exports = function(config) {
 	config.addPassthroughCopy("static/In-Blue-128.png");
 	config.addPassthroughCopy("static/resume.pdf");
 
-	// Resize images and send to static directory
-	config.addAsyncShortcode("image", async function (src, alt){
+	let imageFunc = async function (src, alt) {
 		if (!alt) {
 			throw new Error(`Missing \`alt\` on image from: ${src}`);
 		}
@@ -58,6 +57,14 @@ module.exports = function(config) {
 			${source}
 			${img}
 		</picture>`;
+	};
+
+	// Resize images and send to static directory
+	config.addAsyncShortcode("image", imageFunc);
+
+	config.addAsyncShortcode("modalImage", async function (src, alt) {
+		let content = await imageFunc(src, alt);
+		return `<a href="javascript:showInModal('${src}')">${content}</a>`;
 	});
 
 	return {
