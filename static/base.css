@@ -114,6 +114,9 @@ img.lazy.error {
 
 /* about me */
 #about-me {
+    min-height: 646px;
+}
+#about-me>div {
     display: flex;
     max-width: 1000px;
     margin: auto;
@@ -133,36 +136,43 @@ img.lazy.error {
     align-self: center;
     order: 2;
 }
+#self-intro > p {
+    margin-bottom: 30px;
+}
 .flex-nav {
     display: flex;
     flex-wrap: wrap;
     padding: 0;
 }
 .flex-nav li {
-    margin: 0px 12px 12px 0px;
     display: inline;
     width: auto;
     height: auto;
+    margin-right: 12px;
+    margin-bottom: 12px;
 }
 .button {
     background-color: black;
     border-radius: 3px;
-    padding: 0px 10px;
+    padding: 6px 24px;
     color: white;
     font-size: 24px;
-    font-weight: lighter;
 }
 .social-icon {
-    display: inline-block;
+    display: inline-flex;
     height: 32px;
     width: auto;
+    margin: auto;
+    align-items: center;
 }
 .social-icon > * {
     height: 100%;
     width: auto;
     max-width: 100%;
     max-height: 100%;
-    filter: grayscale(100%) contrast(500%);
+}
+.social-icon > img {
+    filter: grayscale(100%) contrast(500%) contrast(20%);
 }
 #resume {
     position: relative;
@@ -199,10 +209,7 @@ img.lazy.error {
     .mobile-expand-content {
         max-height: 0px;
     }
-    #about-me-wrapper {
-        display: block;
-    }
-    #about-me {
+    #about-me>div {
         flex-direction: column;
         padding: 20px;
     }
@@ -215,6 +222,7 @@ img.lazy.error {
     }
     .flex-nav {
         margin: auto;
+        
         justify-content: center;
     }
     .flex-nav li {
