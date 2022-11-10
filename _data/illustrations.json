@@ -1,26 +1,32 @@
 [
     {
         "src": "cardsdesign.jpg",
-        "alt": "Character designs based on playing cards."
+        "alt": "A series of illustrations about a world based on playing cards.",
+        "mediums": "Gouache."
     },
     {
         "src": "clubs1.jpg",
-        "alt": "Illustration based on playing cards."
+        "alt": "A series of illustrations about a world based on playing cards.",
+        "mediums": "Gouache, ink."
     },
     {
         "src": "diamonds2.jpg",
-        "alt": "Illustration based on playing cards."
+        "alt": "A series of illustrations about a world based on playing cards.",
+        "mediums": "Gouache, ink."
     },
     {
         "src": "diamonds1.jpg",
-        "alt": "Illustrations based on playing cards."
+        "alt": "A series of illustrations about a world based on playing cards.",
+        "mediums": "Gouache."
     },
     {
         "src": "spades2.jpg",
-        "alt": "Illustrations based on playing cards."
+        "alt": "A series of illustrations about a world based on playing cards.",
+        "mediums": "Gouache, ink."
     },
     {
         "src": "Phoenix.png",
-        "alt": "A good cat"
+        "alt": "An illustration of a friend's cat, made for printing on metal.",
+        "mediums": "Procreate."
     }
 ]
