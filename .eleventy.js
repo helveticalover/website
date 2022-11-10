@@ -8,6 +8,9 @@ module.exports = function(config) {
 	config.addPassthroughCopy("static/**/*.js");
 	config.addPassthroughCopy("static/**/*.css");
 	config.addPassthroughCopy("static/cgpicon.png");
+	config.addPassthroughCopy("static/GitHub-Mark*-64px.png");
+	config.addPassthroughCopy("static/In-Blue-128.png");
+	config.addPassthroughCopy("static/resume.pdf");
 
 	// Resize images and send to static directory
 	config.addAsyncShortcode("image", async function (src, alt){

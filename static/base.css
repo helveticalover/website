@@ -22,6 +22,10 @@ body, html {
     padding: 0;
     font-family: var(--body-font);
     font-size: var(--body-font-size);
+    scroll-behavior: smooth;
+}
+a:link, a:visited {
+    text-decoration: none;
 }
 .body-wrapper {
     display: flex;
@@ -70,7 +74,7 @@ nav li {
 }
 nav a {
     display: inline-block;
-    padding: 10px;
+    margin: 10px;
 }
 .mobile-expand {
     display: none;
@@ -109,33 +113,71 @@ img.lazy.error {
 }
 
 /* about me */
-#about-me-wrapper {
-    display: flex;
-    align-items: center;
-    height: 100%;
-
-}
 #about-me {
     display: flex;
-    max-width: 1300px;
+    max-width: 1000px;
     margin: auto;
     padding: 10px;
-    padding-bottom: 300px;
 }
 #portrait {
+    max-width: 40%;
     align-self: center;
     order: 1;
-    max-width: 400px;
 }
 #portrait img {
     width: 100%;
     height: auto;
 }
 #self-intro {
-    flex-grow: 10;
-    padding-left: 5vw;
+    padding-left: 30px;
     align-self: center;
     order: 2;
+}
+.flex-nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+}
+.flex-nav li {
+    margin: 0px 12px 12px 0px;
+    display: inline;
+    width: auto;
+    height: auto;
+}
+.button {
+    background-color: black;
+    border-radius: 3px;
+    padding: 0px 10px;
+    color: white;
+    font-size: 24px;
+    font-weight: lighter;
+}
+.social-icon {
+    display: inline-block;
+    height: 32px;
+    width: auto;
+}
+.social-icon > * {
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+    filter: grayscale(100%) contrast(500%);
+}
+#resume {
+    position: relative;
+    top: 50vh;
+    min-height: 100vh;
+    min-width: 100%;
+}
+#resume>div {
+    padding: 36px;
+    max-width: 540pt;
+    margin: auto;
+    text-align: right;
+}
+#resume>div>div {
+    overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -162,12 +204,24 @@ img.lazy.error {
     }
     #about-me {
         flex-direction: column;
+        padding: 20px;
     }
     #portrait {
+        max-width: 100%;
         width: 100%;
     }
     #self-intro {
-        max-width: 400px;
         padding-left: 0px;
+    }
+    .flex-nav {
+        margin: auto;
+        justify-content: center;
+    }
+    .flex-nav li {
+        margin: 12px;
+    }
+    #resume {
+        left: unset;
+        transform: unset;
     }
 }
