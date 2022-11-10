@@ -39,7 +39,6 @@ module.exports = function(config) {
 			{}
 		);
 
-		const fullSize = `${config.getFilter("url")(stats["jpeg"][stats["jpeg"].length - 1].url)}`;
 		const srcUrl = `${config.getFilter("url")(selectedSrc.url)}`;
 		const source = `<source type="image/webp" data-srcset="${srcset["webp"]}" >`;
 
@@ -52,11 +51,12 @@ module.exports = function(config) {
 			width="${selectedSrc.width}"
 			height="${selectedSrc.height}"
 			data-width="${selectedSrc.width}"
-			data-height="${selectedSrc.height}">`;
+			data-height="${selectedSrc.height}"
+			id="${src}">`;
 	
 		return `<picture>
 			${source}
-			<a href="javascript:showInModal('${fullSize}', '${alt}')">${img}</a>
+			${img}
 		</picture>`;
 	});
 

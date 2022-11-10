@@ -6,15 +6,6 @@ for (let modal of modals)
     var modalImg = modal.querySelector(".modal-img");
     var captionText = modal.querySelector(".modal-caption");
     
-    function showInModal(src, alt) {
-        modalImg.src = src;
-        captionText.innerHTML = alt;
-        modalImg.onload = function () {
-            modal.classList.remove("hidden");
-            modal.classList.add("displayed");
-        }
-    }
-    
     var span = modal.querySelector(".modal-close");
     span.onclick = function() {
         modal.classList.remove("displayed");
@@ -22,4 +13,23 @@ for (let modal of modals)
     }
     
     background.onclick = span.onclick;
+}
+
+function showInModal(id) {
+    const img = document.getElementById(id);
+    const srcs = img.getAttribute("srcset").split(",");
+    const largest = srcs[srcs.length - 2].match(/(\S*\b)/g)[0];
+    
+    for (let modal of modals)
+    {
+        const modalImg = modal.querySelector(".modal-img");
+        const captionText = modal.querySelector(".modal-caption");
+
+        modalImg.src = largest;
+        captionText.innerHTML = img.alt;
+        modalImg.onload = function () {
+            modal.classList.remove("hidden");
+            modal.classList.add("displayed");
+        }
+    }
 }

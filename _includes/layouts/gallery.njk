@@ -2,8 +2,9 @@
 layout: layouts/main.njk
 targetHeight: 500
 ---
+{%- if modal -%}
 {% include "modal.njk" %}
-
+{%- endif -%}
 <div class="gallery" id="id_gallery">
     {{ content | safe }}
 </div>

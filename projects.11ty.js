@@ -3,11 +3,10 @@ exports.data = {
 }
 
 exports.render = async function(data) {
-    let overlays = [];
-
     let projects = await Promise.all(data.collections.project.reverse().map(async function (project) {
         if (project.data.thumbnail) {
-            return await exports.image("static/images/" + project.data.thumbnail, project.data.blurb);
+            const img = await exports.image("static/images/" + project.data.thumbnail, project.data.blurb);
+            return `<a href="${exports.url(project.url)}">${img}</a>`;
         }
     })).then(function (projects) {
         return projects.join("\n");
