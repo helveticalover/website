@@ -1,11 +1,22 @@
 ---
-layout: "layouts/gallery.njk"
+layout: "layouts/main.njk"
 modal: true
 ---
-{%- for img in illustrations -%}
-{% set alt %}
-{{ img.alt }}&nbsp;<i>{% enumerate img.tools %}</i>
-{% endset %}
-{% modalImage "static/images/" + img.src, alt %}
-{% endmodalImage %}
-{%- endfor -%}
+{% include "modal.njk" %}
+{% from "modal.njk" import openModal %}
+
+
+{% set data = illustrations %}
+
+{% macro src(illustration)%}static/images/{{ illustration.src }}{% endmacro %}
+
+{% macro alt(illustration) %}{{ illustration.alt }}&nbsp;<i>{% enumerate illustration.tools %}</i>{% endmacro %}
+
+{% macro href(illustration) %}{% set fullSrc %}{{ src(illustration) }}{% endset %}{{ openModal(fullSrc) }}{% endmacro %}
+
+{% macro overlay(project) %}{% endmacro %}
+
+
+
+
+{% include "gallery.njk" %}

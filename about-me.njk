@@ -4,12 +4,14 @@ title: Tiffany Li
 ---
 
 {% include "modal.njk" %}
+{% from "modal.njk" import openModal %}
 
 <div id="about-me">
     <div class="blog-body">
         <div id="portrait">
-            {% modalImage "static/images/selfportrait.jpg", "A self portrait. <i>Ink.</i>" %}
-            {% endmodalImage %}
+            {% set tempHref %}{{ openModal("static/images/selfportrait.jpg") }}{% endset %}
+            {% image "static/images/selfportrait.jpg", "A self portrait. <i>Ink.</i>", tempHref %}
+            {% endimage %}
         </div>
         <div id="self-intro">
             <h1>{{ title }}</h1>
