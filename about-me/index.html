@@ -29,7 +29,7 @@
             <li><a href="/website/projects">Projects</a></li>
             <li><a href="/website/illustrations">Illustrations</a></li>
             <li><a href="#">Video</a></li>
-            <li><a href="/website/about-me">About Me</a></li>
+            <li><a href="/website/about-me#about-me">About Me</a></li>
           </ul>
         </div>
       </div>
@@ -50,33 +50,44 @@
 <script language="javascript" src="/website/static/modal/modal.js"></script>
 
 <div id="about-me">
-    <div id="portrait">
-        <picture>
-			<source type="image/webp" data-srcset=" /website/static/images/vOF_4Nyxc8-100.webp 100w , /website/static/images/vOF_4Nyxc8-640.webp 640w ," >
-			<a href="javascript:showInModal('/website/static/images/vOF_4Nyxc8-640.jpeg', 'Self portrait.')"><img
+    <div class="blog-body">
+        <div id="portrait">
+            <a href="javascript:showInModal('static/images/selfportrait.jpg')"><div class="image-wrapper">
+			<div class="image-overlay">
+				
+            
+			</div>
+			<picture>
+				<source type="image/webp" data-srcset=" /website/static/images/vOF_4Nyxc8-100.webp 100w , /website/static/images/vOF_4Nyxc8-640.webp 640w ," >
+				<img
 			class="lazy"
-			alt="Self portrait."
+			alt="A self portrait. <i>Ink.</i>"
 			src="/website/static/images/vOF_4Nyxc8-100.jpeg"
 			data-src="/website/static/images/vOF_4Nyxc8-100.jpeg"
 			data-srcset=" /website/static/images/vOF_4Nyxc8-100.jpeg 100w , /website/static/images/vOF_4Nyxc8-640.jpeg 640w ,"
 			width="100"
 			height="161"
 			data-width="100"
-			data-height="161"></a>
-		</picture>
-    </div>
-    <div id="self-intro">
-        <h1>Tiffany Li</h1>
-        <p>I am a Carnegie Mellon University alumna with a 
-            Bachelor's of Computer Science and Arts, and a minor in Game Design. I 
-            specialize in game and game-adjacent software that incorporate a breadth 
-            of disciplines such as engineering, visual arts, and design.
-        </p>
-        <ul class="flex-nav" style="max-width:300px;">
-            <li><a class="social-icon" href="#resume"><div class="button">Resume</div></a></li>
-            <li><a class="social-icon" href="https://www.linkedin.com/in/tiffany-li-a86656135/"><img src="/website/static/In-Blue-128.png"></a></li>
-            <li><a class="social-icon" href="https://github.com/helveticalover"><img src="/website/static/GitHub-Mark-64px.png"></a></li>
-        </ul>
+			data-height="161"
+			id="static/images/selfportrait.jpg">
+			</picture>
+		</div></a>
+        </div>
+        <div id="self-intro">
+            <h1>Tiffany Li</h1>
+            <p>I am a Carnegie Mellon University alumna with a 
+                Bachelor's of Computer Science and Arts and a minor in Game Design. I 
+                specialize in game and game-adjacent software that incorporate a breadth 
+                of disciplines such as engineering, visual arts, and design.
+            </p>
+            <ul class="flex-nav" style="max-width:400px;">
+                <li style="margin-bottom: 30px"><a class="social-icon" href="#resume"><div class="button">Resume</div></a></li>
+                <li><ul class="flex-nav">
+                    <li><a class="social-icon" href="https://www.linkedin.com/in/tiffany-li-a86656135/"><img src="/website/static/In-Blue-128.png"></a></li>
+                    <li><a class="social-icon" href="https://github.com/helveticalover"><img src="/website/static/GitHub-Mark-64px.png"></a></li>
+                </ul></li>
+            </ul>
+        </div>
     </div>
 </div>
 

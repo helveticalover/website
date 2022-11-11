@@ -1,2 +1,50 @@
-<p>This online infrastructure allows students to easily read, complete, and run C++-based lessons through the course website. The framework generates interactive web pages from doxygen-like lesson source files. It also records student submissions for instructor grading. The server includes a mechanism to compile C++ code into WebAssembly, allowing users to execute simple C++ programs directly in the browser. This website is implemented with Django and deployed with Apache, SSL certification, and single-service sign on through Carnegie Mellon University using Shibboleth.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tiffany Li</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+  <link href="/website/static/base.css" type="text/css" rel="stylesheet">
+  <script type="module" async>
+    import Lazyload from "https://cdn.skypack.dev/vanilla-lazyload";
+    const lazyload = new Lazyload();
+</script>
+</head>
+<body>
+  <div class="body-wrapper">
+    <div class="header">
+    <div class="center title">
+      <a href="#">
+        <img src="/website/static/cgpicon.png">
+      </a>
+    </div>
+    <nav class="center">
+      <div class="wrap-mobile-collapsible">
+        <input id="id_nav-collapsible" class="mobile-expand" type="checkbox">
+        <label for="id_nav-collapsible" class="mobile-expand-lbl center" data-target="id_nav"><i class="material-icons">menu</i></label>
+        <div class="mobile-expand-content">
+          <ul class="nav" id="id_nav">
+            <li><a href="/website/projects">Projects</a></li>
+            <li><a href="/website/illustrations">Illustrations</a></li>
+            <li><a href="#">Video</a></li>
+            <li><a href="/website/about-me#about-me">About Me</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+</div>
+    <div class="content">
+      <div class="blog-body">
+    <h1>15-466 Virtual Lessons</h1>
+    <h3>A web framework for creating online C++ lessons for Carnegie Mellon&#39;s Computer Game Programming course.</h3>
+    <i>HTML/CSS, Emscripten, Apache, Shibboleth.</i>
+    <p>This online infrastructure allows students to easily read, complete, and run C++-based lessons through the course website. The framework generates interactive web pages from doxygen-like lesson source files. It also records student submissions for instructor grading. The server includes a mechanism to compile C++ code into WebAssembly, allowing users to execute simple C++ programs directly in the browser. This website is implemented with Django and deployed with Apache, SSL certification, and single-service sign on through Carnegie Mellon University using Shibboleth.</p>
 <p>I was the sole developer of this project, so I was entirely responsible for designing, implementing, and deploying the framework according to specifications provided by Jim McCann, professor of Computer Game Programming.</p>
+
+</div>
+    </div>
+  </div>
+</body>
+</html>

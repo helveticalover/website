@@ -29,42 +29,69 @@
             <li><a href="/website/projects">Projects</a></li>
             <li><a href="/website/illustrations">Illustrations</a></li>
             <li><a href="#">Video</a></li>
-            <li><a href="/website/about-me">About Me</a></li>
+            <li><a href="/website/about-me#about-me">About Me</a></li>
           </ul>
         </div>
       </div>
     </nav>
 </div>
     <div class="content">
-      <div class="modal hidden">
-  <span class="modal-close"><i class="material-icons">close</i></span>
-  <div class="modal-background">
-    <div class="modal-content">
-        <img class="modal-img">
-        <div class="modal-caption">test caption</div>
+      <div class="gallery" id="id_gallery">
+    <style>
+    .image-wrapper .image-overlay {
+        background-color: rgb(255, 255, 255);
+        background-color: rgba(255, 255, 255, 0.8);
+        opacity: 0;
+        transition: opacity 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .image-wrapper:hover .image-overlay {
+        opacity: 1;
+    }
+    .image-wrapper .image-overlay > div {
+        padding: 50px;
+        max-width: 500px;
+    }
+</style><a href="/website/projects/virtual-lessons/">
+    <div class="image-wrapper">
+			<div class="image-overlay">
+				
+    <div>
+        <h1>15-466 Virtual Lessons</h1>
+        <p>A web framework for creating online C++ lessons for Carnegie Mellon&#39;s Computer Game Programming course.<br/><i>HTML/CSS, Emscripten, Apache, Shibboleth.</i></p>
     </div>
-  </div>
-</div>
-<link href="/website/static/modal/modal.css" type="text/css" rel="stylesheet">
-<script language="javascript" src="/website/static/modal/modal.js"></script>
-
-<div class="gallery" id="id_gallery">
-    <picture>
-			<source type="image/webp" data-srcset=" /website/static/images/UXhcIQdMNy-100.webp 100w , /website/static/images/UXhcIQdMNy-640.webp 640w , /website/static/images/UXhcIQdMNy-1024.webp 1024w ," >
-			<a href="javascript:showInModal('/website/static/images/UXhcIQdMNy-1024.jpeg', 'A web framework for creating online C++ lessons for Carnegie Mellon's Computer Game Programming course.')"><img
+    
+			</div>
+			<picture>
+				<source type="image/webp" data-srcset=" /website/static/images/tpblSDpI0O-100.webp 100w , /website/static/images/tpblSDpI0O-640.webp 640w , /website/static/images/tpblSDpI0O-1024.webp 1024w , /website/static/images/tpblSDpI0O-2048.webp 2048w ," >
+				<img
 			class="lazy"
 			alt="A web framework for creating online C++ lessons for Carnegie Mellon's Computer Game Programming course."
-			src="/website/static/images/UXhcIQdMNy-100.jpeg"
-			data-src="/website/static/images/UXhcIQdMNy-100.jpeg"
-			data-srcset=" /website/static/images/UXhcIQdMNy-100.jpeg 100w , /website/static/images/UXhcIQdMNy-640.jpeg 640w , /website/static/images/UXhcIQdMNy-1024.jpeg 1024w ,"
+			src="/website/static/images/tpblSDpI0O-100.jpeg"
+			data-src="/website/static/images/tpblSDpI0O-100.jpeg"
+			data-srcset=" /website/static/images/tpblSDpI0O-100.jpeg 100w , /website/static/images/tpblSDpI0O-640.jpeg 640w , /website/static/images/tpblSDpI0O-1024.jpeg 1024w , /website/static/images/tpblSDpI0O-2048.jpeg 2048w ,"
 			width="100"
-			height="62"
+			height="106"
 			data-width="100"
-			data-height="62"></a>
-		</picture>
-<picture>
-			<source type="image/webp" data-srcset=" /website/static/images/3eg9CHdnbY-100.webp 100w , /website/static/images/3eg9CHdnbY-640.webp 640w , /website/static/images/3eg9CHdnbY-1024.webp 1024w ," >
-			<a href="javascript:showInModal('/website/static/images/3eg9CHdnbY-1024.jpeg', 'An online drawing game with rhythm game mechanics.')"><img
+			data-height="106"
+			id="static/images/logo-f20-extended.svg">
+			</picture>
+		</div>
+    </a><a href="/website/projects/polyrhythm-painter/">
+    <div class="image-wrapper">
+			<div class="image-overlay">
+				
+    <div>
+        <h1>PolyRhythm Painter</h1>
+        <p>An online drawing game with rhythm game mechanics.<br/><i>Unity, C#, HLSL.</i></p>
+    </div>
+    
+			</div>
+			<picture>
+				<source type="image/webp" data-srcset=" /website/static/images/3eg9CHdnbY-100.webp 100w , /website/static/images/3eg9CHdnbY-640.webp 640w , /website/static/images/3eg9CHdnbY-1024.webp 1024w ," >
+				<img
 			class="lazy"
 			alt="An online drawing game with rhythm game mechanics."
 			src="/website/static/images/3eg9CHdnbY-100.jpeg"
@@ -73,11 +100,23 @@
 			width="100"
 			height="100"
 			data-width="100"
-			data-height="100"></a>
-		</picture>
-<picture>
-			<source type="image/webp" data-srcset=" /website/static/images/UXhcIQdMNy-100.webp 100w , /website/static/images/UXhcIQdMNy-640.webp 640w , /website/static/images/UXhcIQdMNy-1024.webp 1024w ," >
-			<a href="javascript:showInModal('/website/static/images/UXhcIQdMNy-1024.jpeg', 'A four-act campaign written for the Firefly Role-Playing Game Core Rulebook.')"><img
+			data-height="100"
+			id="static/images/PRP.png">
+			</picture>
+		</div>
+    </a><a href="/website/projects/false-prophet/">
+    <div class="image-wrapper">
+			<div class="image-overlay">
+				
+    <div>
+        <h1>False Prophet</h1>
+        <p>A four-act campaign written for the Firefly Role-Playing Game Core Rulebook.<br/><i>CeltX, Google Docs, Procreate.</i></p>
+    </div>
+    
+			</div>
+			<picture>
+				<source type="image/webp" data-srcset=" /website/static/images/UXhcIQdMNy-100.webp 100w , /website/static/images/UXhcIQdMNy-640.webp 640w , /website/static/images/UXhcIQdMNy-1024.webp 1024w ," >
+				<img
 			class="lazy"
 			alt="A four-act campaign written for the Firefly Role-Playing Game Core Rulebook."
 			src="/website/static/images/UXhcIQdMNy-100.jpeg"
@@ -86,11 +125,23 @@
 			width="100"
 			height="62"
 			data-width="100"
-			data-height="62"></a>
-		</picture>
-<picture>
-			<source type="image/webp" data-srcset=" /website/static/images/UXhcIQdMNy-100.webp 100w , /website/static/images/UXhcIQdMNy-640.webp 640w , /website/static/images/UXhcIQdMNy-1024.webp 1024w ," >
-			<a href="javascript:showInModal('/website/static/images/UXhcIQdMNy-1024.jpeg', 'A grid-based puzzle-stealth game developed without a pre-existing engine.')"><img
+			data-height="62"
+			id="static/images/Magpie.png">
+			</picture>
+		</div>
+    </a><a href="/website/projects/magpie/">
+    <div class="image-wrapper">
+			<div class="image-overlay">
+				
+    <div>
+        <h1>Magpie</h1>
+        <p>A grid-based puzzle-stealth game developed without a pre-existing engine.<br/><i>C++, OpenGL, Maya, Blender.</i></p>
+    </div>
+    
+			</div>
+			<picture>
+				<source type="image/webp" data-srcset=" /website/static/images/UXhcIQdMNy-100.webp 100w , /website/static/images/UXhcIQdMNy-640.webp 640w , /website/static/images/UXhcIQdMNy-1024.webp 1024w ," >
+				<img
 			class="lazy"
 			alt="A grid-based puzzle-stealth game developed without a pre-existing engine."
 			src="/website/static/images/UXhcIQdMNy-100.jpeg"
@@ -99,11 +150,23 @@
 			width="100"
 			height="62"
 			data-width="100"
-			data-height="62"></a>
-		</picture>
-<picture>
-			<source type="image/webp" data-srcset=" /website/static/images/UXhcIQdMNy-100.webp 100w , /website/static/images/UXhcIQdMNy-640.webp 640w , /website/static/images/UXhcIQdMNy-1024.webp 1024w ," >
-			<a href="javascript:showInModal('/website/static/images/UXhcIQdMNy-1024.jpeg', 'An animation short about a squirrel who lives in a turtle.')"><img
+			data-height="62"
+			id="static/images/Magpie.png">
+			</picture>
+		</div>
+    </a><a href="/website/projects/pick-me-up/">
+    <div class="image-wrapper">
+			<div class="image-overlay">
+				
+    <div>
+        <h1>Pick Me Up</h1>
+        <p>An animation short about a squirrel who lives in a turtle.<br/><i>Maya, Premiere.</i></p>
+    </div>
+    
+			</div>
+			<picture>
+				<source type="image/webp" data-srcset=" /website/static/images/UXhcIQdMNy-100.webp 100w , /website/static/images/UXhcIQdMNy-640.webp 640w , /website/static/images/UXhcIQdMNy-1024.webp 1024w ," >
+				<img
 			class="lazy"
 			alt="An animation short about a squirrel who lives in a turtle."
 			src="/website/static/images/UXhcIQdMNy-100.jpeg"
@@ -112,8 +175,11 @@
 			width="100"
 			height="62"
 			data-width="100"
-			data-height="62"></a>
-		</picture>
+			data-height="62"
+			id="static/images/Magpie.png">
+			</picture>
+		</div>
+    </a>
 </div>
 <link href="/website/static/gallery/gallery.css" type="text/css" rel="stylesheet">
 <script language="javascript" src="/website/static/gallery/gallery.js"></script>

@@ -37,16 +37,20 @@ class Gallery {
         let dat = sumr[sumr.length - 1];
 
         let deviation = Number.MAX_VALUE;
-        let imgs = container.getElementsByTagName("img");
-        for (let img of imgs)
+        let wrappers = container.getElementsByClassName("image-wrapper");
+        for (let wrapper of wrappers)
         {
+            let img = wrapper.querySelector("img");
             let h = img.dataset.height;
             let w = img.dataset.width;
             let w_h = w / h;
 
             // Try add image to existing row
             dat.sum += w_h;
-            dat.images.push(img);
+            dat.images.push({
+                image: img,
+                wrapper: wrapper,
+            });
             this.#calculateScaledRows(sumr, R);
 
             let samples = sumr.map((dat) => dat.scaledHeight);
@@ -60,7 +64,10 @@ class Gallery {
 
                 dat = {};
                 dat.sum = w_h;
-                dat.images = [img];
+                dat.images = [{
+                    image: img,
+                    wrapper: wrapper,
+                }];
                 sumr.push(dat);
 
                 this.#calculateScaledRows(sumr, R);
@@ -78,13 +85,13 @@ class Gallery {
     {
         for (let dat of rows)
         { 
-            let padding = this.#parseSize(this.#getPadding().left);
-            let R_1 = R - 2 * dat.images.length * padding;
+            let margin = this.#parseSize(this.#getPadding().left);
+            let R_1 = R - 2 * dat.images.length * margin;
 
             for (let img of dat.images)
             {
-                let h = img.dataset.height;
-                let w = img.dataset.width;
+                let h = img.image.dataset.height;
+                let w = img.image.dataset.width;
 
                 let num = R_1 * w;
                 let div = h * dat.sum;
@@ -97,29 +104,28 @@ class Gallery {
 
     #scaleRowsToTarget(rows)
     {
+        let padding = this.#getPadding();
         for (let dat of rows)
         { 
             for (let img of dat.images)
             {
-                img.width = dat.scaledHeight * img.dataset.width / img.dataset.height;
-                img.height = dat.scaledHeight;
-
-                let padding = this.#getPadding();
-                img.style.paddingLeft = padding.left;
-                img.style.paddingRight = padding.left;
-                img.style.paddingTop = padding.top;
-                img.style.paddingBottom = padding.top;
+                img.wrapper.style.height = dat.scaledHeight + "px";
+                img.wrapper.style.maxHeight = dat.scaledHeight + "px";
+                img.wrapper.style.paddingLeft = padding.left;
+                img.wrapper.style.paddingRight = padding.left;
+                img.wrapper.style.paddingTop = padding.top;
+                img.wrapper.style.paddingBottom = padding.top;
             }
         }
     }
 
     #getPadding()
     {
-        let paddingLeft = getComputedStyle(document.documentElement).getPropertyValue('--gallery-padding-left');
-        let paddingTop = getComputedStyle(document.documentElement).getPropertyValue('--gallery-padding-top');
+        let marginLeft = getComputedStyle(document.documentElement).getPropertyValue('--gallery-margin-left');
+        let marginTop = getComputedStyle(document.documentElement).getPropertyValue('--gallery-margin-top');
         return {
-            top: paddingTop ? paddingTop : "0px",
-            left: paddingLeft ? paddingLeft : "0px",
+            top: marginTop ? marginTop : "0px",
+            left: marginLeft ? marginLeft : "0px",
         };
     }
 
