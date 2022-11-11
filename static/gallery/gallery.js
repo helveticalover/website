@@ -37,16 +37,20 @@ class Gallery {
         let dat = sumr[sumr.length - 1];
 
         let deviation = Number.MAX_VALUE;
-        let imgs = container.getElementsByTagName("img");
-        for (let img of imgs)
+        let wrappers = container.getElementsByClassName("image-wrapper");
+        for (let wrapper of wrappers)
         {
+            let img = wrapper.querySelector("img");
             let h = img.dataset.height;
             let w = img.dataset.width;
             let w_h = w / h;
 
             // Try add image to existing row
             dat.sum += w_h;
-            dat.images.push(img);
+            dat.images.push({
+                image: img,
+                wrapper: wrapper,
+            });
             this.#calculateScaledRows(sumr, R);
 
             let samples = sumr.map((dat) => dat.scaledHeight);
@@ -60,7 +64,10 @@ class Gallery {
 
                 dat = {};
                 dat.sum = w_h;
-                dat.images = [img];
+                dat.images = [{
+                    image: img,
+                    wrapper: wrapper,
+                }];
                 sumr.push(dat);
 
                 this.#calculateScaledRows(sumr, R);
@@ -83,8 +90,8 @@ class Gallery {
 
             for (let img of dat.images)
             {
-                let h = img.dataset.height;
-                let w = img.dataset.width;
+                let h = img.image.dataset.height;
+                let w = img.image.dataset.width;
 
                 let num = R_1 * w;
                 let div = h * dat.sum;
@@ -97,17 +104,17 @@ class Gallery {
 
     #scaleRowsToTarget(rows)
     {
+        let padding = this.#getPadding();
         for (let dat of rows)
         { 
             for (let img of dat.images)
             {
-                img.height = dat.scaledHeight;
-
-                let margin = this.#getPadding();
-                img.style.marginLeft = margin.left;
-                img.style.marginRight = margin.left;
-                img.style.marginTop = margin.top;
-                img.style.marginBottom = margin.top;
+                img.wrapper.style.height = dat.scaledHeight + "px";
+                img.wrapper.style.maxHeight = dat.scaledHeight + "px";
+                img.wrapper.style.paddingLeft = padding.left;
+                img.wrapper.style.paddingRight = padding.left;
+                img.wrapper.style.paddingTop = padding.top;
+                img.wrapper.style.paddingBottom = padding.top;
             }
         }
     }

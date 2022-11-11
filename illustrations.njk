@@ -3,7 +3,6 @@ layout: "layouts/gallery.njk"
 modal: true
 ---
 {%- for img in illustrations -%}
-<div class="image-wrapper">
 {% modalImage "static/images/" + img.src, img.alt + " <i>" + img.mediums + "</i>" %}
-</div>
+{% endmodalImage %}
 {%- endfor -%}
