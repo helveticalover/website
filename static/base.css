@@ -5,14 +5,14 @@
     --mobile-body-padding: 0px;
     --modal-padding: 50px;
     --mobile-modal-padding: 0px;
-    --desktop-gallery-margin-left: 10px;
-    --desktop-gallery-margin-top: 10px;
+    --desktop-gallery-margin-left: 6px;
+    --desktop-gallery-margin-top: 6px;
     --mobile-gallery-margin-left: 5px;
-    --mobile-gallery-margin-top: 2px;
+    --mobile-gallery-margin-top: 5px;
     --gallery-margin-left: var(--desktop-gallery-margin-left);
     --gallery-margin-top: var(--desktop-gallery-margin-top);
 
-    --website-background-color: rgb(255, 252, 247);
+    --website-background-color: rgb(255, 253, 250);
     --background-color-major: black;
     --background-color-minor: hsl(247, 10%, 33%);
     --text-color-body: black;
@@ -209,7 +209,7 @@ img.lazy.error {
     text-align: right;
 }
 #resume>div>div {
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 @media only screen and (max-width: 768px) {
