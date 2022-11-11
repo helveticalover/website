@@ -1,0 +1,9 @@
+---
+layout: layouts/main.njk
+---
+<div class="blog-body">
+    <h1>{{ title }}</h1>
+    <h3>{{ blurb }}</h3>
+    <i>{% enumerate tools %}</i>
+    {{ content | safe }}
+</div>

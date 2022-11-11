@@ -1,0 +1,32 @@
+---
+layout: layouts/gallery.njk
+---
+<style>
+    .image-wrapper .image-overlay {
+        background-color: rgb(255, 255, 255);
+        background-color: rgba(255, 255, 255, 0.8);
+        opacity: 0;
+        transition: opacity 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .image-wrapper:hover .image-overlay {
+        opacity: 1;
+    }
+    .image-wrapper .image-overlay > div {
+        padding: 50px;
+        max-width: 500px;
+    }
+</style>
+
+{%- for project in collections.project | reverse -%}
+    <a href="{{ project.url | url }}">
+    {% image "static/images/" + project.data.thumbnail, project.data.blurb %}
+    <div>
+        <h1>{{ project.data.title }}</h1>
+        <p>{{ project.data.blurb }}<br/><i>{% enumerate project.data.tools %}</i></p>
+    </div>
+    {% endimage %}
+    </a>
+{%- endfor -%}
