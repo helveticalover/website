@@ -4,9 +4,9 @@
 const Image = require("@11ty/eleventy-img");
 
 module.exports = function(config) {
-
 	config.addPassthroughCopy("static/**/*.js");
 	config.addPassthroughCopy("static/**/*.css");
+	config.addPassthroughCopy("static/video/");
 	config.addPassthroughCopy("static/cgpicon.png");
 	config.addPassthroughCopy("static/GitHub-Mark*-64px.png");
 	config.addPassthroughCopy("static/In-Blue-128.png");

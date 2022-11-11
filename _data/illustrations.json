@@ -28,5 +28,35 @@
         "src": "Phoenix.png",
         "alt": "An illustration of a friend's cat, made for printing on metal.",
         "tools": ["Procreate"]
+    },
+    {
+        "src": "pokecomic1.PNG",
+        "alt": "A fan comic about Pokemon training. Page 1.",
+        "tools": ["Procreate"]
+    },
+    {
+        "src": "pokecomic2.PNG",
+        "alt": "A fan comic about Pokemon training. Page 2.",
+        "tools": ["Procreate"]
+    },
+    {
+        "src": "pokecomic3.PNG",
+        "alt": "A fan comic about Pokemon training. Page 3.",
+        "tools": ["Procreate"]
+    },
+    {
+        "src": "pokecomic4.PNG",
+        "alt": "A fan comic about Pokemon training. Page 4.",
+        "tools": ["Procreate"]
+    },
+    {
+        "src": "pokecomic5.PNG",
+        "alt": "A fan comic about Pokemon training. Page 5.",
+        "tools": ["Procreate"]
+    },
+    {
+        "src": "pokecomic6.PNG",
+        "alt": "A fan comic about Pokemon training. Page 6.",
+        "tools": ["Procreate"]
     }
 ]
