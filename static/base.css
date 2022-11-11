@@ -12,8 +12,11 @@
     --gallery-margin-left: var(--desktop-gallery-margin-left);
     --gallery-margin-top: var(--desktop-gallery-margin-top);
 
+    --website-background-color: rgb(255, 252, 247);
     --background-color-major: black;
-    --background-color-minor: #666666;
+    --background-color-minor: hsl(247, 10%, 33%);
+    --text-color-body: black;
+    --text-color-current-page: red;
 }
 
 body, html {
@@ -26,9 +29,12 @@ body, html {
     font-family: var(--body-font);
     font-size: var(--body-font-size);
     scroll-behavior: smooth;
+    color: var(--text-color-body);
+    background-color: var(--website-background-color);
 }
 a:link, a:visited {
     text-decoration: none;
+    color: var(--text-color-body);
 }
 .body-wrapper {
     display: flex;
@@ -43,7 +49,6 @@ a:link, a:visited {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    
 }
 .header {
     margin: 0;
@@ -100,11 +105,18 @@ nav a {
 }
 
 /* image transitions */
+.image-wrapper img {
+    transition: box-shadow 0.2;
+}
+.image-wrapper:hover img {
+    box-shadow: 1px 1px 10px var(--background-color-major);
+}
 img.lazy {
     object-fit: cover;
     opacity: 0;
     visibility: hidden;
     box-shadow: 1px 1px 5px var(--background-color-minor);
+    background-color: white;
 }
 img.lazy:not(.initial) {
     transition: opacity 1s;
