@@ -1,7 +1,7 @@
 class Gallery {
-    #targetHeight = 400;
+    #targetHeight = 500;
     constructor(targetHeight) {
-        this.#targetHeight = targetHeight;
+        this.#targetHeight = targetHeight ? targetHeight : this.#targetHeight;
         window.addEventListener('resize', (e) => this.sizeGalleries());
         this.sizeGalleries();
         this.sizeGalleries();
@@ -110,7 +110,6 @@ class Gallery {
             for (let img of dat.images)
             {
                 img.wrapper.style.height = dat.scaledHeight + "px";
-                img.wrapper.style.maxHeight = dat.scaledHeight + "px";
                 img.wrapper.style.paddingLeft = padding.left;
                 img.wrapper.style.paddingRight = padding.left;
                 img.wrapper.style.paddingTop = padding.top;

@@ -12,7 +12,8 @@ module.exports = function(config) {
 	config.addPassthroughCopy("static/In-Blue-128.png");
 	config.addPassthroughCopy("static/resume.pdf");
 
-	let imageFunc = async function (content, src, alt) {
+	// Resize images and send to static directory
+	config.addPairedAsyncShortcode("image", async function (content, src, alt, href) {
 		if (!alt) {
 			throw new Error(`Missing \`alt\` on image from: ${src}`);
 		}
@@ -53,7 +54,7 @@ module.exports = function(config) {
 			data-height="${selectedSrc.height}"
 			id="${src}">`;
 	
-		return `<div class="image-wrapper">
+		return `<a href="${href}"><div class="image-wrapper">
 			<div class="image-overlay">
 				${content}
 			</div>
@@ -61,15 +62,7 @@ module.exports = function(config) {
 				${source}
 				${img}
 			</picture>
-		</div>`;
-	};
-
-	// Resize images and send to static directory
-	config.addPairedAsyncShortcode("image", imageFunc);
-
-	config.addPairedAsyncShortcode("modalImage", async function (content, src, alt) {
-		let img = await imageFunc(content, src, alt);
-		return `<a href="javascript:showInModal('${src}')">${img}</a>`;
+		</div></a>`;
 	});
 
 	config.addShortcode("enumerate", function(list) {

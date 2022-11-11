@@ -9,3 +9,5 @@
 </div>
 <link href="{{ '/static/modal/modal.css' | url }}" type="text/css" rel="stylesheet">
 <script language="javascript" src="{{ '/static/modal/modal.js' | url }}"></script>
+
+{% macro openModal(src) %}javascript:showInModal('{{ src }}'){% endmacro %}
