@@ -129,6 +129,11 @@ img.lazy.error {
 }
 
 /* about me */
+.blog-body {
+    max-width: 1000px;
+    margin: auto;
+    padding: 10px;
+}
 #about-me {
     height: 100vh;
     max-height: 100vh;
@@ -136,9 +141,6 @@ img.lazy.error {
 }
 #about-me>div {
     display: flex;
-    max-width: 1000px;
-    margin: auto;
-    padding: 10px;
     padding-top: 100px;
 }
 #portrait {
@@ -229,11 +231,14 @@ img.lazy.error {
     .mobile-expand-content {
         max-height: 0px;
     }
+    .blog-body {
+        padding: 0px 50px;
+    }
     #about-me>div {
+        padding-top: 0px;
         position: relative;
         flex-direction: column-reverse;
         height: 100%;
-        padding: 0px 50px;
         overflow: hidden;
     }
     #portrait {

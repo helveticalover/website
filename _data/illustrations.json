@@ -2,31 +2,31 @@
     {
         "src": "cardsdesign.jpg",
         "alt": "A series of illustrations about a world based on playing cards.",
-        "mediums": "Gouache."
+        "tools": ["gouache"]
     },
     {
         "src": "clubs1.jpg",
         "alt": "A series of illustrations about a world based on playing cards.",
-        "mediums": "Gouache, ink."
+        "tools": ["gouache", "ink"]
     },
     {
         "src": "diamonds2.jpg",
         "alt": "A series of illustrations about a world based on playing cards.",
-        "mediums": "Gouache, ink."
+        "tools": ["gouache", "ink"]
     },
     {
         "src": "diamonds1.jpg",
         "alt": "A series of illustrations about a world based on playing cards.",
-        "mediums": "Gouache."
+        "tools": ["gouache"]
     },
     {
         "src": "spades2.jpg",
         "alt": "A series of illustrations about a world based on playing cards.",
-        "mediums": "Gouache, ink."
+        "tools": ["gouache", "ink"]
     },
     {
         "src": "Phoenix.png",
         "alt": "An illustration of a friend's cat, made for printing on metal.",
-        "mediums": "Procreate."
+        "tools": ["Procreate"]
     }
 ]

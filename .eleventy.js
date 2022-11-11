@@ -72,6 +72,13 @@ module.exports = function(config) {
 		return `<a href="javascript:showInModal('${src}')">${img}</a>`;
 	});
 
+	config.addShortcode("enumerate", function(list) {
+		return list.map(function(value, i) {
+			value = i == 0 ? value.charAt(0).toUpperCase() + value.slice(1) : value;
+			return i != list.length - 1 ? value + ", " : value + "."
+		}).join("");;
+	});
+
 	return {
 		pathPrefix: "/website/",
 	};
