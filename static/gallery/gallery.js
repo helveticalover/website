@@ -109,7 +109,9 @@ class Gallery {
         { 
             for (let img of dat.images)
             {
-                img.wrapper.style.height = dat.scaledHeight + "px";
+                let scaledHeight = Math.min(dat.scaledHeight, this.#getMaxImageHeight());
+                img.wrapper.style.height = scaledHeight + "px";
+                img.wrapper.style.width = (scaledHeight * img.image.dataset.width / img.image.dataset.height) + "px";
                 img.wrapper.style.paddingLeft = padding.left;
                 img.wrapper.style.paddingRight = padding.left;
                 img.wrapper.style.paddingTop = padding.top;
@@ -131,7 +133,17 @@ class Gallery {
     #parseSize(str)
     {
         str = str.replace(/\s/g, "");
-        return parseInt(str.substring(0, str.length - 2));
+        str = str.replace(/[A-Za-z]+$/g, "");
+        return parseInt(str);
+    }
+
+    #getMaxImageHeight()
+    {
+        let vh = getComputedStyle(document.documentElement).getPropertyValue('--gallery-image-max-height');
+        vh = vh.replace(/\s/g, "")
+        vh = vh.replace(/[A-Za-z]+$/g, "");
+        vh = parseInt(vh);
+        return Math.round(window.innerHeight / (100 / vh));
     }
 
     #getMean(samples)

@@ -8,8 +8,7 @@
   padding: 0;
 }
 .gallery .image-wrapper {
-  max-height: 90vh;
-  width: auto;
+  max-height: var(--gallery-image-max-height);
 }
 .gallery img {
   width: 100%;
