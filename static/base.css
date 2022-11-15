@@ -32,6 +32,7 @@ body, html {
     scroll-behavior: smooth;
     color: var(--text-color-body);
     background-color: var(--website-background-color);
+    overflow: auto;
 }
 a:link, a:visited {
     text-decoration: none;
