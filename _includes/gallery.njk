@@ -1,13 +1,14 @@
 <div class="gallery" id="id_gallery">
     {%- for dat in data -%}
-    {% set tempSrc %}{{src(dat)}}{% endset %}
-    {% set tempAlt %}{{alt(dat)}}{% endset %}
-    {% set tempHref %}{{href(dat)}}{% endset %}
+    {% set tempSrc %}{{ src(dat) }}{% endset %}
+    {% set tempAlt %}{{ alt(dat) }}{% endset %}
     {% set tempOverlay %}{{ overlay(dat) }}{% endset %}
+    {% set tempFields %}{{ fields(dat) }}{% endset %}
 
-    {% image tempSrc, tempAlt, tempHref %}
+    {% image tempSrc, tempAlt, tempFields %}
         {{ tempOverlay | safe }}
     {% endimage %}
+
     {%- endfor -%}
 </div>
 <link href="{{ '/static/gallery/gallery.css' | url }}" type="text/css" rel="stylesheet">

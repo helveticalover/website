@@ -2,9 +2,16 @@ class Gallery {
     #targetHeight = 500;
     constructor(targetHeight) {
         this.#targetHeight = targetHeight ? targetHeight : this.#targetHeight;
-        window.addEventListener('resize', (e) => this.sizeGalleries());
-        this.sizeGalleries();
-        this.sizeGalleries();
+        window.addEventListener('resize', () => this.sizeGalleries());
+        if (document.readyState === "complete")
+        {
+            this.sizeGalleries();
+            this.sizeGalleries();
+        }
+        window.addEventListener('DOMContentLoaded', () => {
+            this.sizeGalleries();
+            this.sizeGalleries();
+        });
     }
 
     sizeGalleries()

@@ -30,16 +30,14 @@ img#static\/images\/final-map\.png {
 <p>This game was developed in pure C++ by a team of four Computer Game Programming students over three months. I was responsible for standardizing the asset creation and loading pipeline and producing all 3D assets. I also designed the gameplay map using our bitmap level-loading pipeline. I led high-level design discussions and maintained up-to-date documentation and task lists.</p>
 
 {% include "modal.njk" %}
-{% from "modal.njk" import openModal %}
-
-{% set data = magpie %}
 
 {% macro src(img)%}static/images/{{ img.src }}{% endmacro %}
 
 {% macro alt(img) %}{{ img.alt }}{% endmacro %}
 
-{% macro href(img) %}{% set fullSrc %}{{ src(img) }}{% endset %}{{ openModal(fullSrc) }}{% endmacro %}
-
 {% macro overlay(img) %}{% endmacro %}
 
+{% macro fields(dat) %}{% endmacro %}
+
+{% set data = magpie %}
 {% include "gallery.njk" %}

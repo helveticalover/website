@@ -18,16 +18,14 @@ layout: layouts/blog.njk
 <p>I was the sole developer of this project, so I was entirely responsible for designing, implementing, and deploying the framework according to specifications provided by Jim McCann, professor of Computer Game Programming.</p>
 
 {% include "modal.njk" %}
-{% from "modal.njk" import openModal %}
-
-{% set data = virtualLessons %}
 
 {% macro src(img)%}static/images/{{ img.src }}{% endmacro %}
 
 {% macro alt(img) %}{{ img.alt }}{% endmacro %}
 
-{% macro href(img) %}{% set fullSrc %}{{ src(img) }}{% endset %}{{ openModal(fullSrc) }}{% endmacro %}
-
 {% macro overlay(img) %}{% endmacro %}
 
+{% macro fields(dat) %}{% endmacro %}
+
+{% set data = virtualLessons %}
 {% include "gallery.njk" %}

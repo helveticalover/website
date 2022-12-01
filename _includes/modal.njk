@@ -1,4 +1,4 @@
-<div class="modal hidden">
+<div class="modal hidden" id="modal">
   <span class="modal-close"><i class="material-icons">close</i></span>
   <div class="modal-background">
     <div class="modal-content">
@@ -9,5 +9,4 @@
 </div>
 <link href="{{ '/static/modal/modal.css' | url }}" type="text/css" rel="stylesheet">
 <script language="javascript" src="{{ '/static/modal/modal.js' | url }}"></script>
-
-{% macro openModal(src) %}javascript:showInModal('{{ src }}'){% endmacro %}
+<script>const modal = new Modal();</script>

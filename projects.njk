@@ -29,8 +29,6 @@ layout: layouts/main.njk
 
 {% macro alt(project) %}{{ project.data.blurb }}<br/><i>{% enumerate project.data.tools %}</i>{% endmacro %}
 
-{% macro href(project) %}{{ project.url | url }}"{% endmacro %}
-
 {% macro overlay(project) %}
 <div>
     <h1>{{ project.data.title }}</h1>
@@ -38,6 +36,6 @@ layout: layouts/main.njk
 </div>
 {% endmacro %}
 
-
+{% macro fields(dat) %}href = "{{ dat.url | url }}"{% endmacro %}
 
 {% include "gallery.njk" %}

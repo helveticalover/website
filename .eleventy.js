@@ -12,7 +12,7 @@ module.exports = function(config) {
 	config.addPassthroughCopy("static/resume.pdf");
 
 	// Resize images and send to static directory
-	config.addPairedAsyncShortcode("image", async function (content, src, alt, href) {
+	config.addPairedAsyncShortcode("image", async function (content, src, alt, wrapperFields) {
 		if (!alt) {
 			throw new Error(`Missing \`alt\` on image from: ${src}`);
 		}
@@ -50,10 +50,14 @@ module.exports = function(config) {
 			width="${selectedSrc.width}"
 			height="${selectedSrc.height}"
 			data-width="${selectedSrc.width}"
-			data-height="${selectedSrc.height}"
-			id="${src}">`;
+			data-height="${selectedSrc.height}">`;
 	
-		return `<a href="${href}"><div class="image-wrapper">
+		return `<a ${wrapperFields} 
+			class="modal-image"
+			data-modalSrc="${config.getFilter("url")(stats["jpeg"][stats["jpeg"].length - 1].url)}"
+			data-modalAlt="${alt}"
+			data-modalTarget="modal">
+			<div class="image-wrapper">
 			<div class="image-overlay">
 				${content}
 			</div>
