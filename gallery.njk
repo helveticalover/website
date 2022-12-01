@@ -3,8 +3,6 @@ layout: "layouts/main.njk"
 modal: true
 ---
 {% include "modal.njk" %}
-{% from "modal.njk" import openModal %}
-
 
 {% set data = illustrations %}
 
@@ -12,11 +10,9 @@ modal: true
 
 {% macro alt(illustration) %}{{ illustration.alt }}&nbsp;<i>{% enumerate illustration.tools %}</i>{% endmacro %}
 
-{% macro href(illustration) %}{% set fullSrc %}{{ src(illustration) }}{% endset %}{{ openModal(fullSrc) }}{% endmacro %}
-
 {% macro overlay(illustration) %}{% endmacro %}
 
-
+{% macro fields(dat) %}{% endmacro %}
 
 
 {% include "gallery.njk" %}
