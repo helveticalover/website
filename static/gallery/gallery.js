@@ -116,7 +116,7 @@ class Gallery {
         { 
             for (let img of dat.images)
             {
-                let scaledHeight = Math.min(dat.scaledHeight, this.#getMaxImageHeight());
+                let scaledHeight = Math.min(Math.min(dat.scaledHeight, this.#getMaxImageHeight()), img.image.dataset.maxheight);
                 img.wrapper.style.height = scaledHeight + "px";
                 img.wrapper.style.width = (scaledHeight * img.image.dataset.width / img.image.dataset.height) + "px";
                 img.wrapper.style.paddingLeft = padding.left;
