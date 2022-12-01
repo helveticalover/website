@@ -16,7 +16,11 @@
     --website-background-color: rgb(255, 253, 250);
     --background-color-major: black;
     --background-color-minor: hsl(247, 10%, 33%);
+    --overlay-color: rgba(255, 255, 255, 0.9);
+    --shadow-color: var(--background-color-minor);
+    --shadow-color-highlighted: var(--background-color-major);
     --text-color-body: black;
+    --text-color-heading: black;
     --text-color-current-page: red;
 }
 
@@ -37,6 +41,9 @@ body, html {
 a:link, a:visited {
     text-decoration: none;
     color: var(--text-color-body);
+}
+h1, h3 {
+    color: var(--text-color-heading);
 }
 .body-wrapper {
     display: flex;
@@ -111,13 +118,13 @@ nav a {
     transition: box-shadow 0.2;
 }
 .image-wrapper:hover img {
-    box-shadow: 1px 1px 10px var(--background-color-major);
+    box-shadow: 1px 1px 10px var(--shadow-color-highlighted);
 }
 img.lazy {
     object-fit: cover;
     opacity: 0;
     visibility: hidden;
-    box-shadow: 1px 1px 5px var(--background-color-minor);
+    box-shadow: 1px 1px 5px var(--shadow-color);
     background-color: white;
 }
 img.lazy:not(.initial) {
@@ -285,5 +292,18 @@ img.lazy.error {
     }
     #resume {
         margin-top: 100px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --website-background-color: rgb(39, 39, 39);
+        --background-color-major: rgb(119, 119, 119);
+        --background-color-minor: hsl(0, 0%, 31%);
+        --shadow-color: rgba(0,0,0,0);
+        --shadow-color-highlighted: rgba(0,0,0,0);
+        --text-color-body: rgb(202, 202, 202);
+        --text-color-heading: rgb(240, 240, 240);
+        --overlay-color: rgba(39, 39, 39, 0.9)
     }
 }
