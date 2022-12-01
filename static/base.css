@@ -21,7 +21,7 @@
     --shadow-color-highlighted: var(--background-color-major);
     --text-color-body: black;
     --text-color-heading: black;
-    --text-color-current-page: red;
+    --text-color-current-page: black;
 }
 
 body, html {
@@ -92,6 +92,10 @@ nav li {
 nav a {
     display: inline-block;
     margin: 10px;
+}
+nav a.current-page {
+    color: var(--text-color-current-page);
+    font-weight: bold;
 }
 .mobile-expand {
     display: none;
@@ -297,13 +301,14 @@ img.lazy.error {
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --website-background-color: rgb(39, 39, 39);
+        --website-background-color: rgb(33, 33, 36);
         --background-color-major: rgb(119, 119, 119);
-        --background-color-minor: hsl(0, 0%, 31%);
+        --background-color-minor: rgb(79, 79, 79);
         --shadow-color: rgba(0,0,0,0);
         --shadow-color-highlighted: rgba(0,0,0,0);
         --text-color-body: rgb(202, 202, 202);
         --text-color-heading: rgb(240, 240, 240);
-        --overlay-color: rgba(39, 39, 39, 0.9)
+        --text-color-current-page: white;
+        --overlay-color: rgba(33, 33, 36, 0.9)
     }
 }

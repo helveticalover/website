@@ -1,6 +1,7 @@
 ---
 layout: "layouts/main.njk"
 modal: true
+currentPage: gallery
 ---
 {% include "modal.njk" %}
 
@@ -12,7 +13,7 @@ modal: true
 
 {% macro overlay(illustration) %}{% endmacro %}
 
-{% macro fields(dat) %}{% endmacro %}
+{% macro fields(dat) %}href="#"{% endmacro %}
 
 
 {% include "gallery.njk" %}

@@ -10,9 +10,9 @@
         <label for="id_nav-collapsible" class="mobile-expand-lbl center" data-target="id_nav"><i class="material-icons">menu</i></label>
         <div class="mobile-expand-content">
           <ul class="nav" id="id_nav">
-            <li><a href="{{ '/projects' | url }}">Projects</a></li>
-            <li><a href="{{ '/gallery' | url }}">Gallery</a></li>
-            <li><a href="{{ '/about-me#about-me' | url }}">About Me</a></li>
+            <li><a href="{{ '/projects' | url }}"{% if currentPage == "projects" %}class="current-page"{% endif %}>Projects</a></li>
+            <li><a href="{{ '/gallery' | url }}"{% if currentPage == "gallery" %}class="current-page"{% endif %}>Gallery</a></li>
+            <li><a href="{{ '/about-me#about-me' | url }}"{% if currentPage == "about-me" %}class="current-page"{% endif %}>About Me</a></li>
           </ul>
         </div>
       </div>
