@@ -1,0 +1,33 @@
+.image-wrapper img {
+    transition: box-shadow 0.2;
+}
+.image-wrapper:hover img {
+    box-shadow: 1px 1px 10px var(--shadow-color-highlighted);
+}
+.image-wrapper .image-overlay {
+    background-color: var(--overlay-image-color);
+    opacity: 0;
+    transition: opacity 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.image-wrapper:hover .image-overlay {
+    opacity: 1;
+}
+img.lazy {
+    object-fit: cover;
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: 1px 1px 5px var(--shadow-color);
+    background-color: white;
+}
+img.lazy:not(.initial) {
+    transition: opacity 1s;
+}
+img.lazy.initial,
+img.lazy.loaded,
+img.lazy.error {
+    opacity: 1;
+    visibility: visible;
+}

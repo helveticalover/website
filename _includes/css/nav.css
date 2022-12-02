@@ -1,0 +1,49 @@
+nav {
+    margin: 20px 0px;
+}
+nav ul {
+    padding: 0;
+}
+nav li {
+    display: inline;
+}
+nav a {
+    display: inline-block;
+    margin: 10px;
+}
+nav a.current-page {
+    color: var(--text-color-current-page);
+    font-weight: bold;
+}
+.mobile-expand {
+    display: none;
+}
+.mobile-expand-lbl {
+    display: none;
+    cursor: pointer;
+    transition: all 0.25s ease-out;
+}
+.mobile-expand-lbl:hover {
+    color: #7C5A0B;
+}
+.mobile-expand-content {
+    max-height: auto;
+    overflow: hidden;
+    transition: max-height .25s ease-in-out;
+}
+.mobile-expand:checked + .mobile-expand-lbl + .mobile-expand-content {
+    max-height: 100vh;
+}
+
+@media only screen and (max-width: 768px) {
+    .nav li {
+        display: inline-block;
+        width: 100%;
+    }
+    .mobile-expand-lbl {
+        display: inline-block;
+    }
+    .mobile-expand-content {
+        max-height: 0px;
+    }
+}

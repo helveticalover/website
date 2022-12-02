@@ -1,0 +1,41 @@
+:root {
+    --body-font: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+    --body-font-size: 1em;
+    --body-padding: 10px 1.5em;
+    --mobile-body-padding: 0px;
+    --modal-padding: 50px;
+    --mobile-modal-padding: 0px;
+    --desktop-gallery-margin-left: 6px;
+    --desktop-gallery-margin-top: 6px;
+    --mobile-gallery-margin-left: 5px;
+    --mobile-gallery-margin-top: 5px;
+    --gallery-margin-left: var(--desktop-gallery-margin-left);
+    --gallery-margin-top: var(--desktop-gallery-margin-top);
+    --gallery-image-max-height: 90vh;
+
+    --website-background-color: rgb(255, 253, 250);
+    --background-color-major: black;
+    --background-color-minor: hsl(247, 10%, 33%);
+    --overlay-text-color: rgba(255, 255, 255, 0.9);
+    --overlay-image-color: rgba(255, 255, 255, 0.2);
+    --shadow-color: var(--background-color-minor);
+    --shadow-color-highlighted: var(--background-color-major);
+    --text-color-body: black;
+    --text-color-heading: black;
+    --text-color-current-page: black;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --website-background-color: rgb(33, 33, 36);
+        --background-color-major: rgb(119, 119, 119);
+        --background-color-minor: rgb(79, 79, 79);
+        --shadow-color: rgba(0,0,0,1);
+        --shadow-color-highlighted: rgba(0,0,0,1);
+        --text-color-body: rgb(202, 202, 202);
+        --text-color-heading: rgb(240, 240, 240);
+        --text-color-current-page: white;
+        --overlay-text-color: rgba(33, 33, 36, 0.9);
+        --overlay-image-color: rgba(33, 33, 36, 0.3);
+    }
+}
