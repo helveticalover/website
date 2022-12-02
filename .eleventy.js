@@ -1,15 +1,64 @@
 // https://mahmoudashraf.dev/blog/how-to-optimize-and-lazyloading-images-on-eleventy/
 // https://github.com/verlok/vanilla-lazyload/
+// https://github.com/benjaminrancourt/eleventy-plugin-files-minifier/blob/main/src/files-minifier.js
 
 const Image = require("@11ty/eleventy-img");
+const htmlmin = require("html-minifier");
+const CleanCSS = require("clean-css");
+const { minify } = require("terser");
+const isProduction = typeof process.env.NODE_ENV === "string" && process.env.NODE_ENV === "production";
 
 module.exports = function(config) {
-	config.addPassthroughCopy("static/**/*.js");
-	config.addPassthroughCopy("static/**/*.css");
 	config.addPassthroughCopy("static/cgpicon.png");
 	config.addPassthroughCopy("static/GitHub-Mark*-64px.png");
 	config.addPassthroughCopy("static/In-Blue-128.png");
 	config.addPassthroughCopy("static/resume.pdf");
+
+	// Minify HTML, CSS and JS
+	config.addTransform("files-minifier", async function (value, outputPath) {
+		if (!isProduction)
+		{
+			return value;
+		}
+
+		const pathEndBy = (extension) => outputPath.includes(extension);
+
+		// CSS
+		if (pathEndBy(".css")) {
+			return new CleanCSS({}).minify(value).styles;
+		}
+	
+		// HTML
+		if (pathEndBy(".html")) {
+			const config = {
+				collapseBooleanAttributes: true, // Omit attribute values from boolean attributes
+				collapseWhitespace: true, // Collapse white space that contributes to text nodes in a document tree
+				decodeEntities: true, // Use direct Unicode characters whenever possible
+				html5: true, // Parse input according to HTML5 specifications
+				minifyCSS: true, // Minify CSS in style elements and style attributes (uses clean-css)
+				minifyJS: true, // Minify JavaScript in script elements and event attributes (uses UglifyJS)
+				removeComments: true, // Strip HTML comments
+				removeEmptyAttributes: true, // Remove all attributes with whitespace-only values
+				removeEmptyElements: false, // Remove all elements with empty contents
+				sortAttributes: true, // Sort attributes by frequency
+				sortClassName: true, // Sort style classes by frequency
+				useShortDoctype: true, // Replaces the doctype with the short (HTML5) doctype
+			};
+
+			return htmlmin.minify(value, config);
+		}
+
+		// JS
+		try {
+			const minified = await minify(value);
+			return minified.code;
+		} catch (err) {
+			console.error("Terser error: ", err);
+		}
+
+		return value;
+	});
+
 
 	// Resize images and send to static directory
 	config.addPairedAsyncShortcode("image", async function (content, src, alt, wrapperFields) {
@@ -38,6 +87,7 @@ module.exports = function(config) {
 			{}
 		);
 
+		const largestSrc = stats["jpeg"][stats["jpeg"].length - 1];
 		const srcUrl = `${config.getFilter("url")(selectedSrc.url)}`;
 		const source = `<source type="image/webp" data-srcset="${srcset["webp"]}" >`;
 
@@ -50,11 +100,13 @@ module.exports = function(config) {
 			width="${selectedSrc.width}"
 			height="${selectedSrc.height}"
 			data-width="${selectedSrc.width}"
-			data-height="${selectedSrc.height}">`;
+			data-height="${selectedSrc.height}"
+			data-maxWidth="${largestSrc.width}"
+			data-maxHeight="${largestSrc.height}">`;
 	
 		return `<a ${wrapperFields} 
 			class="modal-image"
-			data-modalSrc="${config.getFilter("url")(stats["jpeg"][stats["jpeg"].length - 1].url)}"
+			data-modalSrc="${config.getFilter("url")(largestSrc.url)}"
 			data-modalAlt="${alt}"
 			data-modalTarget="modal">
 			<div class="image-wrapper">
