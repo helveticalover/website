@@ -39,7 +39,6 @@ class Modal {
         for (let image of images)
         {
             image.onclick = () => this.openModal(image.dataset.modaltarget, image.dataset.modalsrc, image.dataset.modalalt);
-            image.ontouchend = () => this.openModal(image.dataset.modaltarget, image.dataset.modalsrc, image.dataset.modalalt);
         }
     }
 
