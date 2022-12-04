@@ -5,7 +5,8 @@ title: Magpie
 blurb: A game about a magpie's museum heist.
 tools: ['C++', 'OpenGL', 'Maya', 'Blender']
 thumbnail: Magpie.png
-layout: layouts/blog.njk
+layout: layouts/project.njk
+buttons: [{ text: 'Download', link: 'https://github.com/ShiJbey/Magpie/releases/tag/0.2.0'}, { text: 'Code', link: 'https://github.com/ShiJbey/Magpie/tree/0.2.0' }]
 ---
 
 <style>
@@ -19,13 +20,6 @@ img#static\/images\/final-map\.png {
     -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
 }
 </style>
-
-{% set buttons %}
-<a class="social-icon" href="https://github.com/ShiJbey/Magpie/releases/tag/0.2.0"><div style="margin-right:10px;" class="small minor button">Download</div></a>
-<a class="social-icon" href="https://github.com/ShiJbey/Magpie/tree/0.2.0"><div style="margin-right:10px;" class="small minor button">Code</div></a>
-{% endset %}
-
-{% include "projectBlurb.njk" %}
 
 <p>This game was developed in pure C++ by a team of four Computer Game Programming students over three months. I was responsible for standardizing the asset creation and loading pipeline and producing all 3D assets. I also designed the gameplay map using our bitmap level-loading pipeline. I led high-level design discussions and maintained up-to-date documentation and task lists.</p>
 

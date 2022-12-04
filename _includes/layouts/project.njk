@@ -1,0 +1,15 @@
+---
+layout: layouts/blog.njk
+currentPage: projects
+---
+<div style="display: flex; align-items: center">
+    <h1>{{ title }}</h1>
+    <div style="padding-left: 50px;">
+        {% for button in buttons %}
+        <a class="social-icon" href="{{ button.link }}"><div class="small minor button">{{ button.text }}</div></a>
+        {% endfor %}
+    </div>
+</div>
+<h3>{{ blurb }}</h3>
+<i>{% enumerate tools %}</i>
+{{ content | safe }}
