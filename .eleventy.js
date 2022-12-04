@@ -64,7 +64,7 @@ module.exports = function(config) {
 			throw new Error(`Missing \`alt\` on image from: ${src}`);
 		}
 
-		let stats = await Image(src, {
+		let stats = await Image("static/images/" + src, {
 			widths: [100, 640, 1024, 2048],
 			urlPath: "/static/images/",
 			outputDir: "./_site/static/images/",

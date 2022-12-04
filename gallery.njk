@@ -1,17 +1,16 @@
 ---
 layout: "layouts/main.njk"
-modal: true
 currentPage: gallery
 ---
 {% include "modal.njk" %}
 
 {% set data = illustrations %}
 
-{% macro src(illustration)%}static/images/{{ illustration.src }}{% endmacro %}
+{% macro src(dat)%}{{ dat.src }}{% endmacro %}
 
-{% macro alt(illustration) %}{{ illustration.alt }}&nbsp;<i>{% enumerate illustration.tools %}</i>{% endmacro %}
+{% macro alt(dat) %}{{ dat.alt }}&nbsp;<i>{% enumerate dat.tools %}</i>{% endmacro %}
 
-{% macro overlay(illustration) %}{% endmacro %}
+{% macro overlay(dat) %}{% endmacro %}
 
 {% macro fields(dat) %}href="#"{% endmacro %}
 

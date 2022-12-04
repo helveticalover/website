@@ -11,6 +11,7 @@
 
     {%- endfor -%}
 </div>
+{% if initGallery != true %}
 <style>
     {% include "css/gallery.css" %}
 </style>
@@ -18,3 +19,4 @@
     {% include "js/gallery.js" %}
     const gallery = new Gallery({{ targetHeight }});
 </script>
+{% endif %}

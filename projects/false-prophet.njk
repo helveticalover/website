@@ -18,7 +18,7 @@ layout: layouts/blog.njk
 
 {% include "modal.njk" %}
 
-{% macro src(img)%}static/images/{{ img.src }}{% endmacro %}
+{% macro src(img)%}{{ img.src }}{% endmacro %}
 
 {% macro alt(img) %}{{ img.alt }}{% endmacro %}
 

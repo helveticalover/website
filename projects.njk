@@ -17,7 +17,7 @@ currentPage: projects
 
 {% set data = collections.project | reverse %}
 
-{% macro src(project)%}static/images/{{ project.data.thumbnail }}{% endmacro %}
+{% macro src(project)%}{{ project.data.thumbnail }}{% endmacro %}
 
 {% macro alt(project) %}{{ project.data.blurb }}<br/><i>{% enumerate project.data.tools %}</i>{% endmacro %}
 
