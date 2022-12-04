@@ -39,23 +39,23 @@ class Gallery {
         let sumr = [];
         sumr[0] = {
             sum: 0,
-            images: [],
+            media: [],
         };
         let dat = sumr[sumr.length - 1];
 
         let deviation = Number.MAX_VALUE;
-        let wrappers = container.getElementsByClassName("image-wrapper");
+        let wrappers = container.getElementsByClassName("media-wrapper");
         for (let wrapper of wrappers)
         {
-            let img = wrapper.querySelector("img");
-            let h = img.dataset.height;
-            let w = img.dataset.width;
+            let md = wrapper.querySelector("img, iframe");
+            let h = md.dataset.height;
+            let w = md.dataset.width;
             let w_h = w / h;
 
             // Try add image to existing row
             dat.sum += w_h;
-            dat.images.push({
-                image: img,
+            dat.media.push({
+                content: md,
                 wrapper: wrapper,
             });
             this.#calculateScaledRows(sumr, R);
@@ -67,12 +67,12 @@ class Gallery {
             if (newDeviation > deviation)
             {
                 dat.sum -= w_h;
-                dat.images.pop();
+                dat.media.pop();
 
                 dat = {};
                 dat.sum = w_h;
-                dat.images = [{
-                    image: img,
+                dat.media = [{
+                    content: md,
                     wrapper: wrapper,
                 }];
                 sumr.push(dat);
@@ -93,12 +93,12 @@ class Gallery {
         for (let dat of rows)
         { 
             let margin = this.#parseSize(this.#getPadding().left);
-            let R_1 = R - 2 * dat.images.length * margin;
+            let R_1 = R - 2 * dat.media.length * margin;
 
-            for (let img of dat.images)
+            for (let md of dat.media)
             {
-                let h = img.image.dataset.height;
-                let w = img.image.dataset.width;
+                let h = md.content.dataset.height;
+                let w = md.content.dataset.width;
 
                 let num = R_1 * w;
                 let div = h * dat.sum;
@@ -114,15 +114,19 @@ class Gallery {
         let padding = this.#getPadding();
         for (let dat of rows)
         { 
-            for (let img of dat.images)
+            for (let md of dat.media)
             {
-                let scaledHeight = Math.min(Math.min(dat.scaledHeight, this.#getMaxImageHeight()), img.image.dataset.maxheight);
-                img.wrapper.style.height = scaledHeight + "px";
-                img.wrapper.style.width = (scaledHeight * img.image.dataset.width / img.image.dataset.height) + "px";
-                img.wrapper.style.paddingLeft = padding.left;
-                img.wrapper.style.paddingRight = padding.left;
-                img.wrapper.style.paddingTop = padding.top;
-                img.wrapper.style.paddingBottom = padding.top;
+                let scaledHeight = Math.min(dat.scaledHeight, this.#getMaxImageHeight());
+                if (md.content.dataset.maxheight)
+                {
+                    scaledHeight = Math.min(scaledHeight, md.content.dataset.maxheight);
+                }
+                md.wrapper.style.height = scaledHeight + "px";
+                md.wrapper.style.width = (scaledHeight * md.content.dataset.width / md.content.dataset.height) + "px";
+                md.wrapper.style.paddingLeft = padding.left;
+                md.wrapper.style.paddingRight = padding.left;
+                md.wrapper.style.paddingTop = padding.top;
+                md.wrapper.style.paddingBottom = padding.top;
             }
         }
     }

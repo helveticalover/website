@@ -16,8 +16,7 @@ module.exports = function(config) {
 
 	// Minify HTML, CSS and JS
 	config.addTransform("files-minifier", async function (value, outputPath) {
-		if (!isProduction)
-		{
+		if (!isProduction) {
 			return value;
 		}
 
@@ -59,9 +58,8 @@ module.exports = function(config) {
 		return value;
 	});
 
-
 	// Resize images and send to static directory
-	config.addPairedAsyncShortcode("image", async function (content, src, alt, wrapperFields) {
+	let imageShortcode = async function (content, src, alt, wrapperFields) {
 		if (!alt) {
 			throw new Error(`Missing \`alt\` on image from: ${src}`);
 		}
@@ -109,8 +107,8 @@ module.exports = function(config) {
 			data-modalSrc="${config.getFilter("url")(largestSrc.url)}"
 			data-modalAlt="${alt}"
 			data-modalTarget="modal">
-			<div class="image-wrapper">
-			<div class="image-overlay">
+			<div class="media-wrapper">
+			<div class="media-overlay">
 				${content}
 			</div>
 			<picture>
@@ -118,6 +116,29 @@ module.exports = function(config) {
 				${img}
 			</picture>
 		</div></a>`;
+	};
+
+	let embedShortcode = function (src) {
+		return `<div class="media-wrapper">
+		<iframe src="${src}"
+		frameborder="0"
+		allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+		width="640"
+		height="360"
+		data-width="640"
+		data-height="360"></iframe>
+		</div>`
+	};
+
+	config.addPairedAsyncShortcode("image", imageShortcode);
+
+	config.addShortcode("embed", embedShortcode);
+
+	config.addPairedAsyncShortcode("media", async function (content, src, alt, wrapperFields) {
+		if (/^(ftp|http|https):\/\/[^ "]+$/.test(src)) {
+			return embedShortcode(src);
+		}
+		return await imageShortcode(content, src, alt, wrapperFields);
 	});
 
 	config.addShortcode("enumerate", function(list) {

@@ -5,9 +5,9 @@
     {% set tempOverlay %}{{ overlay(dat) }}{% endset %}
     {% set tempFields %}{{ fields(dat) }}{% endset %}
 
-    {% image tempSrc, tempAlt, tempFields %}
+    {% media tempSrc, tempAlt, tempFields %}
         {{ tempOverlay | safe }}
-    {% endimage %}
+    {% endmedia %}
 
     {%- endfor -%}
 </div>

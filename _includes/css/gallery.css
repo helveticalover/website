@@ -7,17 +7,17 @@
   margin: 0;
   padding: 0;
 }
-.gallery .image-wrapper {
+.gallery .media-wrapper {
   max-height: var(--gallery-image-max-height);
 }
-.gallery img {
+.gallery img, .gallery iframe {
   width: 100%;
   height: 100%;
 }
-.image-wrapper {
+.media-wrapper {
   position: relative;
 }
-.image-wrapper .image-overlay {
+.media-wrapper .media-overlay {
   position: absolute;
   top: calc(0px + var(--gallery-margin-top));
   bottom: calc(0px + var(--gallery-margin-top));

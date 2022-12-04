@@ -1,10 +1,10 @@
-.image-wrapper img {
+.media-wrapper img {
     transition: box-shadow 0.2;
 }
-.image-wrapper:hover img {
+.media-wrapper:hover img {
     box-shadow: 1px 1px 10px var(--shadow-color-highlighted);
 }
-.image-wrapper .image-overlay {
+.media-wrapper .media-overlay {
     background-color: var(--overlay-image-color);
     opacity: 0;
     transition: opacity 0.2s;
@@ -12,7 +12,7 @@
     align-items: center;
     justify-content: center;
 }
-.image-wrapper:hover .image-overlay {
+.media-wrapper:hover .media-overlay {
     opacity: 1;
 }
 img.lazy {
