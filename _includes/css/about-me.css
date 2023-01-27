@@ -75,10 +75,6 @@
         padding-bottom: 50px;
         order: 1;
     }
-    .flex-nav {
-        margin: auto;
-        justify-content: center;
-    }
     .flex-nav>li {
         margin-left: 12px;
         margin-right: 12px;

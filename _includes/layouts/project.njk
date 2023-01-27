@@ -2,12 +2,12 @@
 layout: layouts/blog.njk
 currentPage: projects
 ---
-<div style="display: flex; align-items: center">
-    <h1>{{ title }}</h1>
-    <div style="padding-left: 50px;">
-        {% for button in buttons %}
-        <a class="social-icon" href="{{ button.link }}"><div class="small minor button">{{ button.text }}</div></a>
-        {% endfor %}
+<div style="display: flex; flex-wrap: wrap; align-items: center;">
+    <h1 style="flex-grow: 1;">{{ title }}</h1>
+    <div class="responsive-flex">
+    {% for button in buttons %}
+    <a class="social-icon" href="{{ button.link }}"><div style="margin-left: 3px; margin-right: 3px;" class="small minor square button"><span style="padding: 6px 18px;" class="verbose">{{ button.text }}</span><i class="abbreviated material-icons">{{ button.icon }}</i></div></a>
+    {% endfor %}
     </div>
 </div>
 <h3>{{ blurb }}</h3>
