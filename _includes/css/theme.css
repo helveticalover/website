@@ -14,8 +14,9 @@
     --gallery-image-max-height: 90vh;
 
     --website-background-color: rgb(255, 253, 250);
-    --background-color-major: black;
-    --background-color-minor: hsl(247, 10%, 33%);
+    --background-color-major: hsl(0, 0%, 75%);
+    --background-color-minor: hsl(0, 0%, 85%);
+    --background-color-invert: rgb(33, 33, 36);
     --overlay-text-color: rgba(255, 255, 255, 0.9);
     --overlay-image-color: rgba(255, 255, 255, 0.2);
     --shadow-color: var(--background-color-minor);
@@ -23,6 +24,7 @@
     --text-color-body: black;
     --text-color-heading: black;
     --text-color-current-page: black;
+    --text-color-invert: white;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -30,12 +32,14 @@
         --website-background-color: rgb(33, 33, 36);
         --background-color-major: rgb(119, 119, 119);
         --background-color-minor: rgb(79, 79, 79);
+        --background-color-invert: rgb(202, 202, 202);
+        --overlay-text-color: rgba(33, 33, 36, 0.9);
+        --overlay-image-color: rgba(33, 33, 36, 0.3);
         --shadow-color: rgba(0,0,0,1);
         --shadow-color-highlighted: rgba(0,0,0,1);
         --text-color-body: rgb(202, 202, 202);
         --text-color-heading: rgb(240, 240, 240);
         --text-color-current-page: white;
-        --overlay-text-color: rgba(33, 33, 36, 0.9);
-        --overlay-image-color: rgba(33, 33, 36, 0.3);
+        --text-color-invert: black;
     }
 }

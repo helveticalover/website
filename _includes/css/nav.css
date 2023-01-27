@@ -9,11 +9,10 @@ nav li {
 }
 nav a {
     display: inline-block;
-    margin: 10px;
+    margin: 4px 2px;
 }
-nav a.current-page {
-    color: var(--text-color-current-page);
-    font-weight: bold;
+nav .button {
+    padding: 6px 18px;
 }
 .mobile-expand {
     display: none;
@@ -45,5 +44,8 @@ nav a.current-page {
     }
     .mobile-expand-content {
         max-height: 0px;
+    }
+    .nav a {
+        width: 100%;
     }
 }

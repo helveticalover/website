@@ -9,6 +9,7 @@
 }
 .gallery .media-wrapper {
   max-height: var(--gallery-image-max-height);
+  display: block;
 }
 .gallery img, .gallery iframe {
   width: 100%;

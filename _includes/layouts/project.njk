@@ -6,7 +6,7 @@ currentPage: projects
     <h1 style="flex-grow: 1;">{{ title }}</h1>
     <div class="responsive-flex">
     {% for button in buttons %}
-    <a class="social-icon" href="{{ button.link }}"><div style="margin-left: 3px; margin-right: 3px;" class="small minor square button"><span style="padding: 6px 18px;" class="verbose">{{ button.text }}</span><i class="abbreviated material-icons">{{ button.icon }}</i></div></a>
+    <a class="social-icon" href="{{ button.link }}"><div style="margin-left: 3px; margin-right: 3px;" class="small minor button"><span class="verbose">{{ button.text }}</span><i class="abbreviated material-icons">{{ button.icon }}</i></div></a>
     {% endfor %}
     </div>
 </div>

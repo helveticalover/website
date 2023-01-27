@@ -1,8 +1,6 @@
 <div class="header">
     <div class="center title">
-      <a href="#">
-        <img src="{{ '/static/cgpicon.png' | url }}">
-      </a>
+      <img src="{{ '/static/cgpicon.png' | url }}">
     </div>
     <nav class="center">
       <div class="wrap-mobile-collapsible">
@@ -10,9 +8,9 @@
         <label for="id_nav-collapsible" class="mobile-expand-lbl center" data-target="id_nav"><i class="material-icons">menu</i></label>
         <div class="mobile-expand-content">
           <ul class="nav" id="id_nav">
-            <li><a href="{{ '/projects' | url }}"{% if currentPage == "projects" %}class="current-page"{% endif %}>Projects</a></li>
-            <li><a href="{{ '/gallery' | url }}"{% if currentPage == "gallery" %}class="current-page"{% endif %}>Gallery</a></li>
-            <li><a href="{{ '/about-me#about-me' | url }}"{% if currentPage == "about-me" %}class="current-page"{% endif %}>About Me</a></li>
+            <li><a href="{{ '/projects' | url }}"><div class="button {% if currentPage == "projects" %}active{% endif %}">Projects</div></a></li>
+            <li><a href="{{ '/gallery' | url }}"><div class="button {% if currentPage == "gallery" %}active{% endif %}">Gallery</div></a></li>
+            <li><a href="{{ '/about-me#about-me' | url }}"><div class="button {% if currentPage == "about-me" %}active{% endif %}">About Me</div></a></li>
           </ul>
         </div>
       </div>

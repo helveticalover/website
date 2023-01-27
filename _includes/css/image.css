@@ -1,19 +1,24 @@
-.media-wrapper img {
-    transition: box-shadow 0.2;
+.media-wrapper {
+    display: grid;
 }
+
 .media-wrapper:hover img {
     box-shadow: 1px 1px 10px var(--shadow-color-highlighted);
 }
 .media-wrapper .media-overlay {
+    grid-column: 1;
+    grid-row: 1;
     background-color: var(--overlay-image-color);
     opacity: 0;
-    transition: opacity 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    z-index: 1;
 }
 .media-wrapper:hover .media-overlay {
     opacity: 1;
+    transition: opacity 0.2s linear;
+}
+.media-wrapper picture {
+    grid-column: 1;
+    grid-row: 1;
 }
 img.lazy {
     object-fit: cover;

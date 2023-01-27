@@ -22,7 +22,7 @@ currentPage: about-me
                 of disciplines such as engineering, visual arts, and design.
             </p>
             <ul class="flex-nav responsive-flex" style="max-width:400px;">
-                <li style="margin-bottom: 30px"><a class="social-icon" href="#resume"><div class="button major">Resume</div></a></li>
+                <li style="margin-bottom: 30px"><a class="social-icon" href="#resume"><div class="button major small">Resume</div></a></li>
                 <li><ul class="flex-nav responsive-flex">
                     <li><a class="social-icon" href="https://www.linkedin.com/in/tiffany-li-a86656135/"><img src="{{ '/static/In-Blue-128.png' | url }}"></a></li>
                     <li><a class="social-icon" href="https://github.com/helveticalover"><img src="{{ '/static/GitHub-Mark-64px.png' | url }}"></a></li>
@@ -34,8 +34,10 @@ currentPage: about-me
 
 <div id="resume">
     <div>
-        <a href="{{ '/static/resume.pdf' | url }}"><i class="material-icons">download</i></a>
-        <div>
+        <div style="display: flex; flex-direction: row-reverse;">
+            <a href="{{ '/static/resume.pdf' | url }}"><div class="button square minor"><i class="material-icons">download</i></div></a>
+        </div>
+        <div class="resume-wrapper">
             {% include "resume.html" %}
         </div>
     </div>

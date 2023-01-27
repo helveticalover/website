@@ -59,9 +59,11 @@ h1, h3 {
 }
 .major {
     background-color: var(--background-color-major);
+    color: var(--text-color-heading);
 }
 .minor {
     background-color: var(--background-color-minor);
+    color: var(--text-color-body);
 }
 .responsive-flex {
     display: flex;

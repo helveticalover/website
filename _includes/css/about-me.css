@@ -47,9 +47,8 @@
     padding: 36px;
     max-width: 540pt;
     margin: auto;
-    text-align: right;
 }
-#resume>div>div {
+#resume .resume-wrapper {
     overflow: hidden;
 }
 @media only screen and (max-width: 768px) {
