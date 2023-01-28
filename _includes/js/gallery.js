@@ -1,5 +1,6 @@
 class Gallery {
     #targetHeight = 500;
+    #lastRowAllowance = 200;
     constructor(targetHeight) {
         this.#targetHeight = targetHeight ? targetHeight : this.#targetHeight;
         window.addEventListener('resize', () => this.sizeGalleries());
@@ -85,6 +86,10 @@ class Gallery {
             deviation = newDeviation;
         }
 
+        if (dat.scaledHeight - this.#targetHeight > this.#lastRowAllowance)
+        {
+            dat.scaledHeight = this.#targetHeight + this.#lastRowAllowance;
+        }
         this.#scaleRowsToTarget(sumr);
     }
 
@@ -116,11 +121,7 @@ class Gallery {
         { 
             for (let md of dat.media)
             {
-                let scaledHeight = Math.min(dat.scaledHeight, this.#getMaxImageHeight());
-                if (md.content.dataset.maxheight)
-                {
-                    scaledHeight = Math.min(scaledHeight, md.content.dataset.maxheight);
-                }
+                let scaledHeight = dat.scaledHeight;
                 md.wrapper.style.height = scaledHeight + "px";
                 md.wrapper.style.width = (scaledHeight * md.content.dataset.width / md.content.dataset.height) + "px";
                 md.wrapper.style.paddingLeft = padding.left;

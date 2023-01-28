@@ -85,4 +85,7 @@ h1, h3 {
         margin: auto;
         justify-content: center;
     }
+    .gallery {
+        justify-content: center;
+    }
 }

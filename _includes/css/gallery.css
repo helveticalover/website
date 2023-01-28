@@ -1,14 +1,12 @@
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
 }
 .gallery * {
   margin: 0;
   padding: 0;
 }
 .gallery .media-wrapper {
-  max-height: var(--gallery-image-max-height);
   display: block;
 }
 .gallery img, .gallery iframe {

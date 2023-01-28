@@ -1,13 +1,14 @@
 .button {
     border-radius: 3px;
 }
+.button.active {
+    font-weight: bold;
+    color: var(--text-color-highlight);
+}
 .button:hover {
     background-color: var(--background-color-invert);
     color: var(--text-color-invert);
     transition: background-color 0.25s linear;
-}
-.button.active {
-    font-weight: bold;
 }
 .button.large {
     border-radius: 3px;
