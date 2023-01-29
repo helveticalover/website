@@ -1,0 +1,10 @@
+---
+pagination:
+    data: magpieViewer
+    size: 1
+permalink: "projects/magpie/{{ pagination.items[0].title | slug }}/index.html"
+---
+{% set assetPath = pagination.items[0].assetPath %}
+{% set cameraPosition = pagination.items[0].cameraPosition %}
+{% set cameraTarget = pagination.items[0].cameraTarget %}
+{% include "layouts/3dviewer.njk" %}
