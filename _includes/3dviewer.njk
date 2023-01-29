@@ -34,9 +34,53 @@
             import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
             import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
 
+            {# var strDownloadMime = "image/octet-stream";
+            var saveLink = document.createElement('div');
+            saveLink.style.position = 'absolute';
+            saveLink.style.top = '10px';
+            saveLink.style.width = '100%';
+            saveLink.style.background = '#FFFFFF';
+            saveLink.style.textAlign = 'center';
+            saveLink.innerHTML =
+                '<a href="#" id="saveLink">Save Frame</a>';
+            document.body.appendChild(saveLink);
+            document.getElementById("saveLink").addEventListener('click', saveAsImage);
+            
+            function saveAsImage() {
+                var imgData, imgNode;
+
+                try {
+                    var strMime = "image/png";
+                    imgData = renderer.domElement.toDataURL(strMime);
+
+                    saveFile(imgData.replace(strMime, strDownloadMime), "test.png");
+
+                } catch (e) {
+                    console.log(e);
+                    return;
+                }
+
+            }
+
+            var saveFile = function (strData, filename) {
+                var link = document.createElement('a');
+                if (typeof link.download === 'string') {
+                    document.body.appendChild(link); //Firefox requires the link to be in the body
+                    link.download = filename;
+                    link.href = strData;
+                    link.click();
+                    document.body.removeChild(link); //remove the link when done
+                } else {
+                    location.replace(uri);
+                }
+            } #}
+
 			const clock = new THREE.Clock();
             const container = document.getElementById( 'container' );
-            const renderer = new THREE.WebGLRenderer( { antialias: true } );
+            const renderer = new THREE.WebGLRenderer( { 
+                antialias: true,
+                preserveDrawingBuffer: true
+             } );
             renderer.setPixelRatio( window.devicePixelRatio );
             renderer.setSize( window.innerWidth, window.innerHeight );
             renderer.outputEncoding = THREE.sRGBEncoding;
@@ -55,7 +99,7 @@
             controls.target.set({{ cameraTarget[0] }}, {{ cameraTarget[1] }}, {{ cameraTarget[2] }});
             controls.update();
             controls.autoRotate = true;
-            controls.autoRotateSpeed = 0.5;
+            controls.autoRotateSpeed = 0.75;
             controls.enablePan = true;
             controls.enableDamping = true;
 

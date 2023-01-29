@@ -1,10 +1,17 @@
 [
     {
-        "src" : "map-assets1.png",
-        "alt" : "All level assets for magpie in Blender viewport render."
+        "src" : "guardDog.png",
+        "alt" : "Models and animations for the guard dog character in Magpie.",
+        "url" : "guard-dog"
     },
     {
-        "src" : "map-assets2.png",
-        "alt" : "All level assets for magpie in Blender viewport render."
+        "src" : "magpieMagpie.png",
+        "alt" : "Models and animations for the magpie character in Magpie.",
+        "url" : "magpie"
+    },
+    {
+        "src" : "magpieEnvironment.png",
+        "alt" : "Environment models from Magpie.",
+        "url" : "environment"
     }
 ]

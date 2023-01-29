@@ -7,7 +7,13 @@
     },
     {
         "title": "guard-dog",
-        "assetPath": [ "/static/3d/guardDog_patrol.glb", "/static/3d/guardDog_cautious.glb", "/static/3d/guardDog_chase.glb", "/static/3d/guardDog_idle.glb" ],
+        "assetPath": [ "/static/3d/guardDog_idle.glb", "/static/3d/guardDog_patrol.glb", "/static/3d/guardDog_cautious.glb", "/static/3d/guardDog_chase.glb" ],
+        "cameraPosition": [ 0,1,0 ],
+        "cameraTarget": [ 0,0.5,0 ]
+    },
+    {
+        "title": "magpie",
+        "assetPath": [ "/static/3d/magpie_idle.glb", "/static/3d/magpie_walk.glb", "/static/3d/magpie_pick.glb", "/static/3d/magpieDisguise_walk.glb", "/static/3d/magpieDisguise_idle.glb" ],
         "cameraPosition": [ 0,1,0 ],
         "cameraTarget": [ 0,0.5,0 ]
     }
