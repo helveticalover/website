@@ -33,6 +33,9 @@
             import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
             import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
 
+            let mixer;
+
+			const clock = new THREE.Clock();
             const container = document.getElementById( 'container' );
             const renderer = new THREE.WebGLRenderer( { antialias: true } );
             renderer.setPixelRatio( window.devicePixelRatio );
@@ -68,6 +71,14 @@
                 model.scale.set( 1, 1, 1);
                 scene.add( model );
 
+                console.log(gltf.animations);
+
+                mixer = new THREE.AnimationMixer( model );
+                for (let clip of gltf.animations)
+                {
+				    mixer.clipAction(clip).play();
+                }
+
                 animate();
 
             }, undefined, function ( e ) {
@@ -84,6 +95,8 @@
 
             function animate() {
                 requestAnimationFrame( animate );
+                const delta = clock.getDelta();
+				mixer.update( delta );
                 controls.update();
                 renderer.render( scene, camera );
             }
