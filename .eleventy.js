@@ -13,6 +13,7 @@ module.exports = function(config) {
 	config.addPassthroughCopy("static/GitHub-Mark*-64px.png");
 	config.addPassthroughCopy("static/In-Blue-128.png");
 	config.addPassthroughCopy("static/resume.pdf");
+	config.addPassthroughCopy("static/3d/*");
 
 	// Minify HTML, CSS and JS
 	config.addTransform("files-minifier", async function (value, outputPath) {
