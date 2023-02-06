@@ -6,18 +6,29 @@ blurb: A game about a magpie's museum heist.
 tools: ['C++', 'OpenGL', 'Maya', 'Blender']
 thumbnail: Magpie.png
 layout: layouts/project.njk
-buttons: [{ icon: 'download', text: 'Download', link: 'https://github.com/ShiJbey/Magpie/releases/tag/0.2.0'}, { icon: 'link', text: 'View', link: 'https://github.com/ShiJbey/Magpie/tree/0.2.0' }]
+buttons: [{ icon: 'download', text: 'Download', link: 'https://github.com/ShiJbey/Magpie/releases/tag/0.2.0', target: "_blank" },
+          { icon: 'code', text: 'Code', link: 'https://github.com/ShiJbey/Magpie/tree/0.2.0', target: "_blank" }]
 ---
+<style>
+.corner-icon {
+    float: right;
+    color: var(--overlay-text-color);
+    font-size: 40px;
+    z-index: 1;
+}
+</style>
 
-<p>This game was developed in pure C++ by a team of four Computer Game Programming students over three months. I was responsible for standardizing the asset creation and loading pipeline and producing all 3D assets. I also designed the gameplay map using our bitmap level-loading pipeline. I led high-level design discussions and maintained up-to-date documentation and task lists.</p>
+<p>This game was developed in pure C++ by a team of four Computer Game Programming students over three months. I modeled, colored, animated, and imported all 3D assets in the game. I also designed the gameplay environment by creating bitmaps in Gimp that stored mesh, rotation, and AI pathing data. I led high-level design discussions and maintained up-to-date documentation and task lists.</p>
+
+{% include "modal.njk" %}
 
 {% macro src(img)%}{{ img.src }}{% endmacro %}
 
 {% macro alt(img) %}{{ img.alt }}{% endmacro %}
 
-{% macro overlay(img) %}{% endmacro %}
+{% macro overlay(img) %}{% if img.url %}<i class="corner-icon material-icons">open_in_new</i>{% endif %}{% endmacro %}
 
-{% macro fields(dat) %}href = "{{ dat.url | url }}"{% endmacro %}
+{% macro fields(dat) %}{% if dat.url %}href="{{ dat.url | url }}" target="_blank"{% endif %}{% endmacro %}
 
 {% set data = magpie %}
 {% include "gallery.njk" %}

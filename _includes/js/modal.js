@@ -38,7 +38,11 @@ class Modal {
         let images = document.getElementsByClassName("modal-image");
         for (let image of images)
         {
-            image.onclick = () => this.openModal(image.dataset.modaltarget, image.dataset.modalsrc, image.dataset.modalalt);
+            console.log(image.href);
+            if (image.href == "")
+            {
+                image.onclick = () => this.openModal(image.dataset.modaltarget, image.dataset.modalsrc, image.dataset.modalalt);
+            }
         }
     }
 

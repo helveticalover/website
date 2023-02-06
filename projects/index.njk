@@ -4,7 +4,7 @@ currentPage: projects
 ---
 <style>
     .media-wrapper .media-overlay {
-        background-color: var(--overlay-text-color);
+        background-color: var(--overlay-background-color);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -27,7 +27,7 @@ currentPage: projects
 {% macro overlay(project) %}
 <div>
     <h1>{{ project.data.title }}</h1>
-    <p>{{ project.data.blurb }}<br/><i>{% enumerate project.data.tools %}</i></p>
+    <p><b>{{ project.data.date | year }}.</b>&nbsp&nbsp&nbsp{{ project.data.blurb }}<br/><i>{% enumerate project.data.tools %}</i></p>
 </div>
 {% endmacro %}
 

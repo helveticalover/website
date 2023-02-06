@@ -13,5 +13,9 @@
         "src" : "magpieEnvironment.png",
         "alt" : "Environment models from Magpie.",
         "url" : "environment"
+    },
+    {
+        "src" : "final-map.png",
+        "alt" : "Level data stored in RGB channels, including mesh, rotation, and AI pathing information."
     }
 ]

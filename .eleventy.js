@@ -149,6 +149,10 @@ module.exports = function(config) {
 		}).join("");;
 	});
 
+	config.addFilter("year", function(date) {
+		return `${new Date(date).getFullYear()}`;
+	})
+
 	return {
 		pathPrefix: "/website/",
 	};
