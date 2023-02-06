@@ -31,10 +31,10 @@
             scene.environment = pmremGenerator.fromScene( new RoomEnvironment(), 0.04 ).texture;
 
             const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-            camera.position.set(4.52927830125589, 5.374440438060265, 2.0956965869802344);
+            camera.position.set(4.5, 5.5, 2);
 
             const controls = new OrbitControls( camera, renderer.domElement );
-            controls.target.set(-2.531016179359267, -3.0033031310885487, 1.9465235753145764);
+            controls.target.set(-2.5, -3, 2);
             controls.update();
             controls.autoRotate = true;
             controls.autoRotateSpeed = 0.75;
