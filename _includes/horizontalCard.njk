@@ -1,0 +1,27 @@
+<div class="horizontal-container">
+    <div class="left">
+        {% image thumbnail, thumbnailAlt %}
+        {% endimage %}
+    </div>
+    <div class="right">
+        <h1>{{ title }}</h1>
+        {% if date %}
+        <h3><b>{{ date | year }}.</b>&nbsp&nbsp{{ blurb }}</h3>
+        {% endif %}
+        {% if tools %}
+        <i>{% enumerate tools %}</i>
+        {% endif %}
+        {{ description | safe }}
+        {% if buttons %}
+        <ul class="flex-nav responsive-flex" style="margin-top: 30px; max-width: 400px;">
+            {% for button in buttons %}
+            <li style="display: inline;"><a class="social-icon" href="{{ button.link }}" target="{{ button.target }}"><div style="margin-left: 3px; margin-right: 3px;" class="small minor button"><span class="verbose">{{ button.text }}</span><i class="abbreviated material-icons">{{ button.icon }}</i></div></a></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% if footer %}
+        {{ footer | safe }}
+        {% endif %}
+    </div>
+</div>
+

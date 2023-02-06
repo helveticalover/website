@@ -102,6 +102,8 @@ module.exports = function(config) {
 			data-height="${selectedSrc.height}"
 			data-maxWidth="${largestSrc.width}"
 			data-maxHeight="${largestSrc.height}">`;
+
+		wrapperFields = wrapperFields ? wrapperFields : "";
 	
 		return `<a ${wrapperFields} 
 			class="modal-image"

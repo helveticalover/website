@@ -13,10 +13,10 @@
   width: 100%;
   height: 100%;
 }
-.media-wrapper {
+.gallery .media-wrapper {
   position: relative;
 }
-.media-wrapper .media-overlay {
+.gallery .media-wrapper .media-overlay {
   position: absolute;
   top: calc(0px + var(--gallery-margin-top));
   bottom: calc(0px + var(--gallery-margin-top));

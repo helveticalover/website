@@ -5,12 +5,13 @@
 .media-wrapper:hover img {
     box-shadow: 1px 1px 10px var(--shadow-color-highlighted);
 }
-.media-wrapper .media-overlay {
+.media-wrapper>.media-overlay {
     grid-column: 1;
     grid-row: 1;
     background-color: var(--overlay-image-color);
     opacity: 0;
     z-index: 1;
+    overflow: hidden;
 }
 .media-wrapper:hover .media-overlay {
     opacity: 1;

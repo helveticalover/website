@@ -1,6 +1,8 @@
 ---
 layout: layouts/main.njk
 title: Tiffany Li
+thumbnail: "selfportrait.jpg"
+thumbnailAlt: "A self portrait. <i>Ink.</i>"
 currentPage: about-me
 ---
 
@@ -8,28 +10,25 @@ currentPage: about-me
 <style>
 {% include "css/about-me.css" %}
 </style>
-<div id="about-me">
-    <div class="blog-body">
-        <div id="portrait">
-            {% image "selfportrait.jpg", "A self portrait. <i>Ink.</i>" %}
-            {% endimage %}
-        </div>
-        <div id="self-intro">
-            <h1>{{ title }}</h1>
-            <p>I am a Carnegie Mellon University alumna with a 
-                Bachelor's of Computer Science and Arts and a minor in Game Design. I 
-                specialize in game and game-adjacent software that incorporate a breadth 
-                of disciplines such as engineering, visual arts, and design.
-            </p>
-            <ul class="flex-nav responsive-flex" style="max-width:400px;">
-                <li style="margin-bottom: 30px"><a class="social-icon" href="#resume"><div class="button major small">Resume</div></a></li>
-                <li><ul class="flex-nav responsive-flex">
-                    <li><a class="social-icon" href="https://www.linkedin.com/in/tiffany-li-a86656135/"><img src="{{ '/static/In-Blue-128.png' | url }}"></a></li>
-                    <li><a class="social-icon" href="https://github.com/helveticalover"><img src="{{ '/static/GitHub-Mark-64px.png' | url }}"></a></li>
-                </ul></li>
-            </ul>
-        </div>
-    </div>
+<div id="about-me" class="page-card blog-body">
+    {% set description %}
+        <p>I am a Carnegie Mellon University alumna with a 
+        Bachelor's of Computer Science and Arts and a minor in Game Design. I 
+        specialize in game and game-adjacent software that incorporate a breadth 
+        of disciplines such as engineering, visual arts, and design.
+        </p>
+    {% endset %}
+    {% set footer %}
+        <ul class="flex-nav responsive-flex" style="max-width:400px;">
+            <li style="margin-bottom: 30px"><a class="social-icon" href="#resume"><div class="button major small">Resume</div></a></li>
+            <li><ul class="flex-nav responsive-flex">
+                <li><a class="social-icon" href="https://www.linkedin.com/in/tiffany-li-a86656135/"><img src="{{ '/static/In-Blue-128.png' | url }}"></a></li>
+                <li><a class="social-icon" href="https://github.com/helveticalover"><img src="{{ '/static/GitHub-Mark-64px.png' | url }}"></a></li>
+            </ul></li>
+        </ul>
+    {% endset %}
+
+    {% include "horizontalCard.njk" %}
 </div>
 
 <div id="resume">

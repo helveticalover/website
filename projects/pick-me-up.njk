@@ -5,19 +5,20 @@ title: Pick Me Up
 blurb: An animation short about a squirrel who lives in a turtle.
 tools: ['Maya', 'Premiere']
 thumbnail: pick-me-up-thumbnail.PNG
-layout: layouts/project.njk
+thumbnailAlt: "Pick Me Up thumbnail."
+layout: layouts/blog.njk
 buttons: [{ icon: 'visibility', text: 'View', link: '#id_gallery' }]
 ---
-
+{% set description %}
 <p>This animation was developed in Maya over three months with a team of five Animation, Art and Technology students. I was the team lead, providing both creative and technical direction, as well as organizing team meetings and discussions. I pitched the storyboard and animatic to move this animation forward as a final project. I also modeled and rigged the body of both characters and animated body movements for half of the shots. In addition, I contributed to simulation work, rendering and post-processing in Premiere.</p>
+{% endset %}
+
+{% include "horizontalCard.njk" %}
+
 
 {% macro src(img)%}{{ img.src }}{% endmacro %}
-
 {% macro alt(img) %}{% endmacro %}
-
 {% macro overlay(img) %}{% endmacro %}
-
 {% macro fields(dat) %}{% endmacro %}
-
 {% set data = pickMeUp %}
 {% include "gallery.njk" %}
