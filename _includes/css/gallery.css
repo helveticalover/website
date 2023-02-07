@@ -1,13 +1,12 @@
 .gallery {
   display: flex;
   flex-wrap: wrap;
-}
-.gallery * {
-  margin: 0;
-  padding: 0;
+  width: 100%;
 }
 .gallery .media-wrapper {
   display: block;
+  margin: 0;
+  padding: 0;
 }
 .gallery img, .gallery iframe {
   width: 100%;

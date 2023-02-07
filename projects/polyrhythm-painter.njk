@@ -9,6 +9,10 @@ thumbnailAlt: "Placeholder PolyRhythm Painter logo."
 layout: layouts/blog.njk
 buttons: [{ icon: 'download', text: 'Download', link: 'https://github.com/helveticalover/ddraw/releases/tag/0.0.1', target: "_blank" }]
 ---
+
+<div class="blog-narrow">
+{% image thumbnail, thumbnailAlt %}
+{% endimage %}
 {% set description %}
 <p>This project an extension of DDRaw, a prototype made for a art exhibition in 4 days.</p>
 
@@ -16,5 +20,5 @@ buttons: [{ icon: 'download', text: 'Download', link: 'https://github.com/helvet
 
 <p>PolyRhythm Painter aims to deconstruct the notion that art is only valuable for its novelty, and that works that exist for the enjoyment of making them are inherently inferior. The game's ecosystem of sharing creations and recreations between many players demonstrates that the process of “making” art is just as valuable as the process of “creating” it. PolyRhythm Painter further aims to provide a gaming experience that values collaboration and creativity over competition and achievement. In this game, mistakes aren’t failures; they’re opportunities to laugh, or to create something new and unexpected. The strict, unforgiving timing requirements of rhythm games are subverted by the openness of drawing, rewarding the player however they choose to play the game.</p>
 {% endset %}
-
-{% include "horizontalCard.njk" %}
+{% include "titleText.njk" %}
+</div>

@@ -9,14 +9,16 @@ thumbnailAlt: "Logo for the 2020 fall semester of Computer Game Programming."
 layout: layouts/blog.njk
 buttons: [{ icon: 'link', text: 'View', link: 'https://15466.courses.cs.cmu.edu/', target: "_blank" }]
 ---
+<div class="blog-narrow">
+{% image thumbnail, thumbnailAlt %}
+{% endimage %}
 {% set description %}
 <p>This online infrastructure allows students to easily read, complete, and run C++-based lessons through the course website. The framework generates interactive web pages from doxygen-like lesson source files. It also records student submissions for instructor grading. The server includes a mechanism to compile C++ code into WebAssembly, allowing users to execute simple C++ programs directly in the browser. This website is implemented with Django and deployed with Apache, SSL certification, and single-service sign on through Carnegie Mellon University using Shibboleth.</p>
 
 <p>I was the sole developer of this project, so I was entirely responsible for designing, implementing, and deploying the framework according to specifications provided by Jim McCann, professor of Computer Game Programming.</p>
 {% endset %}
-
-{% include "horizontalCard.njk" %}
-
+{% include "titleText.njk" %}
+</div>
 
 {% include "modal.njk" %}
 {% macro src(img)%}{{ img.src }}{% endmacro %}

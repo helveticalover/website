@@ -11,6 +11,7 @@ currentPage: about-me
 {% include "css/about-me.css" %}
 </style>
 <div id="about-me" class="page-card blog-body">
+    {% set textContent %}
     {% set description %}
         <p>I am a Carnegie Mellon University alumna with a 
         Bachelor's of Computer Science and Arts and a minor in Game Design. I 
@@ -26,6 +27,9 @@ currentPage: about-me
                 <li><a class="social-icon" href="https://github.com/helveticalover"><img src="{{ '/static/GitHub-Mark-64px.png' | url }}"></a></li>
             </ul></li>
         </ul>
+    {% endset %}
+
+    {% include "titleText.njk" %}
     {% endset %}
 
     {% include "horizontalCard.njk" %}
