@@ -38,7 +38,6 @@ class Modal {
         let images = document.getElementsByClassName("modal-image");
         for (let image of images)
         {
-            console.log(image.href);
             if (image.href == "")
             {
                 image.onclick = () => this.openModal(image.dataset.modaltarget, image.dataset.modalsrc, image.dataset.modalalt);

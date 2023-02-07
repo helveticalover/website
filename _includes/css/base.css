@@ -1,3 +1,4 @@
+@import url('https://themes.googleusercontent.com/fonts/css?kit=q2OIMsAtXEkOulLQVdSl04PhyMdNCB7wo_2qNgS7ixM');
 body, html {
     min-width: 100%;
     min-height: 100%;
@@ -44,13 +45,20 @@ h1, h3 {
     width: 100%;
 }
 .title {
-    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.title img {
-    height: 100%;
-    box-sizing: inherit;
-    vertical-align: top;
-    display: inline;
+.title p {
+    margin: 10px 0px;
+}
+.title .lower {
+    font-size: 19.5pt;
+    font-weight: 600
+}
+.title .cap {
+    font-size: 22pt;
+    font-weight: 600
 }
 .blog-body {
     max-width: 1000px;

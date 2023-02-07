@@ -1,8 +1,9 @@
 nav {
-    margin: 20px 0px;
+    margin: 10px 0px 20px 0px;
 }
 nav ul {
-    padding: 0;
+    padding: 0px;
+    margin: 0px;
 }
 nav li {
     display: inline;
@@ -35,6 +36,12 @@ nav .button {
 }
 
 @media only screen and (max-width: 768px) {
+    nav {
+        margin: 20px 0px;
+    }
+    nav ul {
+        margin: 16px;
+    }
     .nav li {
         display: inline-block;
         width: 100%;
