@@ -10,7 +10,7 @@ currentPage: about-me
 <style>
 {% include "css/about-me.css" %}
 </style>
-<div id="about-me" class="page-card blog-body">
+<div id="about-me-wrapper" class="page-card blog-body">
     {% set textContent %}
     {% set description %}
         <p>I am a Carnegie Mellon University alumna with a 
@@ -20,13 +20,16 @@ currentPage: about-me
         </p>
     {% endset %}
     {% set footer %}
-        <ul class="flex-nav responsive-flex" style="max-width:400px;">
-            <li style="margin-bottom: 30px"><a class="social-icon" href="#resume"><div class="button major small">Resume</div></a></li>
-            <li><ul class="flex-nav responsive-flex">
-                <li><a class="social-icon" href="https://www.linkedin.com/in/tiffany-li-a86656135/"><img src="{{ '/static/In-Blue-128.png' | url }}"></a></li>
-                <li><a class="social-icon" href="https://github.com/helveticalover"><img src="{{ '/static/GitHub-Mark-64px.png' | url }}"></a></li>
-            </ul></li>
-        </ul>
+    <ul class="flex-nav responsive-flex" style="margin-top: 30px; max-width:400px;">
+        <li style="margin-bottom: 30px"><a class="social-icon" href="#resume"><div class="button major small">Resume</div></a></li>
+        <li><ul class="flex-nav responsive-flex">
+            <li><a class="social-icon" href="https://www.linkedin.com/in/tiffany-li-a86656135/"><img src="{{ '/static/In-Blue-128.png' | url }}"></a></li>
+            <li><a class="social-icon" href="https://github.com/helveticalover"><img src="{{ '/static/GitHub-Mark-64px.png' | url }}"></a></li>
+        </ul></li>
+    </ul>
+    <div style="position: relative; width: 100%; display: block;">
+        <div style="position: absolute; width: 100%; top: -100vh; bottom: 0; z-index: -1;" id="about-me"></div>
+    </div>
     {% endset %}
 
     {% include "titleText.njk" %}
