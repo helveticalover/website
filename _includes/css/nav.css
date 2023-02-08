@@ -3,6 +3,9 @@
     padding: 25.5px;
     display: flex;
     flex-direction: column;
+    z-index: 2;
+    background-color: var(--website-background-color);
+    transition: top .25s ease-in-out;
 }
 .title {
     display: flex;
@@ -61,7 +64,10 @@ nav .button {
 
 @media only screen and (max-width: 768px) {
     .header {
-        padding: 10px;
+        position: fixed;
+        width: calc(100% - 40px);
+        padding: 10px 20px;
+        top: 0px;
     }
     .title>div {
         display: inline-flex;
