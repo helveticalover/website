@@ -2,15 +2,11 @@
     --body-font: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
     --body-font-size: 1.05em;
     --body-padding: 10px 1.5em;
-    --mobile-body-padding: 0px;
     --modal-padding: 50px;
-    --mobile-modal-padding: 0px;
-    --desktop-gallery-margin-left: 6px;
-    --desktop-gallery-margin-top: 6px;
-    --mobile-gallery-margin-left: 5px;
-    --mobile-gallery-margin-top: 5px;
-    --gallery-margin-left: var(--desktop-gallery-margin-left);
-    --gallery-margin-top: var(--desktop-gallery-margin-top);
+    --gallery-margin-left: 6px;
+    --gallery-margin-top: 6px;
+    --title-lower-font-size: 26.5pt;
+    --title-upper-font-size: 28pt;
 
     --website-background-color: rgb(255, 253, 250);
     --background-color-major: hsl(0, 0%, 75%);
@@ -40,5 +36,17 @@
         --text-color-heading: rgb(240, 240, 240);
         --text-color-highlight: white;
         --text-color-invert: black;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    :root {
+        --body-font-size: 1em;
+        --gallery-margin-left: 5px;
+        --gallery-margin-top: 3px;
+        --body-padding: 0px;
+        --modal-padding: 0px;
+        --title-lower-font-size: 15.2pt;
+        --title-upper-font-size: 16pt;
     }
 }

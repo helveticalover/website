@@ -1,23 +1,25 @@
 <div class="header">
-    <div class="title">
-        <p>
-            <span class="cap">T</span>
-            <span class="lower">IFFANY</span>
-            <span class="cap">&nbsp;L</span>
-            <span class="lower">I</span>
-        </p>
-    </div>
     <nav class="center">
-      <div class="wrap-mobile-collapsible">
-        <input id="id_nav-collapsible" class="mobile-expand" type="checkbox">
-        <label for="id_nav-collapsible" class="mobile-expand-lbl center" data-target="id_nav"><i class="material-icons">menu</i></label>
-        <div class="mobile-expand-content">
-          <ul class="nav" id="id_nav">
-            <li><a href="{{ '/projects' | url }}"><div class="button {% if currentPage == "projects" %}active{% endif %}">Projects</div></a></li>
-            <li><a href="{{ '/gallery' | url }}"><div class="button {% if currentPage == "gallery" %}active{% endif %}">Gallery</div></a></li>
-            <li><a href="{{ '/about-me#about-me' | url }}"><div class="button {% if currentPage == "about-me" %}active{% endif %}">About Me</div></a></li>
-          </ul>
+      <input id="id_nav-collapsible" class="mobile-expand" type="checkbox">
+      <div class="banner">
+        <div class="title">
+            <div>
+                <span class="cap">T</span>
+                <span class="lower">IFFANY</span>
+                <span class="cap">&nbsp;L</span>
+                <span class="lower">I</span>
+            </div>
         </div>
+        <div style="width: 100%;">
+          <label for="id_nav-collapsible" class="mobile-expand-lbl" data-target="id_nav"><i class="material-icons">menu</i></label>
+        </div>
+      </div>
+      <div id="mobile-expand-content">
+        <ul class="nav" id="id_nav">
+          <li><a href="{{ '/projects' | url }}"><div class="button {% if currentPage == "projects" %}active{% endif %}">Projects</div></a></li>
+          <li><a href="{{ '/gallery' | url }}"><div class="button {% if currentPage == "gallery" %}active{% endif %}">Gallery</div></a></li>
+          <li><a href="{{ '/about-me#about-me' | url }}"><div class="button {% if currentPage == "about-me" %}active{% endif %}">About Me</div></a></li>
+        </ul>
       </div>
     </nav>
 </div>

@@ -1,3 +1,46 @@
+.header {
+    margin: 0;
+    padding: 25.5px;
+    display: flex;
+    flex-direction: column;
+}
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.title>div {
+    display: inline-flex;
+    align-items: baseline;
+    margin: 10px 0px;
+}
+.title .lower {
+    font-size: var(--title-lower-font-size);
+    font-weight: 600;
+}
+.title .cap {
+    font-size: var(--title-upper-font-size);
+    font-weight: 600;
+}
+.mobile-expand {
+    display: none;
+}
+.mobile-expand-lbl {
+    display: none;
+    cursor: pointer;
+    transition: all 0.25s ease-out;
+}
+.mobile-expand-lbl:hover {
+    color: var(--background-color-major);
+}
+#mobile-expand-content {
+    max-height: auto;
+    overflow: hidden;
+    transition: max-height .25s ease-in-out;
+}
+.mobile-expand:checked ~ #mobile-expand-content {
+    max-height: 100vh;
+}
 nav {
     margin: 10px 0px 20px 0px;
 }
@@ -15,29 +58,24 @@ nav a {
 nav .button {
     padding: 6px 18px;
 }
-.mobile-expand {
-    display: none;
-}
-.mobile-expand-lbl {
-    display: none;
-    cursor: pointer;
-    transition: all 0.25s ease-out;
-}
-.mobile-expand-lbl:hover {
-    color: #7C5A0B;
-}
-.mobile-expand-content {
-    max-height: auto;
-    overflow: hidden;
-    transition: max-height .25s ease-in-out;
-}
-.mobile-expand:checked + .mobile-expand-lbl + .mobile-expand-content {
-    max-height: 100vh;
-}
 
 @media only screen and (max-width: 768px) {
+    .header {
+        padding: 10px;
+    }
+    .title>div {
+        display: inline-flex;
+        align-items: baseline;
+        margin: 0px;
+    }
+    .banner {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 5px;
+    }
     nav {
-        margin: 20px 0px;
+        margin: 0px;
     }
     nav ul {
         margin: 16px;
@@ -47,9 +85,12 @@ nav .button {
         width: 100%;
     }
     .mobile-expand-lbl {
-        display: inline-block;
+        display: block;
+        top: 2px;
+        position: relative;
+        float: right;
     }
-    .mobile-expand-content {
+    #mobile-expand-content {
         max-height: 0px;
     }
     .nav a {

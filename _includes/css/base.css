@@ -34,31 +34,11 @@ h1, h3 {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-.header {
-    margin: 0;
-    padding: 25.5px;
-}
 .center {
     margin-left: 0;
     margin-right: 0;
     text-align: center;
     width: 100%;
-}
-.title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.title p {
-    margin: 10px 0px;
-}
-.title .lower {
-    font-size: 24pt;
-    font-weight: 600;
-}
-.title .cap {
-    font-size: 28pt;
-    font-weight: 600;
 }
 .blog-body {
     max-width: 1200px;
@@ -127,13 +107,8 @@ h1, h3 {
 }
 
 @media only screen and (max-width: 768px) {
-    :root {
-        --gallery-margin-left: var(--mobile-gallery-margin-left);
-        --gallery-margin-top: var(--mobile-gallery-margin-top);
-    }
     .content {
         width: 100%;
-        padding: var(--mobile-body-padding);
     }
     .blog-body {
         padding: 0px 10px;
