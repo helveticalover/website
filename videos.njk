@@ -1,0 +1,18 @@
+---
+layout: "layouts/main.njk"
+currentPage: videos
+---
+{% include "modal.njk" %}
+
+{% set data = videos %}
+
+{% macro src(dat)%}{{ dat.src }}{% endmacro %}
+
+{% macro alt(dat) %}{{ dat.alt }}{% endmacro %}
+
+{% macro overlay(dat) %}{% endmacro %}
+
+{% macro fields(dat) %}{% endmacro %}
+
+
+{% include "gallery.njk" %}

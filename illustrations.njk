@@ -1,6 +1,6 @@
 ---
 layout: "layouts/main.njk"
-currentPage: gallery
+currentPage: illustrations
 ---
 {% include "modal.njk" %}
 
@@ -8,7 +8,7 @@ currentPage: gallery
 
 {% macro src(dat)%}{{ dat.src }}{% endmacro %}
 
-{% macro alt(dat) %}{{ dat.alt }}&nbsp;<i>{% enumerate dat.tools %}</i>{% endmacro %}
+{% macro alt(dat) %}{{ dat.alt }}{% if dat.tools %}&nbsp;<i>{% enumerate dat.tools %}{% endif %}</i>{% endmacro %}
 
 {% macro overlay(dat) %}{% endmacro %}
 

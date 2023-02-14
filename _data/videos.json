@@ -1,11 +1,14 @@
 [
     {
-        "src": "https://player.vimeo.com/video/205990153?h=4ad22c4a65"
+        "src" : "https://player.vimeo.com/video/216619078?h=d5e6c109d4",
+        "alt" : "Video project of an email skit written when I was eleven years old."
     },
     {
-        "src": "https://player.vimeo.com/video/209686430?h=04212befff"
+        "src" : "https://player.vimeo.com/video/205990153?h=4ad22c4a65",
+        "alt" : "Video art project exploring green screens."
     },
     {
-        "src": "https://player.vimeo.com/video/216619078?h=d5e6c109d4"
+        "src" : "https://player.vimeo.com/video/209686430?h=04212befff",
+        "alt" : "Video art project exploring green screens."
     }
 ]
