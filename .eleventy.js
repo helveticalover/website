@@ -14,6 +14,7 @@ module.exports = function(config) {
 	config.addPassthroughCopy("static/In-Blue-128.png");
 	config.addPassthroughCopy("static/resume.pdf");
 	config.addPassthroughCopy("static/3d/*");
+	config.addPassthroughCopy("static/gifs/*");
 
 	// Minify HTML, CSS and JS
 	config.addTransform("files-minifier", async function (value, outputPath) {
@@ -153,7 +154,11 @@ module.exports = function(config) {
 
 	config.addFilter("year", function(date) {
 		return `${new Date(date).getFullYear()}`;
-	})
+	});
+
+	config.addFilter("gifPreview", function(imgSrc) {
+		return `/static/gifs/${imgSrc.substring(0, imgSrc.lastIndexOf("."))}.gif`;
+	});
 
 	return {
 		pathPrefix: "/website/",

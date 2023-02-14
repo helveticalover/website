@@ -13,10 +13,10 @@ currentPage: projects
 ---
 <style>
 .corner-icon {
-    float: right;
-    margin-right: 10px;
-    margin-top: 10px;
-    color: var(--overlay-text-color);
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: var(--website-background-color);
     font-size: 40px;
     z-index: 1;
 }
@@ -38,7 +38,12 @@ currentPage: projects
 {% include "modal.njk" %}
 {% macro src(img)%}{{ img.src }}{% endmacro %}
 {% macro alt(img) %}{{ img.alt }}{% endmacro %}
-{% macro overlay(img) %}{% if img.url %}<i class="corner-icon material-icons">open_in_new</i>{% endif %}{% endmacro %}
+{% macro overlay(img) %}
+{% if img.url %}
+<image src="{{ img.src | gifPreview | url }}" />
+<i class="corner-icon material-icons">open_in_new</i>
+{% endif %}
+{% endmacro %}
 {% macro fields(dat) %}{% if dat.url %}href="{{ dat.url | url }}" target="_blank"{% endif %}{% endmacro %}
 {% set data = magpie %}
 {% include "gallery.njk" %}

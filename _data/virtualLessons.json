@@ -1,10 +1,18 @@
 [
     {
         "src" : "exercise-lines.png",
-        "alt" : "An online exercise that allows students to checkmark lines that are contain a bug."
+        "alt" : "An online exercise that asks students to checkmark lines that are contain a bug."
+    },
+    {
+        "src" : "exercise-word.png",
+        "alt" : "An online exercise that asks students to submit a short response to the provided graphic."
     },
     {
         "src" : "macros.png",
-        "alt" : "An online exercise that allows students to write and compile C++ code."
+        "alt" : "An online exercise that asks students to write and compile C++ code."
+    },
+    {
+        "src" : "sample-code.png",
+        "alt" : "A block of code that demonstrates bad practice."
     }
 ]
