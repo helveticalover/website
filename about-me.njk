@@ -43,8 +43,8 @@ currentPage: about-me
         <div style="display: flex; flex-direction: row-reverse;">
             <a href="{{ '/static/resume.pdf' | url }}"><div class="button square minor"><i class="material-icons">download</i></div></a>
         </div>
-        <div class="resume-wrapper">
+        {% scoped "resume-wrapper" %}
             {% include "resume.html" %}
-        </div>
+        {% endscoped %}
     </div>
 </div>

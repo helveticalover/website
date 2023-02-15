@@ -9,7 +9,6 @@ const { minify } = require("terser");
 const isProduction = typeof process.env.NODE_ENV === "string" && process.env.NODE_ENV === "production";
 
 module.exports = function(config) {
-	config.addPassthroughCopy("static/cgpicon.png");
 	config.addPassthroughCopy("static/GitHub-Mark*-64px.png");
 	config.addPassthroughCopy("static/In-Blue-128.png");
 	config.addPassthroughCopy("static/resume.pdf");
@@ -143,6 +142,16 @@ module.exports = function(config) {
 			return embedShortcode(src);
 		}
 		return await imageShortcode(content, src, alt, wrapperFields);
+	});
+
+	config.addPairedShortcode("scoped", function (content, scopeId) {
+		let addScope = content.replace(/<style[^>]*>(.*)<\/style>/g, function (whole, styles) {
+			let selectors = styles.replace(/([^;{}]+){([^}]*)}/g, function (whole, selector, properties) {
+				return `#${scopeId} ${selector}{${properties}}`;
+			});
+			return `<style>${selectors}</style>`
+		});
+		return `<div id="${scopeId}">${addScope}</div>`;
 	});
 
 	config.addShortcode("enumerate", function(list) {
