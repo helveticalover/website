@@ -2,10 +2,10 @@
   var prevScrollPos = window.pageYOffset;
   window.onscroll = function() {
     let diff = window.pageYOffset - prevScrollPos;
-    if (diff < -5 || window.pageYOffset < 58) {
+    if (diff < -5 || window.pageYOffset < 44) {
       document.getElementById("navbar").style.top = "0px";
     } else if (diff > 0) {
-      document.getElementById("navbar").style.top = "-58px";
+      document.getElementById("navbar").style.top = "-44px";
       document.getElementById("id_nav-collapsible").checked = false;
     }
     prevScrollPos = window.pageYOffset;

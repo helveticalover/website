@@ -11,12 +11,11 @@
 #resume {
     position: relative;
     min-height: 100vh;
-    min-width: 100%;
 }
 #resume>div {
-    padding: 36px;
     max-width: 540pt;
     margin: auto;
+    width: 100%;
 }
 #resume>div>#resume-wrapper {
     overflow: hidden;
