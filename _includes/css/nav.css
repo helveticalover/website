@@ -69,8 +69,8 @@ nav .button {
 @media only screen and (max-width: 768px) {
     .header {
         position: fixed;
-        width: calc(100% - 40px);
-        padding: 0px 20px;
+        width: 100%;
+        padding: 0px;
         top: 0px;
     }
     .title>div {
@@ -82,13 +82,19 @@ nav .button {
         display: flex;
         flex-direction: row;
         align-items: center;
-        padding: 5px;
+        padding: 5px 20px;
     }
     nav {
         margin: 0px;
     }
+    nav a {
+        margin: 4px 0px;
+    }
     nav ul {
         margin: 0px 0px 10px 0px;
+    }
+    nav .button {
+        border-radius: 0px;
     }
     .nav li {
         display: inline-block;
