@@ -13,7 +13,7 @@ module.exports = function(config) {
 	config.addPassthroughCopy("static/In-Blue-128.png");
 	config.addPassthroughCopy("static/resume.pdf");
 	config.addPassthroughCopy("static/3d/*");
-	config.addPassthroughCopy("static/gifs/*");
+	config.addPassthroughCopy("static/previews/*");
 
 	// Minify HTML, CSS and JS
 	config.addTransform("files-minifier", async function (value, outputPath) {
@@ -130,7 +130,7 @@ module.exports = function(config) {
 		height="360"
 		data-width="640"
 		data-height="360"></iframe>
-		</div>`
+		</div>`;
 	};
 
 	config.addPairedAsyncShortcode("image", imageShortcode);
@@ -154,6 +154,16 @@ module.exports = function(config) {
 		return `<div id="${scopeId}">${addScope}</div>`;
 	});
 
+	config.addShortcode("preview", function(imgSrc) {
+		if (!imgSrc) {
+			return "";
+		}
+		return `<video autoplay loop muted playsinline>
+		<source src="${config.getFilter("url")("/static/previews/" + imgSrc.substring(0, imgSrc.lastIndexOf(".")) + ".webm")}" type="video/webm" />
+		<source src="${config.getFilter("url")("/static/previews/" + imgSrc.substring(0, imgSrc.lastIndexOf(".")) + ".mp4")}" type="video/mp4" />
+		</video>`;
+	});
+
 	config.addShortcode("enumerate", function(list) {
 		return list.map(function(value, i) {
 			value = i == 0 ? value.charAt(0).toUpperCase() + value.slice(1) : value;
@@ -162,11 +172,11 @@ module.exports = function(config) {
 	});
 
 	config.addFilter("year", function(date) {
-		return `${new Date(date).getFullYear()}`;
-	});
-
-	config.addFilter("gifPreview", function(imgSrc) {
-		return `/static/gifs/${imgSrc.substring(0, imgSrc.lastIndexOf("."))}.gif`;
+		let d = new Date(date);
+		if (!d) {
+			return date;
+		}
+		return `${d.getFullYear()}`;
 	});
 
 	return {

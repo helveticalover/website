@@ -40,7 +40,7 @@ currentPage: projects
 {% macro alt(img) %}{{ img.alt }}{% endmacro %}
 {% macro overlay(img) %}
 {% if img.url %}
-<image src="{{ img.src | gifPreview | url }}" />
+{% preview img.src %}
 <i class="corner-icon material-icons">open_in_new</i>
 {% endif %}
 {% endmacro %}
