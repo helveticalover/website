@@ -10,13 +10,6 @@
     color: var(--text-color-invert);
     transition: background-color 0.25s linear;
 }
-.button.large {
-    border-radius: 3px;
-    padding: 6px 24px;
-    font-size: 24px;
-    height: 38px;
-
-}
 .button.small {
     border-radius: 3px;
     padding: 6px 18px;
@@ -29,9 +22,6 @@
     align-items: center;
     justify-content: center;
     display: flex;
-}
-.button>.abbreviated {
-    display: none;
 }
 .social-icon {
     display: inline-flex;
@@ -48,12 +38,4 @@
 }
 .social-icon > img {
     filter: grayscale(100%) contrast(500%) contrast(20%);
-}
-@media only screen and (max-width: 768px) {
-    .button>.verbose {
-        display: none;
-    }
-    .button>.abbreviated {
-        display: block;
-    }
 }

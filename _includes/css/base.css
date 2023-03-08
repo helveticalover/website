@@ -104,6 +104,9 @@ h1, h3 {
 .blog-wide, .blog-narrow, .horizontal-container>.left, .horizontal-container>.right {
     margin-bottom: 24px
 }
+.hide-on-desktop {
+    display: none;
+}
 
 @media only screen and (max-width: 1000px) {
     .horizontal-container {
@@ -132,5 +135,11 @@ h1, h3 {
     }
     .gallery {
         justify-content: center;
+    }
+    .hide-on-mobile {
+        display: none;
+    }
+    .hide-on-desktop {
+        display: block;
     }
 }

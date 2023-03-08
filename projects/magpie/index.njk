@@ -41,7 +41,7 @@ currentPage: projects
 {% macro overlay(img) %}
 {% if img.url %}
 {% preview img.src %}
-<i class="corner-icon material-icons">open_in_new</i>
+<span class="corner-icon">{% include "svg/open_in_new.svg" %}</i>
 {% endif %}
 {% endmacro %}
 {% macro fields(dat) %}{% if dat.url %}href="{{ dat.url | url }}" target="_blank"{% endif %}{% endmacro %}
