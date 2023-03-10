@@ -6,10 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tiffany Li</title>
   <link href="{{ '/static/base.css' | url }}" type="text/css" rel="stylesheet">
-  <script type="module" async>
-    import Lazyload from "https://cdn.skypack.dev/vanilla-lazyload";
-    const lazyload = new Lazyload();
-</script>
 </head>
 <body>
   <div class="body-wrapper">
@@ -18,5 +14,9 @@
       {{ content | safe }}
     </div>
   </div>
+  <script>
+    window.lazyLoadOptions = {};
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js"></script>
 </body>
 </html>

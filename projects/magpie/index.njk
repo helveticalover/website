@@ -50,6 +50,6 @@ metaDescription: A game about a magpie's museum heist. Assets developed by Tiffa
 <span class="corner-icon">{% include "svg/open_in_new.svg" %}</i>
 {% endif %}
 {% endmacro %}
-{% macro fields(dat) %}{% if dat.url %}href="{{ dat.url | url }}" target="_blank"{% endif %}{% endmacro %}
+{% macro fields(dat) %}{% if dat.url %}href="{{ dat.url | url }}" target="_blank" aria-label="{{ dat.alt }}"{% endif %}{% endmacro %}
 {% set data = magpie %}
 {% include "gallery.njk" %}

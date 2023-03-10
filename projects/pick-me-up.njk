@@ -15,7 +15,7 @@ metaDescription: An animation short about a squirrel who lives in a turtle. Dire
 
 <div class="blog-wide">
 {% macro src(img)%}{{ img.src }}{% endmacro %}
-{% macro alt(img) %}{% endmacro %}
+{% macro alt(img) %}{{ img.alt }}{% endmacro %}
 {% macro overlay(img) %}{% endmacro %}
 {% macro fields(dat) %}{% endmacro %}
 {% set data = [{

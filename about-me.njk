@@ -42,7 +42,7 @@ metaDescription: Tiffany Li is a Carnegie Mellon University alumna who specializ
 <div id="resume" class="blog-body">
     <div>
         <div style="display: flex; flex-direction: row-reverse;">
-            <a href="{{ '/static/resume.pdf' | url }}"><div class="button square minor">{% include "svg/download.svg" %}</div></a>
+            <a href="{{ '/static/resume.pdf' | url }}" aria-label="Download resume"><div class="button square minor">{% include "svg/download.svg" %}</div></a>
         </div>
         {% scoped "resume-wrapper" %}
             {% include "resume.html" %}
