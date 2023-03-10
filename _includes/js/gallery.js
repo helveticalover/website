@@ -48,7 +48,7 @@ class Gallery {
         let wrappers = container.getElementsByClassName("media-wrapper");
         for (let wrapper of wrappers)
         {
-            let md = wrapper.querySelector("picture>img, iframe");
+            let md = wrapper.querySelector("picture>img, iframe, lite-vimeo");
             let h = md.dataset.height;
             let w = md.dataset.width;
             let w_h = w / h;

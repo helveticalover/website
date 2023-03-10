@@ -1,6 +1,7 @@
 // https://mahmoudashraf.dev/blog/how-to-optimize-and-lazyloading-images-on-eleventy/
 // https://github.com/verlok/vanilla-lazyload/
 // https://github.com/benjaminrancourt/eleventy-plugin-files-minifier/blob/main/src/files-minifier.js
+// https://github.com/luwes/lite-vimeo-embed
 
 const Image = require("@11ty/eleventy-img");
 const htmlmin = require("html-minifier");
@@ -123,7 +124,9 @@ module.exports = function(config) {
 
 	let embedShortcode = function (src, alt) {
 		return `<div class="media-wrapper">
-		<iframe src="${src}"
+		<iframe 
+		class="lazy"
+		data-src="${src}"
 		title="${alt}"
 		frameborder="0"
 		allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
@@ -134,12 +137,32 @@ module.exports = function(config) {
 		</div>`;
 	};
 
+	let vimeoShortcode = function(videoId) {
+		return `<div class="media-wrapper">
+		<lite-vimeo
+		videoid="${ videoId }"
+		width="640"
+		height="360"
+		data-width="640"
+		data-height="360"
+		style="background-image: url('https://i.vimeocdn.com/video/${ videoId }.webp?mw=1600&mh=900&q=70');">
+			<div class="ltv-playbtn"></div>
+		</lite-vimeo>
+		</div>`;
+	};
+
 	config.addPairedAsyncShortcode("image", imageShortcode);
 
 	config.addShortcode("embed", embedShortcode);
 
+	config.addShortcode("vimeo", vimeoShortcode);
+
 	config.addPairedAsyncShortcode("media", async function (content, src, alt, wrapperFields) {
 		if (/^(ftp|http|https):\/\/[^ "]+$/.test(src)) {
+			if (/vimeo/.test(src)) {
+				let videoId = /\/([0-9]+)$/.exec(src)[1];
+				return vimeoShortcode(videoId);
+			}
 			return embedShortcode(src, alt);
 		}
 		return await imageShortcode(content, src, alt, wrapperFields);
