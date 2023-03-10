@@ -1,6 +1,6 @@
 <h1>{{ title }}</h1>
 {% if date %}
-<h3><b>{{ date | year }}.</b>&nbsp&nbsp{{ blurb }}</h3>
+<h2><b>{{ date | year }}.</b>&nbsp&nbsp{{ blurb }}</h2>
 {% endif %}
 {% if tools %}
 <i>{% enumerate tools %}</i>
@@ -9,7 +9,7 @@
 {% if buttons %}
 <ul class="flex-nav responsive-flex" style="margin-top: 30px; max-width: 400px;">
     {% for button in buttons %}
-    <li style="display: inline;"><a class="social-icon" href="{{ button.link }}" target="{{ button.target }}">
+    <li style="display: inline;"><a class="social-icon" href="{{ button.link }}" target="{{ button.target }}" aria-label="{{ button.text }}">
         <div style="margin-left: 3px; margin-right: 3px;" class="small minor button hide-on-mobile">
             {{ button.text }}
         </div>

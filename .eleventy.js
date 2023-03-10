@@ -121,9 +121,10 @@ module.exports = function(config) {
 		</div></a>`;
 	};
 
-	let embedShortcode = function (src) {
+	let embedShortcode = function (src, alt) {
 		return `<div class="media-wrapper">
 		<iframe src="${src}"
+		title="${alt}"
 		frameborder="0"
 		allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
 		width="640"
@@ -139,7 +140,7 @@ module.exports = function(config) {
 
 	config.addPairedAsyncShortcode("media", async function (content, src, alt, wrapperFields) {
 		if (/^(ftp|http|https):\/\/[^ "]+$/.test(src)) {
-			return embedShortcode(src);
+			return embedShortcode(src, alt);
 		}
 		return await imageShortcode(content, src, alt, wrapperFields);
 	});

@@ -17,8 +17,17 @@ a:link, a:visited {
     text-decoration: none;
     color: var(--text-color-body);
 }
-h1, h3 {
+h1,h2,h3,h4 {
     color: var(--text-color-heading);
+}
+h2 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
 }
 .body-wrapper {
     display: flex;
