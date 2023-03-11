@@ -66,31 +66,42 @@ module.exports = function(config) {
 			throw new Error(`Missing \`alt\` on image from: ${src}`);
 		}
 
+		const widths = lazy ? [100, 640, 1024] : ["auto"];
 		let stats = await Image("static/images/" + src, {
-			widths: [100, 640, 1024],
+			widths: widths,
 			urlPath: "/static/images/",
 			outputDir: "./_site/static/images/",
 		});
-
-		let selectedSrc = stats["jpeg"][0];
 
 		const srcset = Object.keys(stats).reduce(
 			(acc, format) => ({
 				...acc,
 				[format]: stats[format].reduce(
 					function(_acc, curr) {
-						let url = `${config.getFilter("url")(curr.srcset)}`;
-						return `${_acc} ${url} ,`;
+						let url = (_acc.length > 0 ? ", " : "") + `${config.getFilter("url")(curr.srcset)}`;
+						return `${_acc}${url}`;
 					},
 				""),
 			}),
 			{}
 		);
 
+		srcset["sizes"] = stats["jpeg"].reduce(
+			function(_acc, curr) {
+				let size = (_acc.length > 0 ? ", " : "") + `${curr.width}w`;
+				return `${_acc}${size}`;	
+			},
+		"");
+
+		const selectedSrc = stats["jpeg"][0];
 		const largestSrc = stats["jpeg"][stats["jpeg"].length - 1];
 		const srcUrl = `${config.getFilter("url")(selectedSrc.url)}`;
 		const largestSrcUrl = `${config.getFilter("url")(largestSrc.url)}`;
-		const source = `<source type="image/webp" data-srcset="${srcset["webp"]}" >`;
+		const webpsrcset = `${srcset["webp"]}`;
+		const source = `<source type="image/webp"
+			${ lazy ? '' : 'srcset="' + webpsrcset + '"' }
+			data-srcset="${webpsrcset}"
+			data-sizes="${srcset["sizes"]}">`;
 
 		const img = `<img 
 			${ lazy ? 'class="lazy"' : '' }
@@ -98,6 +109,7 @@ module.exports = function(config) {
 			src="${ lazy ? srcUrl : largestSrcUrl }"
 			data-src="${ lazy ? srcUrl : largestSrcUrl}"
 			data-srcset="${srcset["jpeg"]}"
+			data-sizes="${srcset["sizes"]}"
 			width="${ lazy ? selectedSrc.width : largestSrc.width}"
 			height="${lazy ? selectedSrc.height : largestSrc.height}"
 			data-width="${ lazy ? selectedSrc.width : largestSrc.width}"

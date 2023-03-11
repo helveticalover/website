@@ -103,7 +103,6 @@ h2 {
     padding-left: 30px;
     align-self: center;
     order: 2;
-    flex-shrink: 2;
 }
 .horizontal-container>.left img, .horizontal-container>.right img {
     width: 100%;
