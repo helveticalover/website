@@ -66,7 +66,7 @@ module.exports = function(config) {
 			throw new Error(`Missing \`alt\` on image from: ${src}`);
 		}
 
-		const widths = lazy ? [100, 640, 1024] : ["auto"];
+		const widths = lazy ? [100, 640, 1024] : [1024, "auto"];
 		let stats = await Image("static/images/" + src, {
 			widths: widths,
 			urlPath: "/static/images/",
@@ -96,26 +96,26 @@ module.exports = function(config) {
 		const selectedSrc = stats["jpeg"][0];
 		const largestSrc = stats["jpeg"][stats["jpeg"].length - 1];
 		const srcUrl = `${config.getFilter("url")(selectedSrc.url)}`;
-		const largestSrcUrl = `${config.getFilter("url")(largestSrc.url)}`;
-		const webpsrcset = `${srcset["webp"]}`;
 		const source = `<source type="image/webp"
-			${ lazy ? '' : 'srcset="' + webpsrcset + '"' }
-			data-srcset="${webpsrcset}"
-			data-sizes="${srcset["sizes"]}">`;
+			${ lazy ? `` : `srcset="${config.getFilter("url")(stats["webp"][0].url)}"` }
+			${ lazy ?
+				`data-srcset="${srcset["webp"]}"
+				 data-sizes="${srcset["sizes"]}"` : ``
+			}>`;
 
 		const img = `<img 
-			${ lazy ? 'class="lazy"' : '' }
+			${ lazy ? `class="lazy"` : `` }
 			alt="${alt}"
-			src="${ lazy ? srcUrl : largestSrcUrl }"
-			data-src="${ lazy ? srcUrl : largestSrcUrl}"
+			src="${srcUrl}"
+			data-src="${srcUrl}"
 			data-srcset="${srcset["jpeg"]}"
 			data-sizes="${srcset["sizes"]}"
-			width="${ lazy ? selectedSrc.width : largestSrc.width}"
-			height="${lazy ? selectedSrc.height : largestSrc.height}"
-			data-width="${ lazy ? selectedSrc.width : largestSrc.width}"
-			data-height="${ lazy ? selectedSrc.height : largestSrc.height}"
-			data-maxWidth="${largestSrc.width}"
-			data-maxHeight="${largestSrc.height}">`;
+			width="${selectedSrc.width}"
+			height="${selectedSrc.height}"
+			data-width="${selectedSrc.width}"
+			data-height="${selectedSrc.height}"
+			data-maxWidth="${ lazy ? largestSrc.width : selectedSrc.width }"
+			data-maxHeight="${ lazy ? largestSrc.height : selectedSrc.height }">`;
 
 		wrapperFields = wrapperFields ? wrapperFields : "";
 	
