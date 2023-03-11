@@ -61,7 +61,7 @@ module.exports = function(config) {
 	});
 
 	// Resize images and send to static directory
-	let imageShortcode = async function (content, src, alt, wrapperFields) {
+	let imageShortcode = async function (content, src, alt, wrapperFields, lazy = true) {
 		if (!alt) {
 			throw new Error(`Missing \`alt\` on image from: ${src}`);
 		}
@@ -89,18 +89,19 @@ module.exports = function(config) {
 
 		const largestSrc = stats["jpeg"][stats["jpeg"].length - 1];
 		const srcUrl = `${config.getFilter("url")(selectedSrc.url)}`;
+		const largestSrcUrl = `${config.getFilter("url")(largestSrc.url)}`;
 		const source = `<source type="image/webp" data-srcset="${srcset["webp"]}" >`;
 
-		const img = `<img
-			class="lazy"
+		const img = `<img 
+			${ lazy ? 'class="lazy"' : '' }
 			alt="${alt}"
-			src="${srcUrl}"
-			data-src="${srcUrl}"
+			src="${ lazy ? srcUrl : largestSrcUrl }"
+			data-src="${ lazy ? srcUrl : largestSrcUrl}"
 			data-srcset="${srcset["jpeg"]}"
-			width="${selectedSrc.width}"
-			height="${selectedSrc.height}"
-			data-width="${selectedSrc.width}"
-			data-height="${selectedSrc.height}"
+			width="${ lazy ? selectedSrc.width : largestSrc.width}"
+			height="${lazy ? selectedSrc.height : largestSrc.height}"
+			data-width="${ lazy ? selectedSrc.width : largestSrc.width}"
+			data-height="${ lazy ? selectedSrc.height : largestSrc.height}"
 			data-maxWidth="${largestSrc.width}"
 			data-maxHeight="${largestSrc.height}">`;
 
@@ -122,10 +123,10 @@ module.exports = function(config) {
 		</div></a>`;
 	};
 
-	let embedShortcode = function (src, alt) {
+	let embedShortcode = function (src, alt, lazy = true) {
 		return `<div class="media-wrapper">
 		<iframe 
-		class="lazy"
+		${ lazy ? 'class="lazy"' : '' }
 		data-src="${src}"
 		title="${alt}"
 		frameborder="0"
@@ -167,15 +168,15 @@ module.exports = function(config) {
 
 	config.addAsyncShortcode("vimeo", vimeoShortcode);
 
-	config.addPairedAsyncShortcode("media", async function (content, src, alt, wrapperFields) {
+	config.addPairedAsyncShortcode("media", async function (content, src, alt, wrapperFields, lazy = true) {
 		if (/^(ftp|http|https):\/\/[^ "]+$/.test(src)) {
 			if (/vimeo/.test(src)) {
 				let videoId = /\/([0-9]+)$/.exec(src)[1];
-				return vimeoShortcode(videoId);
+				return await vimeoShortcode(videoId);
 			}
-			return embedShortcode(src, alt);
+			return embedShortcode(src, alt, lazy);
 		}
-		return await imageShortcode(content, src, alt, wrapperFields);
+		return await imageShortcode(content, src, alt, wrapperFields, lazy);
 	});
 
 	config.addPairedShortcode("scoped", function (content, scopeId) {

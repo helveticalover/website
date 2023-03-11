@@ -93,6 +93,7 @@ h2 {
 .horizontal-container {
     display: flex;
     padding: 0px;
+    width: 100%
 }
 .horizontal-container>.left {
     align-self: center;
@@ -102,6 +103,7 @@ h2 {
     padding-left: 30px;
     align-self: center;
     order: 2;
+    flex-shrink: 2;
 }
 .horizontal-container>.left img, .horizontal-container>.right img {
     width: 100%;
@@ -123,8 +125,12 @@ h2 {
         flex-direction: column;
         height: 100%;
     }
+    .horizontal-container>.left {
+        width: 100%;
+    }
     .horizontal-container>.right {
         padding-left: 0px;
+        width: 100%
     }
 }
 
@@ -150,5 +156,8 @@ h2 {
     }
     .hide-on-desktop {
         display: block;
+    }
+    .full-width-on-mobile {
+        width: 100vw !important;
     }
 }
