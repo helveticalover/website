@@ -1,7 +1,6 @@
 .media-wrapper {
     display: grid;
 }
-
 .media-wrapper:hover img {
     box-shadow: 1px 1px 10px var(--shadow-color-highlighted);
 }
@@ -21,11 +20,13 @@
     grid-column: 1;
     grid-row: 1;
 }
+img.lazy, lite-vimeo {
+    box-shadow: 1px 1px 5px var(--shadow-color);
+}
 img.lazy {
     object-fit: cover;
     opacity: 0;
     visibility: hidden;
-    box-shadow: 1px 1px 5px var(--shadow-color);
     background-color: white;
 }
 img.lazy:not(.initial) {

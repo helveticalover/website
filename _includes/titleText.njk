@@ -9,11 +9,11 @@
 {% if buttons %}
 <ul class="flex-nav responsive-flex" style="margin-top: 30px; max-width: 400px;">
     {% for button in buttons %}
-    <li style="display: inline;"><a class="social-icon" href="{{ button.link }}" target="{{ button.target }}" aria-label="{{ button.text }}">
-        <div style="margin-left: 3px; margin-right: 3px;" class="small minor button hide-on-mobile">
+    <li style="display: inline; margin-left: 0px;"><a href="{{ button.link }}" target="{{ button.target }}" aria-label="{{ button.text }}" style="align-items: center; display: inline-flex; height: 32px;">
+        <div style="margin-left: 0px; margin-right: 3px;" class="small minor button hide-on-mobile">
             {{ button.text }}
         </div>
-        <div class="hide-on-desktop"><div style="margin-left: 12px; margin-right: 12px;" class="minor button social-icon">
+        <div class="hide-on-desktop"><div style="margin-left: 6px; margin-right: 6px;" class="square minor button">
             {% include "svg/" + button.icon + ".svg" %}
         </div></div>
     </a></li>

@@ -20,13 +20,11 @@ metaDescription: Tiffany Li is a Carnegie Mellon University alumna who specializ
         of disciplines such as engineering, visual arts, and design.
         </p>
     {% endset %}
+    {% set socialsMargin = "6px" %}
     {% set footer %}
     <ul class="flex-nav responsive-flex" style="margin-top: 30px; max-width:400px;">
-        <li style="margin-bottom: 30px"><a class="social-icon" href="#resume"><div class="button major small">Resume</div></a></li>
-        <li><ul class="flex-nav responsive-flex">
-            <li><a class="social-icon" href="https://www.linkedin.com/in/tiffany-li-a86656135/" aria-label="Tiffany Li's LinkedIn profile."><img src="{{ '/static/In-Blue-128.png' | url }}" height="32" width="32" alt=""></a></li>
-            <li><a class="social-icon" href="https://github.com/helveticalover" aria-label="Tiffany Li's GitHub profile."><img src="{{ '/static/GitHub-Mark-64px.png' | url }}" height="32" width="32" alt=""></a></li>
-        </ul></li>
+        <li style="margin-bottom: 30px; margin-left: 0px;"><a href="#resume" style="align-items: center; display: inline-flex; height: 32px;"><div class="button major small">Resume</div></a></li>
+        <li><ul class="flex-nav responsive-flex">{% include "socials.njk" %}</li>
     </ul>
     <div style="position: relative; width: 100%; display: block;">
         <div style="position: absolute; width: 100%; top: -100vh; bottom: 0; z-index: -1;" id="about-me"></div>

@@ -10,11 +10,10 @@ const { minify } = require("terser");
 const isProduction = typeof process.env.NODE_ENV === "string" && process.env.NODE_ENV === "production";
 
 module.exports = function(config) {
-	config.addPassthroughCopy("static/GitHub-Mark*-64px.png");
-	config.addPassthroughCopy("static/In-Blue-128.png");
 	config.addPassthroughCopy("static/resume.pdf");
 	config.addPassthroughCopy("static/3d/*");
 	config.addPassthroughCopy("static/previews/*");
+	config.addPassthroughCopy("static/socials/*");
 
 	// Minify HTML, CSS and JS
 	config.addTransform("files-minifier", async function (value, outputPath) {
@@ -66,7 +65,7 @@ module.exports = function(config) {
 			throw new Error(`Missing \`alt\` on image from: ${src}`);
 		}
 
-		const widths = lazy ? [100, 640, 1024] : [1024, "auto"];
+		const widths = lazy ? [100, 640, 1024] : [1024];
 		let stats = await Image("static/images/" + src, {
 			widths: widths,
 			urlPath: "/static/images/",

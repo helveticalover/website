@@ -7,10 +7,8 @@ class Gallery {
         if (document.readyState === "complete")
         {
             this.sizeGalleries();
-            this.sizeGalleries();
         }
         window.addEventListener('DOMContentLoaded', () => {
-            this.sizeGalleries();
             this.sizeGalleries();
         });
     }

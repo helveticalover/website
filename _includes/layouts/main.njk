@@ -14,9 +14,24 @@
       {{ content | safe }}
     </div>
   </div>
+  {% set socialsMargin = "12px" %}
+  <div class="center-flex" style="height: 150px; align-items: end;">
+    {% include "socials.njk" %}
+  </div>
   <script>
-    window.lazyLoadOptions = {};
-  </script>
+    window.lazyLoadOptions = {
+      callback_loaded: function (element) {
+        if (typeof gallery !== 'undefined')
+        {
+          gallery.sizeGalleries();
+        }
+      },
+    };
+    if (typeof gallery !== 'undefined')
+    {
+      gallery.sizeGalleries();
+    }
+    </script>
   <script async src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js"></script>
 </body>
 </html>

@@ -1,0 +1,17 @@
+<ul class="flex-nav responsive-flex">
+    <li style="margin-left: {{ socialsMargin }}; margin-right: {{ socialsMargin }}">
+        <a class="social-icon socials-linkedin" href="https://www.linkedin.com/in/tiffany-li-a86656135/" aria-label="Link to Tiffany Li's LinkedIn profile.">
+            <picture>
+                <source srcset="{{ '/static/socials/In-Dark.png' | url }}" media="(prefers-color-scheme:dark)">
+                <img src="{{ '/static/socials/In-Light.png' | url }}" height="32" width="32" alt="">
+            </picture>
+        </a>
+    </li>
+    <li style="margin-left: {{ socialsMargin }}; margin-right: {{ socialsMargin }}"><a class="social-icon socials-github" href="https://github.com/helveticalover" aria-label="Link to Tiffany Li's GitHub profile.">
+        <picture>
+            <source srcset="{{ '/static/socials/GitHub-Dark.png' | url }}" media="(prefers-color-scheme:dark)">
+            <img src="{{ '/static/socials/GitHub-Light.png' | url }}" height="32" width="32" alt="">
+        </picture>
+    </a></li>
+    <li style="margin-left: {{ socialsMargin }}; margin-right: {{ socialsMargin }}"><a class="social-icon socials-email" href="mailto:tiffany.li.0001@gmail.com" aria-label="Link to Tiffany Li's email.">{% include "svg/mail.svg" %}</a></li>
+</ul>

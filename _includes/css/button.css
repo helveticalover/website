@@ -19,6 +19,7 @@
 .button.square {
     width: 32px;
     height: 32px;
+    padding: 2px;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -35,7 +36,5 @@
     width: auto !important;
     max-width: 100%;
     max-height: 100%;
-}
-.social-icon > img {
-    filter: grayscale(100%) contrast(500%) contrast(20%);
+    color: var(--background-color-major);
 }
