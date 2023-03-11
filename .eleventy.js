@@ -67,7 +67,7 @@ module.exports = function(config) {
 		}
 
 		let stats = await Image("static/images/" + src, {
-			widths: [100, 640, 1024, 2048],
+			widths: [100, 640, 1024],
 			urlPath: "/static/images/",
 			outputDir: "./_site/static/images/",
 		});
@@ -137,15 +137,25 @@ module.exports = function(config) {
 		</div>`;
 	};
 
-	let vimeoShortcode = function(videoId) {
-		return `<div class="media-wrapper">
+	let vimeoShortcode = async function(videoId) {
+		let stats = await Image("static/images/" + videoId + ".jpg", {
+			widths: [640],
+			urlPath: "/static/images/",
+			outputDir: "./_site/static/images/",
+		});
+		let thumbnail = stats["jpeg"][stats["jpeg"].length - 1];
+
+		return `<style>
+		lite-vimeo#vimeo${videoId} { background-image: url('${config.getFilter("url")(thumbnail.url)}') !important; }
+		</style>
+		<div class="media-wrapper">
 		<lite-vimeo
 		videoid="${ videoId }"
 		width="640"
 		height="360"
 		data-width="640"
 		data-height="360"
-		style="background-image: url('https://i.vimeocdn.com/video/${ videoId }.webp?mw=1600&mh=900&q=70');">
+		id="vimeo${videoId}">
 			<div class="ltv-playbtn"></div>
 		</lite-vimeo>
 		</div>`;
@@ -155,7 +165,7 @@ module.exports = function(config) {
 
 	config.addShortcode("embed", embedShortcode);
 
-	config.addShortcode("vimeo", vimeoShortcode);
+	config.addAsyncShortcode("vimeo", vimeoShortcode);
 
 	config.addPairedAsyncShortcode("media", async function (content, src, alt, wrapperFields) {
 		if (/^(ftp|http|https):\/\/[^ "]+$/.test(src)) {
