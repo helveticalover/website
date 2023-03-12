@@ -151,7 +151,8 @@ h2 {
 @media only screen and (max-width: 768px) {
     .content {
         width: 100%;
-        margin-top: 44px;
+        position: absolute;
+        top: 44px;
     }
     .blog-body {
         padding: 0px 10px;

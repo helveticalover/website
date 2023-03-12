@@ -12,11 +12,11 @@
     {% include "header.njk" %}
     <div class="content">
       {{ content | safe }}
+      {% set socialsMargin = "12px" %}
+      <div class="center-flex" style="height: 150px; align-items: end;">
+        {% include "socials.njk" %}
+      </div>
     </div>
-  </div>
-  {% set socialsMargin = "12px" %}
-  <div class="center-flex" style="height: 150px; align-items: end;">
-    {% include "socials.njk" %}
   </div>
   <script>
     window.lazyLoadOptions = {
