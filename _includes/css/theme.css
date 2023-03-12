@@ -3,8 +3,10 @@
     --body-font-size: 1.05em;
     --body-padding: 10px 1.5em;
     --modal-padding: 50px;
-    --gallery-margin-left: 6px;
-    --gallery-margin-top: 6px;
+    --gallery-item-margin-left: 6px;
+    --gallery-item-margin-top: 6px;
+    --gallery-margin-left: 0px;
+    --gallery-margin-top: 0px;
     --title-lower-font-size: 26.5pt;
     --title-upper-font-size: 28pt;
 
@@ -42,7 +44,8 @@
 @media only screen and (max-width: 768px) {
     :root {
         --body-font-size: 1em;
-        --gallery-margin-left: 5px;
+        --gallery-item-margin-left: 5px;
+        --gallery-item-margin-top: 3px;
         --gallery-margin-top: 3px;
         --body-padding: 0px;
         --modal-padding: 0px;

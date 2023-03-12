@@ -95,8 +95,8 @@ class Gallery {
     {
         for (let dat of rows)
         { 
-            let margin = this.#parseSize(this.#getPadding().left);
-            let R_1 = R - 2 * dat.media.length * margin;
+            let margin = this.#parseSize(this.#getItemMargin().left);
+            let R_1 = R - 2 * (dat.media.length - 1) * margin;
 
             for (let md of dat.media)
             {
@@ -114,26 +114,28 @@ class Gallery {
 
     #scaleRowsToTarget(rows)
     {
-        let padding = this.#getPadding();
-        for (let dat of rows)
+        let margin = this.#getItemMargin();
+        for (let j = 0; j < rows.length; j++)
         { 
-            for (let md of dat.media)
+            let dat = rows[j];
+            for (let i = 0; i < dat.media.length; i++)
             {
+                let md = dat.media[i];
                 let scaledHeight = dat.scaledHeight;
                 md.wrapper.style.height = scaledHeight + "px";
                 md.wrapper.style.width = (scaledHeight * md.content.dataset.width / md.content.dataset.height) + "px";
-                md.wrapper.style.paddingLeft = padding.left;
-                md.wrapper.style.paddingRight = padding.left;
-                md.wrapper.style.paddingTop = padding.top;
-                md.wrapper.style.paddingBottom = padding.top;
+                md.wrapper.style.marginLeft = (i == 0 ? "0px" : margin.left);
+                md.wrapper.style.marginRight = (i == dat.media.length - 1 ? "0px" : margin.left);
+                md.wrapper.style.marginTop = (j == 1 ? "0px" : margin.top);
+                md.wrapper.style.marginBottom = (j == rows.length ? "0px" : margin.top);
             }
         }
     }
 
-    #getPadding()
+    #getItemMargin()
     {
-        let marginLeft = getComputedStyle(document.documentElement).getPropertyValue('--gallery-margin-left');
-        let marginTop = getComputedStyle(document.documentElement).getPropertyValue('--gallery-margin-top');
+        let marginLeft = getComputedStyle(document.documentElement).getPropertyValue('--gallery-item-margin-left');
+        let marginTop = getComputedStyle(document.documentElement).getPropertyValue('--gallery-item-margin-top');
         return {
             top: marginTop ? marginTop : "0px",
             left: marginLeft ? marginLeft : "0px",

@@ -2,10 +2,13 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  margin-top: var(--gallery-margin-top);
+  margin-bottom: var(--gallery-margin-top);
+  margin-left: var(--gallery-margin-left);
+  margin-right: var(--gallery-margin-left);
 }
 .gallery .media-wrapper {
   display: block;
-  margin: 0;
   padding: 0;
 }
 .gallery img, .gallery iframe, .gallery lite-vimeo {
@@ -18,8 +21,8 @@
 }
 .gallery .media-wrapper .media-overlay {
   position: absolute;
-  top: calc(0px + var(--gallery-margin-top));
-  bottom: calc(0px + var(--gallery-margin-top));
-  left: calc(0px + var(--gallery-margin-left));
-  right: calc(0px + var(--gallery-margin-left));
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
 }
