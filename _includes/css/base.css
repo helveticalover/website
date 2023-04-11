@@ -29,6 +29,9 @@ h2 {
     margin-inline-end: 0px;
     font-weight: bold;
 }
+p {
+    line-height: 1.4;
+}
 .body-wrapper {
     display: flex;
     flex-direction: column;
