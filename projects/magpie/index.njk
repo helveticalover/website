@@ -12,6 +12,8 @@ buttons: [{ icon: 'download', text: 'Download', link: 'https://github.com/ShiJbe
 currentPage: projects
 metaDescription: A game about a magpie's museum heist. Assets developed by Tiffany Li, a Carnegie Mellon University alumna who specializes in game and game-adjacent software that incorporate a breadth of disciplines such as engineering, visual arts, and design.
 ---
+<script src="https://unpkg.com/lite-vimeo-embed"></script>
+
 <style>
 .corner-icon {
     position: absolute;
@@ -27,8 +29,6 @@ metaDescription: A game about a magpie's museum heist. Assets developed by Tiffa
 }
 </style>
 
-<script src="https://unpkg.com/lite-vimeo-embed"></script>
-
 <div class="blog-wide full-width-on-mobile">
 {% image thumbnail, thumbnailAlt, "", false %}
 {% endimage %}
@@ -41,6 +41,9 @@ metaDescription: A game about a magpie's museum heist. Assets developed by Tiffa
 {% include "titleText.njk" %}
 </div>
 
+<div class="blog-wide full-width-on-mobile">
+    {% vimeo "307810024" %}
+</div>
 
 {% include "modal.njk" %}
 {% macro src(img)%}{{ img.src }}{% endmacro %}
