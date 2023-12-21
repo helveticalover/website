@@ -1,5 +1,9 @@
 [
     {
+        "src" : "https://player.vimeo.com/video/307810024",
+        "alt" : "Gameplay video of Magpie."
+    },
+    {
         "src" : "guardDog.png",
         "alt" : "Models and animations for the guard dog character in Magpie.",
         "url" : "guard-dog"
