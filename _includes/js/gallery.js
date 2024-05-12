@@ -7,10 +7,21 @@ class Gallery {
         if (document.readyState === "complete")
         {
             this.sizeGalleries();
+            this.attachToContainers();
         }
         window.addEventListener('DOMContentLoaded', () => {
             this.sizeGalleries();
+            this.attachToContainers();
         });
+    }
+
+    attachToContainers()
+    {
+        const galleries = document.getElementsByClassName("gallery");
+        for (let gallery of galleries)
+        {
+            gallery.addEventListener('resize', () => this.sizeGalleries());
+        }
     }
 
     sizeGalleries()
@@ -108,8 +119,6 @@ class Gallery {
                 let w_1 = Math.floor(num / div);
                 let h_1 = Math.floor(w_1 * h / w);
                 dat.scaledHeight = h_1;
-
-                console.log(R, margin, R_1, dat.media.length, dat.sum);
             }
         }
     }
