@@ -108,6 +108,8 @@ class Gallery {
                 let w_1 = Math.floor(num / div);
                 let h_1 = Math.floor(w_1 * h / w);
                 dat.scaledHeight = h_1;
+
+                console.log(R, margin, R_1, dat.media.length, dat.sum);
             }
         }
     }
