@@ -225,7 +225,5 @@ module.exports = function(config) {
 		return `${d.getFullYear()}`;
 	});
 
-	return {
-		pathPrefix: "/website/",
-	};
+	return {};
 }
