@@ -14,6 +14,7 @@ module.exports = function(config) {
 	config.addPassthroughCopy("static/3d/*");
 	config.addPassthroughCopy("static/previews/*");
 	config.addPassthroughCopy("static/socials/*");
+	config.addPassthroughCopy("static/components/*");
 
 	// Minify HTML, CSS and JS
 	config.addTransform("files-minifier", async function (value, outputPath) {

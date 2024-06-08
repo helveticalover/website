@@ -1,16 +1,4 @@
-<div class="modal hidden" id="modal">
-  <span class="modal-close">{% include "svg/close.svg" %}</span>
-  <div class="modal-background">
-    <div class="modal-content">
-        <img class="modal-img">
-        <div class="modal-caption">test caption</div>
-    </div>
-  </div>
-</div>
-<style>
-  {% include "css/modal.css" %}
-</style>
-<script language="javascript">
-  {% include "js/modal.js" %}
-  const modal = new Modal();
-</script>
+<script async src="{{ "/static/js/modal-component.js" | url }}"></script>
+<popup-modal id="modal">
+    <span slot="exit-icon">{% include "svg/close.svg" %}</span>
+</popup-modal>
