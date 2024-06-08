@@ -115,7 +115,7 @@ class ModalComponent extends HTMLElement {
         this._exit.addEventListener('click', this._onClick);
         this._modalImg.addEventListener('load', this._showImageOnLoad);
 
-        let images = document.querySelectorAll(`.modal-image[data-modaltarget="${this.id}"]`);
+        let images = document.querySelectorAll(`[data-modaltarget="${this.id}"]`);
         for (let image of images)
         {
             if (image.href == "")
@@ -132,7 +132,7 @@ class ModalComponent extends HTMLElement {
         this._exit.removeEventListener('click', this._onClick);
         this._modalImg.removeEventListener('load', this._showImageOnLoad);
 
-        let images = document.querySelector(`.modal-image[data-modalTarget=${this.id}]`);
+        let images = document.querySelector(`[data-modalTarget=${this.id}]`);
         for (let image of images)
         {
             if (image.href == "")

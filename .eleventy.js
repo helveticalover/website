@@ -120,7 +120,6 @@ module.exports = function(config) {
 		wrapperFields = wrapperFields ? wrapperFields : "";
 	
 		return `<a ${wrapperFields} 
-			class="modal-image"
 			data-modalSrc="${config.getFilter("url")(largestSrc.url)}"
 			data-modalAlt="${alt}"
 			data-modalTarget="modal">
