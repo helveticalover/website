@@ -26,8 +26,8 @@ template.innerHTML =
 
 .modal .modal-background {
     position: relative;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.9);
+    background-color: var(--modal-background-color-rgb, rgb(0,0,0));
+    background-color: var(--modal-background-color-rgba, rgba(0,0,0,0.9));
     width: 100%;
     height: 100%;
     overflow: auto;
@@ -42,8 +42,8 @@ template.innerHTML =
 }
 
 .modal .modal-img {
-    max-width: calc(100vw - var(--modal-padding));
-    max-height: calc(100vh - 1em - var(--modal-padding));
+    max-width: calc(100vw - var(--modal-padding, 50px));
+    max-height: calc(100vh - 1em - var(--modal-padding, 50px));
 }
 
 .modal .modal-caption {
@@ -61,27 +61,25 @@ template.innerHTML =
     float: right;
     top: -5px;
     right: 15px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
+    color: var(--modal-close-color, #f1f1f1);
+    font-size: var(--modal-font-size, 40px);
+    font-weight: var(--modal-font-weight, bold);
     transition: 0.2s;
     z-index: 1;
 }
 
 .modal .modal-close:hover,
 .modal .modal-close:focus {
-    color: #bbb;
+    color: var(--modal-close-select-color, #bbb);
     text-decoration: none;
     cursor: pointer;
 }
 </style>
 <div class="modal hidden">
     <div class="modal-close">
-    <slot name="exit-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48" viewBox="0 0 48 48">
-            <path d="m12.45 37.65-2.1-2.1L21.9 24 10.35 12.45l2.1-2.1L24 21.9l11.55-11.55 2.1 2.1L26.1 24l11.55 11.55-2.1 2.1L24 26.1Z"/>
-        </svg>
-    </slot>
+    <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48" viewBox="0 0 48 48" fill="currentColor">
+        <path d="m12.45 37.65-2.1-2.1L21.9 24 10.35 12.45l2.1-2.1L24 21.9l11.55-11.55 2.1 2.1L26.1 24l11.55 11.55-2.1 2.1L24 26.1Z"/>
+    </svg>
     </div>
     <div class="modal-background">
         <div class="modal-content">
